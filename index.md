@@ -1,4 +1,4 @@
-# Welcome to GitHub Pages
+# Welcome to GitHub Pages {#title}
 
 You can use the [editor on GitHub](https://github.com/Mananoy/Mananoy.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
@@ -32,7 +32,7 @@ Syntax highlighted code block
 &nbsp;  
 &nbsp; 
 
-[To Top](https://github.com/Mananoy/Mananoy.github.io/blob/main/index.md#welcome-to-github-pages)
+[To Top](#title)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 

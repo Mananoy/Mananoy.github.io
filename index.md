@@ -36,6 +36,8 @@ Syntax highlighted code block
 
 [To emoji.md](emoji.md)
 
+| :bowtie: `:bowtie:` | :smile: `:smile:` | :laughing: `:laughing:` |
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 # Jekyll Themes

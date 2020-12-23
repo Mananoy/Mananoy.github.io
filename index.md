@@ -34,7 +34,7 @@ Syntax highlighted code block
 
 [To Top](#welcome-to-github-pages)
 
-[To emoji.md](emoji.md)
+[To 404.md](404.md)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 

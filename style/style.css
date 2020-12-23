@@ -1,0 +1,190 @@
+body{
+  padding:0;
+  font-size:20px;
+}
+
+time{
+  color:grey;
+}
+
+h1{
+  display:inline;
+}
+
+.grey{
+  color:grey;
+}
+
+.grey_back{
+  background-size:auto;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  background-image:linear-gradient(gainsboro,floralWhite,cornsilk);
+  height: 100%;
+}
+
+.container{
+  display: inline-block;
+  background-color:ivory;
+  border:2px solid darkgrey;
+  border-radius:8px;
+  padding:1em 0.5em 1em 0.5em;
+  text-align:center;
+}
+
+.container2{
+  display: inline-block;
+  background-color:ivory;
+  border:2px solid darkgrey;
+  border-radius:8px;
+  padding:0.1em 0.5em 0.7em 0.5em;
+  text-align:center;
+}
+
+.top_bar{
+  background-color:burlywood;
+  height:3em;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 9.4em;
+  position: fixed;
+  top: 3em;
+  left: 0;
+  background-color:blanchedalmond;
+  overflow-x: hidden;
+  padding-top: 1em;
+}
+
+.sidenav a {
+  padding: 1em 1em 1em 1em;
+  text-decoration:none;
+  font-size: 1em;
+  color:black;
+  display:block;
+}
+
+/* When mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color:grey;
+}
+
+/*Main page content */
+.main {
+  margin-left:8em; /* Same as the width of the sidebar */
+  margin-top: 3em; /* Same as the width of the topbar */
+  padding:1em 3em;
+}
+
+.exactCenter {
+  position: fixed;
+  top: 15%;
+  left: 27%;
+  right: 27%;
+}
+
+
+.exactCenter2 {
+  position: fixed;
+  top: 75%;
+  left: 27%;
+  right: 27%;
+}
+
+
+.input_round{
+  border:1px solid darkgrey;
+  border-radius:10px;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center_text{
+  text-align:center;
+}
+
+.border{
+  border:2px solid grey;
+  padding:0.5em;
+  margin:0.5em;
+}
+
+.task{
+  word-spacing: 1em;
+}
+
+.description{
+  color: grey;
+  font-size:0.8em;
+}
+
+.spaces{
+  margin:0.5em;
+}
+
+.button-success,.button-error,.button-warning,.button-secondary,.button-disabled,.button-functional{
+  color: white;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success{
+  background: limegreen;
+}
+
+.button-error{
+  background: crimson;
+}
+
+.button-warning{
+  background: orange;
+}
+
+.button-secondary{
+  background: deepskyblue;
+}
+
+.button-disabled{
+  background: grey;
+}
+
+.button-functional{
+  background: lightslategrey;
+}
+
+.button-xsmall{
+  font-size: 70%;
+}
+
+.button-small{
+  font-size: 85%;
+}
+
+.button-large{
+  font-size: 110%;
+}
+
+.button-xlarge{
+  font-size: 125%;
+}
+
+
+input[type='checkbox'] {
+    width:1.3em;
+    height:1.3em;
+    border-radius:8px;
+    border:2px solid grey;
+}

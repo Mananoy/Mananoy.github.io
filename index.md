@@ -52,6 +52,6 @@ Syntax highlighted code block
 &nbsp;  
 &nbsp;  
 
-[To Top](#welcome-to-github-pages)
+[To Top](#welcome-to-house-price-dashboard)
 
 [To 404.md](pages/404.md)

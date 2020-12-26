@@ -21,16 +21,16 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
-&nbsp; 
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
 [To Top](#welcome-to-github-pages)
 

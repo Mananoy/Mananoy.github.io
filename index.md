@@ -1,4 +1,4 @@
-# Welcome to House Price Dashboard
+# House Price Dashboard
 
 ### About Markdown
 

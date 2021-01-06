@@ -54,4 +54,4 @@ Syntax highlighted code block
 
 [To Top](#welcome-to-house-price-dashboard)
 
-[To 404.md](https://mananoy.github.io/404)
+[To 404.md](https://mananoy.github.io/pages/404)

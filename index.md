@@ -61,13 +61,15 @@ You will see how the js work here:
 <pre/>
 
 <div id="text"></div>
+<div id="text2"></div>
 
 <!--This time we can put the script tags anywhere we like as the jQuery callback function will be only executed when the DOM is ready. The only limitation is that we need to load our code after we have loaded jQuery itself.-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script/test.js"></script>
+
 <!--The JavaScript code must come at the end so by the time it is executed the DOM is ready. Otherwise the JavaScript code will not find the HTML element.-->
 <script>
-document.getElementById("text").innerHTML = "Text added by JavaScript code";
+document.getElementById("text2").innerHTML = "Text added by JavaScript code";
 </script>
 
 [To Top](#welcome-to-house-price-dashboard)

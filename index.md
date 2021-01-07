@@ -68,13 +68,13 @@ You will see how the js work here:
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script/test.js"></script>
 
+<!--we would like to get some data from the server. As we cannot run anything on the server we cannot get dynamic data, but we can store the data in JSON files and load them using the Ajax methods provided by jQuery.-->
+<script src="script/json.js"></script>
+
 <!--The JavaScript code must come at the end so by the time it is executed the DOM is ready. Otherwise the JavaScript code will not find the HTML element.-->
 <script>
 document.getElementById("text2").innerHTML = "Text added by JavaScript code";
 </script>
-
-<!--we would like to get some data from the server. As we cannot run anything on the server we cannot get dynamic data, but we can store the data in JSON files and load them using the Ajax methods provided by jQuery.-->
-<script src="script/json.js"></script>
 
 [To Top](#welcome-to-house-price-dashboard)
 

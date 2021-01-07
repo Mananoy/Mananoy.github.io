@@ -11,7 +11,9 @@ $().ready(function(){
        $("#text3").html(data["text"]);
     });
     //*/
+    /*
     $.getJSON("https://mananoy.github.io/script/data.json").done(function( data ) {
        $("#text3").html(data["text"]);
     });
+    */
 });

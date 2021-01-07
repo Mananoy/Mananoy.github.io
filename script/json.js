@@ -7,7 +7,7 @@ In the last JQuery code, in $("#text").html(data["text"]); the first part $("#te
 $().ready(function(){
     $("#text3").html("before");
     ///*
-    $.getJSON( "/data.json", function( data ) {
+    $.getJSON( "https://mananoy.github.io/script/data.json", function( data ) {
         $("#text3").html(data["text"]);
     });
     //*/

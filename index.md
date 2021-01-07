@@ -54,12 +54,6 @@ Syntax highlighted code block
 
 <p title="Oh~ You even hover on me~~"> Hey you find me! <p/>
 
-<pre>
-THis is pre! Fuuuuuu
-wryyyyyyyyy!
-You will see how the js work here:
-<pre/>
-
 <div id="text1"></div>
 <div id="text2"></div>
 <div id="text3"></div>

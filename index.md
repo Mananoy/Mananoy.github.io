@@ -21,6 +21,10 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+- [ ] Item A
+- [ ] Item B
+- [x] Item C
+
 &nbsp;  
 &nbsp;  
 &nbsp;  

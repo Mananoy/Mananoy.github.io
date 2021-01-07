@@ -5,8 +5,8 @@ console.log(data); was only added for debugging.
 In the last JQuery code, in $("#text").html(data["text"]); the first part $("#text") will locate the element with the id "text". The html method will set the content of the element to the value we pass to it which in our case is data["text"], the value of the "text" key that arrived from the JSON file
 */
 $().ready(function(){
-    $.getJSON( "/data.json", function( data ) {
     $("#text3").html("before");
-    $("#text3").html(data["text"]);
-  });
+    $.getJSON( "/data.json", function( data ) {
+        $("#text3").html(data["text"]);
+    });
 });

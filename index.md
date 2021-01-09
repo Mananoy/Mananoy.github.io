@@ -54,9 +54,11 @@ Syntax highlighted code block
 
 <p title="Oh~ You even hover on me~~"> Hey you find me! <p/>
 
-<div id="text1"></div>
-<div id="text2"></div>
-<div id="text3"></div>
+<div style="background-color: blue; border-color: red;">
+  <div id="text1"></div>
+  <div id="text2"></div>
+  <div id="text3"></div>
+</div>
 
 <!--This time we can put the script tags anywhere we like as the jQuery callback function will be only executed when the DOM is ready. The only limitation is that we need to load our code after we have loaded jQuery itself.-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

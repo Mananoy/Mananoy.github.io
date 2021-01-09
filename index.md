@@ -54,7 +54,7 @@ Syntax highlighted code block
 
 <p title="Oh~ You even hover on me~~"> Hey you find me! <p/>
 
-<div style="background-color: blue; border-color: red;">
+<div style="background-color: blue; border:2px solid Tomato;">
   <div id="text1"></div>
   <div id="text2"></div>
   <div id="text3"></div>

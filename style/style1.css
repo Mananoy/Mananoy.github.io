@@ -1,6 +1,6 @@
 <style>
   .page-header {
-    background-image: url(image/page-top.jpeg);
+    background-image: url(https://mananoy.github.io/image/page-top.jpeg);
   }
 
   ul.menubar {
@@ -9,9 +9,13 @@
     padding: 0;
     overflow: hidden;
     background-color: LightGrey;
+  }
+
+  .sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    width: 100%;
   }
 
   li.menubar {
@@ -22,7 +26,6 @@
     display: block;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
   }
   
   li a:hover:not(.active) {
@@ -30,7 +33,7 @@
     text-decoration: none;
   }
   
-  li.active {
+  a.active {
     color: white;
     background-color: #4CAF50;
   }

@@ -1,9 +1,9 @@
-<style>
   .sticky {
     /*position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
   }
+
   ul.menubar {
     list-style-type: none;
     margin: 0;
@@ -35,4 +35,3 @@
     color: white;
   }
 
-</style>

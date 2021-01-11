@@ -1,5 +1,8 @@
 <style>
   .page-header {
+    color: #fff;
+    text-align: center;
+    background-color: #159957;
     background-image: url(https://mananoy.github.io/image/page-top.jpeg);
   }
 
@@ -33,8 +36,11 @@
     text-decoration: none;
   }
   
-  a.active {
-    color: white;
+  li.active {
     background-color: #4CAF50;
   }
+  li.active a {
+    color: white;
+  }
+
 </style>

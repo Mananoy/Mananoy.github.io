@@ -1,11 +1,12 @@
 <link rel="stylesheet" type="text/css" href="style/style1.css">
+<script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>
 
 <nav class="sticky">
    <ul class="menubar">
-      <li class="menubar active"><a href="https://mananoy.github.io">Home</a></li>
-      <li class="menubar"><a href="https://mananoy.github.io/pages/404">Status</a></li>
-      <li class="menubar"><a href="https://mananoy.github.io/pages/404">World</a></li>
-      <li class="menubar"><a href="https://mananoy.github.io/pages/404">About</a></li>
+      <li class="menubar active"><a href="https://mananoy.github.io"><i class="fas fa-home"></i>Home</a></li>
+      <li class="menubar"><a href="https://mananoy.github.io/pages/404"><i class="fas fa-house-user"></i>Option2</a></li>
+      <li class="menubar"><a href="https://mananoy.github.io/pages/404"><i class="fas fa-archive"></i>Option3</a></li>
+      <li class="menubar"><a href="https://mananoy.github.io/pages/404"><i class="fas fa-address-card"></i>Option4</a></li>
    </ul>
 </nav>
 

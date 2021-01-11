@@ -56,7 +56,7 @@
 [To 404.md](https://mananoy.github.io/pages/404)
 
 
-<div style="background-color: Grey; border:2px solid SeaShell;">
+<div style="background-color: PapayaWhip; border:0.2em solid PeachPuff;">
   <div id="text1"></div>
   <div id="text2"></div>
   <div id="text3"></div>

@@ -6,8 +6,8 @@
 .page-header {
     color: #fff;
     text-align: center;
-    text-shadow: 3px 2px FloralWhite;
     background-image: url(https://mananoy.github.io/image/page-top.jpeg);
+    background-size: auto;
     
     @include large {
       padding: 5rem 6rem;

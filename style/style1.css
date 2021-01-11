@@ -31,18 +31,17 @@
     /*position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    width: 100%;
   }
 
   li.menubar {
     float: left;
+    width: 25%;
   }
 
   li a {
     display: block;
     text-align: center;
     padding: 14px 16px;
-    width: 25%;
   }
   
   li a:hover:not(li.active) {

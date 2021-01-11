@@ -9,6 +9,9 @@
     padding: 0;
     overflow: hidden;
     background-color: LightGrey;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
   }
 
   li.menubar {

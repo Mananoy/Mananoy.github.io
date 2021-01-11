@@ -1,24 +1,4 @@
 <style>
-  .page-header {
-    color: #fff;
-    text-align: center;
-    text-shadow: 3px 2px FloralWhite;
-    background-color: #159957;
-    background-image: url(https://mananoy.github.io/image/page-top.jpeg);
-    
-    @include large {
-      padding: 5rem 6rem;
-    }
-
-    @include medium {
-      padding: 3rem 4rem;
-    }
-
-    @include small {
-      padding: 2rem 1rem;
-    }
-  }
-
   ul.menubar {
     list-style-type: none;
     margin: 0;

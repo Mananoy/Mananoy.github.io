@@ -19,7 +19,7 @@
     text-decoration: none;
   }
   
-  li a:hover {
+  li a:hover:not(.active) {
     background-color: LightSlateGrey;
     text-decoration: none;
   }

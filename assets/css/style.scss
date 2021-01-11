@@ -1,0 +1,23 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+    color: #fff;
+    text-align: center;
+    text-shadow: 3px 2px FloralWhite;
+    background-image: url(https://mananoy.github.io/image/page-top.jpeg);
+    
+    @include large {
+      padding: 5rem 6rem;
+    }
+
+    @include medium {
+      padding: 3rem 4rem;
+    }
+
+    @include small {
+      padding: 2rem 1rem;
+    }
+  }

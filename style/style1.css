@@ -30,7 +30,7 @@
     text-decoration: none;
   }
   
-  li a.active {
+  li.active {
     color: white;
     background-color: #4CAF50;
   }

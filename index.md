@@ -1,34 +1,4 @@
-<!--<link rel="stylesheet" type="text/css" href="stylesheets/style.css">-->
-<style>
-  ul.menubar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: LightGrey;
-  }
-
-  li.menubar {
-    float: left;
-  }
-
-  li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: LightSlateGrey;
-    text-decoration: none;
-  }
-  
-  .active {
-    background-color: ForestGreen;
-  }
-</style>
-
+<link rel="stylesheet" type="text/css" href="style/style1.css">
 
 <nav>
    <ul class="menubar">
@@ -36,7 +6,7 @@
       <li class="menubar"><a href="https://mananoy.github.io/pages/404">Status</a></li>
       <li class="menubar"><a href="https://mananoy.github.io/pages/404">World</a></li>
       <li class="menubar"><a href="https://mananoy.github.io/pages/404">About</a></li>
-  </ul>
+   </ul>
 </nav>
 
 <br/>

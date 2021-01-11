@@ -52,7 +52,7 @@ Syntax highlighted code block
 <br/>
 <br/>
 
-<p title="Oh~ You even hover on me~~"> Hey you find me! <p/>
+<p title="Oh~ You even hover on me~~"> Hey you find me! </p>
 
 [Google](https://www.google.com)
 
@@ -60,6 +60,6 @@ Syntax highlighted code block
 
 [To 404.md](https://mananoy.github.io/pages/404)
 
-<p title="Oh~ You even hover on me~~"> Hey you find me! <p/>
+<p title="Oh~ You even hover on me~~"> Hey you find me! </p>
 
 

@@ -1,4 +1,8 @@
 <style>
+  .page-header {
+    background-image: url(image/page-top.jpeg);
+  }
+
   ul.menubar {
     list-style-type: none;
     margin: 0;

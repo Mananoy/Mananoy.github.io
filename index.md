@@ -1,62 +1,16 @@
-# House Price Dashboard
+<nav>
+  <ul style="list-style-type: none; margin: 0; padding: 0;">
+    <li style="display: inline; text-align: center; background-color: Green;"><a href="https://mananoy.github.io">Home</a></li>
+    <li style="display: inline; text-align: center; onhover: background-color: Black"><a href="https://mananoy.github.io/pages/404">Status</a></li>
+    <li style="display: inline; text-align: center; onhover: background-color: Black"><a href="https://mananoy.github.io/pages/404">World</a></li>
+    <li style="display: inline; text-align: center; onhover: background-color: Black"><a href="https://mananoy.github.io/pages/404">About</a></li>
+  </ul>
+</nav>
 
-### About Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for:
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-- [ ] Item A
-- [ ] Item B
-- [x] Item C
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 
 <p title="Oh~ You even hover on me~~"> Hey you find me! </p>
-
-[Google](https://www.google.com)
-
-[To Top](#house-price-dashboard)
 
 [To 404.md](https://mananoy.github.io/pages/404)
 

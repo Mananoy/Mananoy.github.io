@@ -1,17 +1,17 @@
 <style>
 
+  .sticky {
+    /*position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+
   ul.menubar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: LightGrey;
-  }
-
-  .sticky {
-    /*position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
   }
 
   li.menubar {

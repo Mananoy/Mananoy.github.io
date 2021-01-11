@@ -27,8 +27,8 @@
     text-decoration: none;
   }
   
-  .active {
-    background-color: ForestGreen;
+  li a.active {
     color: white;
+    background-color: #4CAF50;
   }
 </style>

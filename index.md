@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="style/style1.css">
 
-<nav>
-   <ul class="menubar sticky">
+<nav class="sticky">
+   <ul class="menubar">
       <li class="menubar active"><a href="https://mananoy.github.io">Home</a></li>
       <li class="menubar"><a href="https://mananoy.github.io/pages/404">Status</a></li>
       <li class="menubar"><a href="https://mananoy.github.io/pages/404">World</a></li>

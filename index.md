@@ -79,5 +79,7 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
    
    <br>
-   <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
+   <div style="text-align: center;">
+      <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
+   </div>
 </div>

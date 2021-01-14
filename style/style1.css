@@ -35,4 +35,7 @@
   li.active a {
     color: white;
   }
-
+  
+  #main {
+    background-color: SeaShell;
+  }

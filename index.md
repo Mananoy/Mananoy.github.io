@@ -52,11 +52,6 @@ chart.draw(data, options);
         zoom: 8,
       });
     }
-<style>
-   #map {
-      height: 100%;
-   }
-</style>
 <!--test for google map-->
 
 
@@ -97,7 +92,7 @@ chart.draw(data, options);
    <br/>
    
    <!--Div that will hold the map-->
-   <div id="map"></div>
+   <div id="map" style="height: 100%;"></div>
    
    <br/>
    <br/>

@@ -69,7 +69,7 @@ chart.draw(data, options);
            };
       }
       // set map height
-      document.getElementById("map_canvas").style.height = (window.innerHeight - 120).toString() + "px"
+      document.getElementById("map_canvas").style.height = (window.innerHeight - 100).toString() + "px"
       // Show map
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       
@@ -86,56 +86,20 @@ chart.draw(data, options);
          <li class="menubar"><a href="https://mananoy.github.io/pages/404"><i class="fas fa-archive"></i> Option3</a></li>
          <li class="menubar"><a href="https://mananoy.github.io/pages/404"><i class="fas fa-address-card"></i> Option4</a></li>
       </ul>
-   </nav>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
+   </nav> 
+   <!--Div that will hold the map-->
+   <div id="map_canvas"></div>
    
+   <br/>
    <!--Div that will hold the pie chart-->
    <div id="chart_div"></div>
-   
    <br/>
    <br/>
    <br/>
    <br/>
    <br/>
    <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   
-   <!--Div that will hold the map-->
-   <div id="map_canvas" style="overflow: visible; height: 10%;"></div>
-   
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <p title="Oh~ You even hover on me~~"> Below are add by different js approaches </p>
+   <p title="You hover on me~"> Below are add by different js approaches </p>
 
    <div style="background-color: PapayaWhip; border:0.2em solid PeachPuff;">
      <div id="text1"></div>

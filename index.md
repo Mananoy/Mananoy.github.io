@@ -69,10 +69,12 @@ chart.draw(data, options);
            };
       }
       // set map height
-      document.getElementById("map_canvas").style.height = (window.innerHeight - 115).toString() + "px"
+      document.getElementById("map_canvas").style.height = (window.innerHeight - 120).toString() + "px"
       // Show map
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-      
+      // Load boundary data
+      map.data.loadGeoJson('script/geo.json', {}, function() {});
+	   map.data.setStyle({fillOpacity: 0.0, strokeWeight: 2.0});
     }
 </script>
 <!--test for google map-->

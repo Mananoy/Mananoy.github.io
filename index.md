@@ -47,10 +47,32 @@ chart.draw(data, options);
 <script>
     let map;
     function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-      });
+      // Set basic params
+      var mapOptions = {
+          center : new google.maps.LatLng(-33.868, 151.209),
+          zoom : 13,
+          zoomControl: false,
+          streetViewControl: false,
+          mapTypeControl: false,
+          panControl: false
+      };
+      // Add Control keys
+      if (window.innerWidth > 728) {
+           mapOptions.zoomControl = true;
+           mapOptions.zoomControlOptions = {
+               position: google.maps.ControlPosition.RIGHT_BOTTOM
+           };
+           mapOptions.streetViewControl = true;
+           mapOptions.mapTypeControl = true;
+           mapOptions.mapTypeControlOptions = {
+               position: google.maps.ControlPosition.LEFT_BOTTOM
+           };
+      }
+      // set map height
+      document.getElementById("map_canvas").style.height = (window.innerHeight - 120).toString() + "px"
+      // Show map
+      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+      
     }
 </script>
 <!--test for google map-->
@@ -93,7 +115,7 @@ chart.draw(data, options);
    <br/>
    
    <!--Div that will hold the map-->
-   <div id="map" style="overflow: visible; height: 10%;"></div>
+   <div id="map_canvas" style="overflow: visible; height: 10%;"></div>
    
    <br/>
    <br/>

@@ -75,7 +75,19 @@ chart.draw(data, options);
       // Load boundary data
       map.data.loadGeoJson('script/geo.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 2.0});
+      // Link Event to Functions
+      map.data.addListener('click', function(event) {
+         selectSuburb(event.feature);
+      });
     }
+    // Handle selection
+    function selectSuburb(feature) {
+      map.data.revertStyle();
+      map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
+      suburb_name = feature.getId();
+      document.getElementById('selected_suburb_name').innerHTML = suburb_name;
+      // change data here
+}
 </script>
 <!--test for google map-->
 
@@ -93,6 +105,7 @@ chart.draw(data, options);
    <div id="map_canvas"></div>
    
    <br/>
+   <h2 id="selected_suburb_name">Suburb Name</h2>
    <!--Div that will hold the pie chart-->
    <div id="chart_div"></div>
    <br/>

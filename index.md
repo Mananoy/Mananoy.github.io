@@ -100,7 +100,8 @@ chart.draw(data, options);
    </div>
 
    <!--load JQuery-->
-   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    
    <!--This time we can put the script tags anywhere we like as the jQuery callback function will be only executed when the DOM is ready. The only limitation is that we need to load our code after we have loaded jQuery itself.-->
    <script src="script/test.js"></script>
@@ -121,4 +122,5 @@ chart.draw(data, options);
    <div style="text-align: center;">
       <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
    </div>
+   
 </div>

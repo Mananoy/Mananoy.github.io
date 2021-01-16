@@ -93,7 +93,7 @@ chart.draw(data, options);
    <br/>
    
    <!--Div that will hold the map-->
-   <div id="map" style="overflow: visible;"></div>
+   <div id="map" style="overflow:visible; height:10%;"></div>
    
    <br/>
    <br/>

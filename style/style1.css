@@ -40,3 +40,6 @@
     background-color: SeaShell;
   }
 
+  #nav {
+    z-index: 9999;
+  }

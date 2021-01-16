@@ -8,29 +8,52 @@
 <script type="text/javascript">
 <!--Load the Visualization API and the corechart package.-->
 google.charts.load('current', {'packages':['corechart']});
-<!--Set a callback to run when the Google Visualization API is loaded.-->
-google.charts.setOnLoadCallback(drawChart);
+<!--Draw the pie chart for Sarah's pizza when Charts is loaded.-->
+google.charts.setOnLoadCallback(drawSarahChart);
+<!--Draw the pie chart for the Anthony's pizza when Charts is loaded.-->
+google.charts.setOnLoadCallback(drawAnthonyChart);
 
 <!--Callback that creates and populates a data table, instantiates the pie chart, passes in the data and draws it.-->
-function drawChart() {
+function drawSarahChart() {
    <!--Create the data table.-->
    var data = new google.visualization.DataTable();
    data.addColumn('string', 'Topping');
    data.addColumn('number', 'Slices');
    data.addRows([
-      ['Mushrooms', 3],
+      ['Mushrooms', 1],
       ['Onions', 1],
-      ['Olives', 1],
-      ['Zucchini', 1],
-      ['Pepperoni', 2]
-]);
-<!--Set chart options-->
-var options = {'title':'How Much Pizza I Ate Last Night',
-               'width':700,
-               'height':600};
-<!--Instantiate and draw our chart, passing in some options.-->
-var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-chart.draw(data, options);
+      ['Olives', 2],
+      ['Zucchini', 2],
+      ['Pepperoni', 1]
+   ]);
+   <!--Set chart options-->
+   var options = {'title':'How Much Pizza Sarah Ate Last Night',
+                  'width':400,
+                  'height':300};
+   <!--Instantiate and draw our chart, passing in some options.-->
+   var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+   chart.draw(data, options);
+}
+
+function drawAnthonyChart() {
+   <!--Create the data table.-->
+   var data = new google.visualization.DataTable();
+   data.addColumn('string', 'Topping');
+   data.addColumn('number', 'Slices');
+   data.addRows([
+     ['Mushrooms', 2],
+     ['Onions', 2],
+     ['Olives', 2],
+     ['Zucchini', 0],
+     ['Pepperoni', 3]
+   ]);
+   <!--Set chart options-->
+   var options = {'title':'How Much Pizza Anthony Ate Last Night',
+                  'width':400,
+                  'height':300};
+   <!--Instantiate and draw our chart, passing in some options.-->
+   var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+   chart.draw(data, options);
 }
 </script>
 <!--test for google chart-->
@@ -104,7 +127,13 @@ chart.draw(data, options);
    <h2 id="selected_suburb_name" text-align="center">Suburb Name</h2>
    
    <!--Div that will hold the pie chart-->
-   <div id="chart_div"></div>
+   <!--Table and divs that hold the pie charts-->
+   <table class="columns">
+     <tr>
+       <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
+       <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
+     </tr>
+   </table>
    <br/>
    <br/>
    <br/>

@@ -5,11 +5,11 @@
 <!--This is required for icon-->
 <script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>
 
+
 <!--test for google chart-->
 <!--Load the AJAX API-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-
 <!--Load the Visualization API and the corechart package.-->
 google.charts.load('current', {'packages':['corechart']});
 <!--Set a callback to run when the Google Visualization API is loaded.-->
@@ -17,16 +17,16 @@ google.charts.setOnLoadCallback(drawChart);
 
 <!--Callback that creates and populates a data table, instantiates the pie chart, passes in the data and draws it.-->
 function drawChart() {
-<!--Create the data table.-->
-var data = new google.visualization.DataTable();
-data.addColumn('string', 'Topping');
-data.addColumn('number', 'Slices');
-data.addRows([
-   ['Mushrooms', 3],
-   ['Onions', 1],
-   ['Olives', 1],
-   ['Zucchini', 1],
-   ['Pepperoni', 2]
+   <!--Create the data table.-->
+   var data = new google.visualization.DataTable();
+   data.addColumn('string', 'Topping');
+   data.addColumn('number', 'Slices');
+   data.addRows([
+      ['Mushrooms', 3],
+      ['Onions', 1],
+      ['Olives', 1],
+      ['Zucchini', 1],
+      ['Pepperoni', 2]
 ]);
 <!--Set chart options-->
 var options = {'title':'How Much Pizza I Ate Last Night',
@@ -104,8 +104,9 @@ chart.draw(data, options);
    <!--Div that will hold the map-->
    <div id="map_canvas"></div>
    
-   <br/>
-   <h2 id="selected_suburb_name">Suburb Name</h2>
+   <!--display suburb name-->
+   <h2 id="selected_suburb_name" text-align="center">Suburb Name</h2>
+   
    <!--Div that will hold the pie chart-->
    <div id="chart_div"></div>
    <br/>
@@ -121,6 +122,13 @@ chart.draw(data, options);
      <div id="text2"></div>
      <div id="text3"></div>
    </div>
+
+   <br>
+   <div style="text-align: center;">
+      <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
+   </div>
+
+
 
    <!--test for loading with js file, jquery, and intext js-->
    <!--load JQuery-->
@@ -138,13 +146,8 @@ chart.draw(data, options);
       document.getElementById("text2").innerHTML = "Text added by JavaScript code";
    </script>
    
-   <!--This is required for bootstrap for nice button-->
+   <!--This is required for bootstrap-->
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   
-   <br>
-   <div style="text-align: center;">
-      <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
-   </div>
    
 </div>

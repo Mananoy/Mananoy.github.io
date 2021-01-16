@@ -2,10 +2,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style/style1.css">
 
-<!--This is required for icon-->
-<script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>
-
-
 <!--test for google chart-->
 <!--Load the AJAX API-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -30,8 +26,8 @@ function drawChart() {
 ]);
 <!--Set chart options-->
 var options = {'title':'How Much Pizza I Ate Last Night',
-               'width':400,
-               'height':300};
+               'width':700,
+               'height':600};
 <!--Instantiate and draw our chart, passing in some options.-->
 var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 chart.draw(data, options);
@@ -132,7 +128,6 @@ chart.draw(data, options);
 
    <!--test for loading with js file, jquery, and intext js-->
    <!--load JQuery-->
-   <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    
    <!--This time we can put the script tags anywhere we like as the jQuery callback function will be only executed when the DOM is ready. The only limitation is that we need to load our code after we have loaded jQuery itself.-->
@@ -146,6 +141,8 @@ chart.draw(data, options);
       document.getElementById("text2").innerHTML = "Text added by JavaScript code";
    </script>
    
+   <!--This is required for icon-->
+   <script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>
    <!--This is required for bootstrap-->
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

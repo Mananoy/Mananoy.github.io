@@ -52,6 +52,7 @@ chart.draw(data, options);
         zoom: 8,
       });
     }
+</script>
 <!--test for google map-->
 
 

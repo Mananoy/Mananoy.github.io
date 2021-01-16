@@ -69,7 +69,7 @@ chart.draw(data, options);
            };
       }
       // set map height
-      document.getElementById("map_canvas").style.height = (window.innerHeight - 100).toString() + "px"
+      document.getElementById("map_canvas").style.height = (window.innerHeight - 110).toString() + "px"
       // Show map
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       

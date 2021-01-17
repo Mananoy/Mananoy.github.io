@@ -12,10 +12,12 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawSarahChart);
 <!--Draw the pie chart for the Anthony's pizza when Charts is loaded.-->
 google.charts.setOnLoadCallback(drawAnthonyChart);
+<!--Draw the pie chart for the Spreadsheet's pizza when Charts is loaded.-->
+google.charts.setOnLoadCallback(drawSpreadsheetChart);
 
 <!--Callback that creates and populates a data table, instantiates the pie chart, passes in the data and draws it.-->
 function drawSarahChart() {
-   <!--Create the data table.-->
+   <!--Create the table data.-->
    var data = new google.visualization.DataTable();
    data.addColumn('string', 'Topping');
    data.addColumn('number', 'Slices');
@@ -36,7 +38,7 @@ function drawSarahChart() {
 }
 
 function drawAnthonyChart() {
-   <!--Create the data table.-->
+   <!--Create the table data.-->
    var data = new google.visualization.DataTable();
    data.addColumn('string', 'Topping');
    data.addColumn('number', 'Slices');
@@ -54,6 +56,30 @@ function drawAnthonyChart() {
    <!--Instantiate and draw our chart, passing in some options.-->
    var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
    chart.draw(data, options);
+}
+   
+function drawSpreadsheetChart() {   
+   <!--Create a query to spreadsheet.-->
+   var query = new google.visualization.Query(https://docs.google.com/spreadsheets/d/1omZ2t2D1XgQjkOBE-Dbw-a8kZH621k5aBoICls8IUqU/edit#gid=0);
+   <!--send query and handle response-->
+   query.send(handleQueryResponse);
+   <!--handler function-->
+   function handleQueryResponse(response) {
+     // Called when the query response is returned
+     if (response.isError()) {
+       alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+       return;
+     }
+     <!--extract response data-->
+     var data = response.getDataTable();
+     <!--Set chart options-->
+     var options = {'title':'How Much Pizza Spread sheet Ate Last Night',
+                    'width':400,
+                    'height':300};
+     <!--Instantiate and draw our chart, passing in some options.-->
+     var chart = new google.visualization.PieChart(document.getElementById('Spread_chart_div'));
+     chart.draw(data, options);
+   }
 }
 </script>
 <!--test for google chart-->
@@ -132,6 +158,7 @@ function drawAnthonyChart() {
      <tr>
        <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
        <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
+       <td><div id="Spread_chart_div" style="border: 1px solid #ccc"></div></td>
      </tr>
    </table>
    <br/>

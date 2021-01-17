@@ -60,7 +60,7 @@ function drawAnthonyChart() {
    
 function drawSpreadsheetChart() {   
    <!--Create a query to spreadsheet.-->
-   var query = new google.visualization.Query(https://docs.google.com/spreadsheets/d/1omZ2t2D1XgQjkOBE-Dbw-a8kZH621k5aBoICls8IUqU/edit#gid=0);
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1omZ2t2D1XgQjkOBE-Dbw-a8kZH621k5aBoICls8IUqU/edit#gid=0');
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->

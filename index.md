@@ -122,6 +122,8 @@ function drawSpreadsheetChart() {
       map.data.loadGeoJson('script/features-2.json', {}, function() {});
       map.data.loadGeoJson('script/features-3.json', {}, function() {});
       map.data.loadGeoJson('script/features-4.json', {}, function() {});
+      map.data.loadGeoJson('script/features-5.json', {}, function() {});
+      map.data.loadGeoJson('script/features-6.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {
@@ -135,7 +137,7 @@ function drawSpreadsheetChart() {
       if( feature.getProperty("sa_local_2") != "undefined" ){
          suburb_name = feature.getProperty("sa_local_2");
       }
-      else if( feature.getProperty("vic_loca_2") != "undefined" ){
+      if( feature.getProperty("vic_loca_2") != "undefined" ){
          suburb_name = feature.getProperty("vic_loca_2");
       }
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;

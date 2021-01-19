@@ -94,8 +94,8 @@ function drawSpreadsheetChart() {
     function initMap() {
       // Set basic params
       var mapOptions = {
-          center : new google.maps.LatLng(-33.868, 151.209),
-          zoom : 13,
+          center : new google.maps.LatLng(25.51237, 133.49844),
+          zoom : 9,
           zoomControl: false,
           streetViewControl: false,
           mapTypeControl: false,

@@ -119,7 +119,7 @@ function drawSpreadsheetChart() {
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       // Load boundary data
       map.data.loadGeoJson('script/geo.json', {}, function() {});
-      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1});
+      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightgrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {
          selectSuburb(event.feature);
@@ -132,7 +132,7 @@ function drawSpreadsheetChart() {
       suburb_name = feature.getId();
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
-}
+    }
 </script>
 <!--test for google map-->
 

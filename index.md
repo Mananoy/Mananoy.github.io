@@ -117,8 +117,15 @@ function drawSpreadsheetChart() {
       document.getElementById("map_canvas").style.height = (window.innerHeight - 120).toString() + "px"
       // Show map
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-      // Load boundary data
-      map.data.loadGeoJson('script/geo.json', {}, function() {});
+      // Load boundary data and set style
+      map.data.loadGeoJson('script/features-1.json', {}, function() {});
+      map.data.loadGeoJson('script/features-2.json', {}, function() {});
+      map.data.loadGeoJson('script/features-3.json', {}, function() {});
+      map.data.loadGeoJson('script/features-4.json', {}, function() {});
+      map.data.loadGeoJson('script/features-5.json', {}, function() {});
+      map.data.loadGeoJson('script/features-6.json', {}, function() {});
+      map.data.loadGeoJson('script/features-7.json', {}, function() {});
+      map.data.loadGeoJson('script/features-8.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {

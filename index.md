@@ -119,7 +119,7 @@ function drawSpreadsheetChart() {
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       // Load boundary data
       map.data.loadGeoJson('script/geo.json', {}, function() {});
-      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 2.0});
+      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1.0, strokeColor: LightGrey});
       // Link Event to Functions
       map.data.addListener('click', function(event) {
          selectSuburb(event.feature);

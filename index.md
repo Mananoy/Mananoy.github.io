@@ -129,7 +129,7 @@ function drawSpreadsheetChart() {
     function selectSuburb(feature) {
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
-      suburb_name = feature.getId();
+      suburb_name = feature.getProperty("vic_loca_2");
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

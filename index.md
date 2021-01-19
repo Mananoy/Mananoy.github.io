@@ -125,7 +125,6 @@ function drawSpreadsheetChart() {
       map.data.loadGeoJson('script/features-5.json', {}, function() {});
       map.data.loadGeoJson('script/features-6.json', {}, function() {});
       map.data.loadGeoJson('script/features-7.json', {}, function() {});
-      map.data.loadGeoJson('script/features-8.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {

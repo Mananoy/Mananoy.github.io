@@ -119,6 +119,8 @@ function drawSpreadsheetChart() {
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       // Load boundary data and set style
       map.data.loadGeoJson('script/features-1.json', {}, function() {});
+      map.data.loadGeoJson('script/features-2.json', {}, function() {});
+      map.data.loadGeoJson('script/features-3.json', {}, function() {});
       map.data.loadGeoJson('script/features-4.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
@@ -130,11 +132,11 @@ function drawSpreadsheetChart() {
     function selectSuburb(feature) {
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
-      if( feature.getProperty("vic_loca_2") != "undefined" ){
-         suburb_name = feature.getProperty("vic_loca_2");
-      }
-      else if( feature.getProperty("sa_local_2") != "undefined" ){
+      if( feature.getProperty("sa_local_2") != "undefined" ){
          suburb_name = feature.getProperty("sa_local_2");
+      }
+      else if( feature.getProperty("vic_loca_2") != "undefined" ){
+         suburb_name = feature.getProperty("vic_loca_2");
       }
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here

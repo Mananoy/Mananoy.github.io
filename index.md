@@ -138,6 +138,8 @@ function drawSpreadsheetChart() {
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
       // Handle different naming
       suburb_name = feature.getProperty("name");
+      suburb_name = suburb_name.toLowerCase;
+      suburb_name = suburb_name.charAt(0).toUpperCase() + suburb_name.slice(1); 
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

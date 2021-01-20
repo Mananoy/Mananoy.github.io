@@ -137,16 +137,7 @@ function drawSpreadsheetChart() {
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
       // Handle different naming
-      console.log( feature.getProperty("vic_loca_2") );
-      suburb_name = feature.getProperty("vic_loca_2");
-      if ( suburb_name === "undefined" ){
-         console.log( feature.getProperty("act_loca_2") );
-         suburb_name = feature.getProperty("act_loca_2");
-      }
-      if ( suburb_name === "undefined" ){
-         console.log( feature.getProperty("sa_local_2") );
-         suburb_name = feature.getProperty("sa_local_2");
-      }
+      suburb_name = feature.getProperty("name");
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

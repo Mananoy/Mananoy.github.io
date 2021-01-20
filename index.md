@@ -148,9 +148,9 @@ function drawSpreadsheetChart() {
         return splitStr.join(' '); 
       }
       suburb_name = feature.getProperty("name");
-      console.log(suburb_name);
+      //console.log(suburb_name);
       suburb_name = capitalizeFirstLetter(suburb_name);
-      console.log(suburb_name);
+      //console.log(suburb_name);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

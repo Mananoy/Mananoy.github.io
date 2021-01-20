@@ -142,7 +142,7 @@ function drawSpreadsheetChart() {
       }
       suburb_name = feature.getProperty("name");
       console.log(suburb_name.value);
-      suburb_name.value = suburb_name.value.toLowerCase;
+      suburb_name.value = suburb_name.value.toLowerCase();
       console.log(suburb_name.value);
       suburb_name.value = capitalizeFirstLetter(suburb_name.value);
       console.log(suburb_name.value);

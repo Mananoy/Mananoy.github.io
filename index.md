@@ -95,7 +95,7 @@ function drawSpreadsheetChart() {
       // Set basic params
       var mapOptions = {
           center : new google.maps.LatLng(-25.51237, 133.49844),
-          zoom : 6,
+          zoom : 5,
           zoomControl: false,
           streetViewControl: false,
           mapTypeControl: false,
@@ -125,7 +125,7 @@ function drawSpreadsheetChart() {
       map.data.loadGeoJson('script/features-5.json', {}, function() {});
       map.data.loadGeoJson('script/features-6.json', {}, function() {});
       map.data.loadGeoJson('script/features-7.json', {}, function() {});
-      //map.data.loadGeoJson('script/features-8.json', {}, function() {});
+      map.data.loadGeoJson('script/features-8.json', {}, function() {});
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {
@@ -136,11 +136,15 @@ function drawSpreadsheetChart() {
     function selectSuburb(feature) {
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
+      // Handle different naming
+      console.log( feature.getProperty("vic_loca_2") );
       suburb_name = feature.getProperty("vic_loca_2");
-      if( suburb_name === "undefined" ){
+      if ( suburb_name === "undefined" ){
+         console.log( feature.getProperty("act_loca_2") );
          suburb_name = feature.getProperty("act_loca_2");
       }
-      if( suburb_name === "undefined" ){
+      if ( suburb_name === "undefined" ){
+         console.log( feature.getProperty("sa_local_2") );
          suburb_name = feature.getProperty("sa_local_2");
       }
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;

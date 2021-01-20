@@ -137,11 +137,14 @@ function drawSpreadsheetChart() {
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
       // Handle different naming
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
       suburb_name = feature.getProperty("name");
       console.log(suburb_name);
       suburb_name = suburb_name.toLowerCase;
       console.log(suburb_name);
-      suburb_name = suburb_name.charAt(0).toUpperCase() + suburb_name.slice(1);
+      suburb_name = capitalizeFirstLetter(suburb_name);
       console.log(suburb_name);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here

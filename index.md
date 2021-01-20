@@ -141,11 +141,11 @@ function drawSpreadsheetChart() {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
       suburb_name = feature.getProperty("name");
-      console.log(suburb_name);
-      suburb_name = suburb_name.toLowerCase;
-      console.log(suburb_name);
-      suburb_name = capitalizeFirstLetter(suburb_name);
-      console.log(suburb_name);
+      console.log(suburb_name.value);
+      suburb_name.value = suburb_name.value.toLowerCase;
+      console.log(suburb_name.value);
+      suburb_name.value = capitalizeFirstLetter(suburb_name.value);
+      console.log(suburb_name.value);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

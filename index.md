@@ -144,8 +144,8 @@ function drawSpreadsheetChart() {
       console.log(suburb_name);
       suburb_name = suburb_name.toLowerCase();
       console.log(suburb_name);
-      //suburb_name = capitalizeFirstLetter(suburb_name);
-      //console.log(suburb_name.value);
+      suburb_name = capitalizeFirstLetter(suburb_name);
+      console.log(suburb_name.value);
       //document.getElementById('selected_suburb_name').innerHTML = suburb_name;
       // change data here
     }

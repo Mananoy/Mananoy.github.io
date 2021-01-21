@@ -60,10 +60,10 @@ function drawAnthonyChart() {
    
 function drawSpreadsheetChart() {   
    <!--Create a query to spreadsheet.-->
-   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Ha9VJMicQ5JZj3m7PMu3LUdRyPAzZGNIWTdrYidwUPw/edit#gid=790914470');
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select C, '01 Rent EventCount', '02 Rent EventCount', '03 Rent EventCount', '04 Rent EventCount', '05 Rent EventCount', '06 Rent EventCount', '07 Rent EventCount', '08 Rent EventCount', '09 Rent EventCount', '10 Rent EventCount', '11 Rent EventCount', '12 Rent EventCount' where C = 'Braidwood' ");
+   query.setQuery("select A, 'Braidwood' where name = '01 Rent EventCount' or name = '02 Rent EventCount' or name = '03 Rent EventCount' or name = '04 Rent EventCount' or name = '05 Rent EventCount' or name = '06 Rent EventCount' or name = '07 Rent EventCount' or name = '08 Rent EventCount' or name = '09 Rent EventCount' or name = '10 Rent EventCount' or name = '11 Rent EventCount' or name = '12 Rent EventCount'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->

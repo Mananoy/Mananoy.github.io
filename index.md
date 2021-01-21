@@ -60,7 +60,10 @@ function drawAnthonyChart() {
    
 function drawSpreadsheetChart() {   
    <!--Create a query to spreadsheet.-->
-   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1omZ2t2D1XgQjkOBE-Dbw-a8kZH621k5aBoICls8IUqU/edit#gid=0');
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Ha9VJMicQ5JZj3m7PMu3LUdRyPAzZGNIWTdrYidwUPw/edit#gid=790914470');
+   <!--Set Query-->
+   <!--For Rent EventCount-->
+   query.setQuery("select '01 Rent EventCount', '02 Rent EventCount', '03 Rent EventCount', '04 Rent EventCount', '05 Rent EventCount', '06 Rent EventCount', '07 Rent EventCount', '08 Rent EventCount', '09 Rent EventCount', '10 Rent EventCount', '11 Rent EventCount', '12 Rent EventCount' where Name = 'Braidwood' ");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->
@@ -73,11 +76,13 @@ function drawSpreadsheetChart() {
      <!--extract response data-->
      var data = response.getDataTable();
      <!--Set chart options-->
-     var options = {'title':'How Much Pizza Spread sheet Ate Last Night',
+     var options = {'title':'Spread sheet test: Rent EventCount',
                     'width':400,
-                    'height':300};
+                    'height':300
+                    legend: { position: 'bottom' }
+                    };
      <!--Instantiate and draw our chart, passing in some options.-->
-     var chart = new google.visualization.PieChart(document.getElementById('Spread_chart_div'));
+     var chart = new google.visualization.LineChart(document.getElementById('Spread_chart_div'));
      chart.draw(data, options);
    }
 }

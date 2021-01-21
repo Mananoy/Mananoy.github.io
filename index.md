@@ -60,7 +60,7 @@ function drawAnthonyChart() {
    
 function drawSpreadsheetChart() {   
    <!--Create a query to spreadsheet.-->
-   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1omZ2t2D1XgQjkOBE-Dbw-a8kZH621k5aBoICls8IUqU/edit#gid=0');
    <!--Set Query-->
    <!--For Rent EventCount-->
    query.setQuery("select A, B");

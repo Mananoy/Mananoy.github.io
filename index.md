@@ -75,6 +75,7 @@ function drawSpreadsheetChart() {
      }
      <!--extract response data-->
      var data = response.getDataTable();
+     console.log(data);
      <!--Set chart options-->
      var options = {'title':'Spread sheet test: Rent EventCount',
                     'width':400,

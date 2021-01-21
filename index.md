@@ -63,7 +63,7 @@ function drawSpreadsheetChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select A, B where 2 = '01 Rent EventCount' or 6 = '02 Rent EventCount' or 10 = '03 Rent EventCount' or 14 = '04 Rent EventCount' or 18 = '05 Rent EventCount' or 22 = '06 Rent EventCount' or 26 = '07 Rent EventCount' or 30 = '08 Rent EventCount' or 34 = '09 Rent EventCount' or 38 = '10 Rent EventCount' or 42 = '11 Rent EventCount' or 46 = '12 Rent EventCount'");
+   query.setQuery("select A, B where 2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->

@@ -63,7 +63,7 @@ function drawSpreadsheetChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select A, 'Braidwood' where name = '01 Rent EventCount' or name = '02 Rent EventCount' or name = '03 Rent EventCount' or name = '04 Rent EventCount' or name = '05 Rent EventCount' or name = '06 Rent EventCount' or name = '07 Rent EventCount' or name = '08 Rent EventCount' or name = '09 Rent EventCount' or name = '10 Rent EventCount' or name = '11 Rent EventCount' or name = '12 Rent EventCount'");
+   query.setQuery("select A, 'Braidwood' where 'name' = '01 Rent EventCount' or 'name' = '02 Rent EventCount' or 'name' = '03 Rent EventCount' or 'name' = '04 Rent EventCount' or 'name' = '05 Rent EventCount' or 'name' = '06 Rent EventCount' or 'name' = '07 Rent EventCount' or 'name' = '08 Rent EventCount' or 'name' = '09 Rent EventCount' or 'name' = '10 Rent EventCount' or 'name' = '11 Rent EventCount' or 'name' = '12 Rent EventCount'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->

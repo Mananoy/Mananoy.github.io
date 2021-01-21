@@ -78,7 +78,7 @@ function drawSpreadsheetChart() {
      <!--Set chart options-->
      var options = {'title':'Spread sheet test: Rent EventCount',
                     'width':400,
-                    'height':300
+                    'height':300,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->

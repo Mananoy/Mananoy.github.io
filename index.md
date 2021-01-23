@@ -225,7 +225,7 @@ function drawSoldAveragePriceChart() {
    <div id="map_canvas"></div>
    
    <!--display suburb name-->
-   <h2 id="selected_suburb_name" text-align="center">Suburb Name</h2>
+   <h2 id="selected_suburb_name" text-align="center">Braidwood</h2>
    
    <!--Div that will hold the pie chart-->
    <!--Table and divs that hold the pie charts-->

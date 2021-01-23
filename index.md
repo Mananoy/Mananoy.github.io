@@ -37,6 +37,7 @@ function drawRentEventCountChart() {
      var options = {'title':'Rent EventCount',
                     'width':650,
                     'height':450,
+                    pointSize: 5,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->
@@ -66,6 +67,7 @@ function drawRentAveragePriceChart() {
      var options = {'title':'Rent AveragePrice',
                     'width':650,
                     'height':450,
+                    pointSize: 5,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->
@@ -95,6 +97,7 @@ function drawSoldEventCountChart() {
      var options = {'title':'Sold EventCount',
                     'width':650,
                     'height':450,
+                    pointSize: 5,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->
@@ -124,6 +127,7 @@ function drawSoldAveragePriceChart() {
      var options = {'title':'Sold AveragePrice',
                     'width':650,
                     'height':450,
+                    pointSize: 5,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->

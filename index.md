@@ -8,57 +8,14 @@
 <script type="text/javascript">
 <!--Load the Visualization API and the corechart package.-->
 google.charts.load('current', {'packages':['corechart']});
-<!--Draw the pie chart for Sarah's pizza when Charts is loaded.-->
-google.charts.setOnLoadCallback(drawSarahChart);
-<!--Draw the pie chart for the Anthony's pizza when Charts is loaded.-->
-google.charts.setOnLoadCallback(drawAnthonyChart);
-<!--Draw the pie chart for the Spreadsheet's pizza when Charts is loaded.-->
-google.charts.setOnLoadCallback(drawSpreadsheetChart);
+<!--Draw the line chart for the Spreadsheet when Charts is loaded.-->
+google.charts.setOnLoadCallback(drawRentEventCountChart);
+google.charts.setOnLoadCallback(drawRentAveragePriceChart);
+google.charts.setOnLoadCallback(drawSoldEventCountChart);
+google.charts.setOnLoadCallback(drawSoldAveragePriceChart);
 
 <!--Callback that creates and populates a data table, instantiates the pie chart, passes in the data and draws it.-->
-function drawSarahChart() {
-   <!--Create the table data.-->
-   var data = new google.visualization.DataTable();
-   data.addColumn('string', 'Topping');
-   data.addColumn('number', 'Slices');
-   data.addRows([
-      ['Mushrooms', 1],
-      ['Onions', 1],
-      ['Olives', 2],
-      ['Zucchini', 2],
-      ['Pepperoni', 1]
-   ]);
-   <!--Set chart options-->
-   var options = {'title':'How Much Pizza Sarah Ate Last Night',
-                  'width':400,
-                  'height':300};
-   <!--Instantiate and draw our chart, passing in some options.-->
-   var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
-   chart.draw(data, options);
-}
-
-function drawAnthonyChart() {
-   <!--Create the table data.-->
-   var data = new google.visualization.DataTable();
-   data.addColumn('string', 'Topping');
-   data.addColumn('number', 'Slices');
-   data.addRows([
-     ['Mushrooms', 2],
-     ['Onions', 2],
-     ['Olives', 2],
-     ['Zucchini', 0],
-     ['Pepperoni', 3]
-   ]);
-   <!--Set chart options-->
-   var options = {'title':'How Much Pizza Anthony Ate Last Night',
-                  'width':400,
-                  'height':300};
-   <!--Instantiate and draw our chart, passing in some options.-->
-   var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
-   chart.draw(data, options);
-}
-   
-function drawSpreadsheetChart() {   
+function drawRentEventCountChart() {   
    <!--Create a query to spreadsheet.-->
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
@@ -77,13 +34,100 @@ function drawSpreadsheetChart() {
      var data = response.getDataTable();
      console.log(data);
      <!--Set chart options-->
-     var options = {'title':'Spread sheet test: Rent EventCount',
-                    'width':400,
-                    'height':300,
+     var options = {'title':'Rent EventCount',
+                    'width':700,
+                    'height':600,
                     legend: { position: 'bottom' }
                     };
      <!--Instantiate and draw our chart, passing in some options.-->
-     var chart = new google.visualization.LineChart(document.getElementById('Spread_chart_div'));
+     var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+     chart.draw(data, options);
+   }
+}
+function drawRentAveragePriceChart() {   
+   <!--Create a query to spreadsheet.-->
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+   <!--Set Query-->
+   <!--For Rent EventCount-->
+   query.setQuery("select A, B where A contains 'Rent AveragePrice'");
+   <!--send query and handle response-->
+   query.send(handleQueryResponse);
+   <!--handler function-->
+   function handleQueryResponse(response) {
+     // Called when the query response is returned
+     if (response.isError()) {
+       alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+       return;
+     }
+     <!--extract response data-->
+     var data = response.getDataTable();
+     console.log(data);
+     <!--Set chart options-->
+     var options = {'title':'Rent AveragePrice',
+                    'width':700,
+                    'height':600,
+                    legend: { position: 'bottom' }
+                    };
+     <!--Instantiate and draw our chart, passing in some options.-->
+     var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+     chart.draw(data, options);
+   }
+}
+function drawSoldEventCountChart() {   
+   <!--Create a query to spreadsheet.-->
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+   <!--Set Query-->
+   <!--For Rent EventCount-->
+   query.setQuery("select A, B where A contains 'Sold EventCount'");
+   <!--send query and handle response-->
+   query.send(handleQueryResponse);
+   <!--handler function-->
+   function handleQueryResponse(response) {
+     // Called when the query response is returned
+     if (response.isError()) {
+       alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+       return;
+     }
+     <!--extract response data-->
+     var data = response.getDataTable();
+     console.log(data);
+     <!--Set chart options-->
+     var options = {'title':'Sold EventCount',
+                    'width':700,
+                    'height':600,
+                    legend: { position: 'bottom' }
+                    };
+     <!--Instantiate and draw our chart, passing in some options.-->
+     var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+     chart.draw(data, options);
+   }
+}
+function drawSoldAveragePriceChart() {   
+   <!--Create a query to spreadsheet.-->
+   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+   <!--Set Query-->
+   <!--For Rent EventCount-->
+   query.setQuery("select A, B where A contains 'Sold AveragePrice'");
+   <!--send query and handle response-->
+   query.send(handleQueryResponse);
+   <!--handler function-->
+   function handleQueryResponse(response) {
+     // Called when the query response is returned
+     if (response.isError()) {
+       alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+       return;
+     }
+     <!--extract response data-->
+     var data = response.getDataTable();
+     console.log(data);
+     <!--Set chart options-->
+     var options = {'title':'Sold AveragePrice',
+                    'width':700,
+                    'height':600,
+                    legend: { position: 'bottom' }
+                    };
+     <!--Instantiate and draw our chart, passing in some options.-->
+     var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
      chart.draw(data, options);
    }
 }
@@ -183,9 +227,14 @@ function drawSpreadsheetChart() {
    <!--Table and divs that hold the pie charts-->
    <table class="columns">
      <tr>
-       <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div></td>
-       <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div></td>
-       <td><div id="Spread_chart_div" style="border: 1px solid #ccc"></div></td>
+       <td><div id="RentEventCount_div" style="border: 1px solid #ccc"></div></td>
+       <td><div id="RentAveragePrice_div" style="border: 1px solid #ccc"></div></td>
+     </tr>
+   </table>
+   <table class="columns">
+     <tr>
+       <td><div id="SoldEventCount_div" style="border: 1px solid #ccc"></div></td>
+       <td><div id="SoldAveragePrice_div" style="border: 1px solid #ccc"></div></td>
      </tr>
    </table>
    <br/>

@@ -35,8 +35,8 @@ function drawRentEventCountChart() {
      console.log(data);
      <!--Set chart options-->
      var options = {'title':'Rent EventCount',
-                    'width':700,
-                    'height':450,
+                    'width':680,
+                    'height':400,
                     pointSize: 5,
                     legend: { position: 'bottom' }
                     };
@@ -65,8 +65,8 @@ function drawRentAveragePriceChart() {
      console.log(data);
      <!--Set chart options-->
      var options = {'title':'Rent AveragePrice',
-                    'width':700,
-                    'height':450,
+                    'width':680,
+                    'height':400,
                     pointSize: 5,
                     legend: { position: 'bottom' }
                     };
@@ -95,8 +95,8 @@ function drawSoldEventCountChart() {
      console.log(data);
      <!--Set chart options-->
      var options = {'title':'Sold EventCount',
-                    'width':700,
-                    'height':450,
+                    'width':680,
+                    'height':400,
                     pointSize: 5,
                     legend: { position: 'bottom' }
                     };
@@ -125,8 +125,8 @@ function drawSoldAveragePriceChart() {
      console.log(data);
      <!--Set chart options-->
      var options = {'title':'Sold AveragePrice',
-                    'width':700,
-                    'height':450,
+                    'width':680,
+                    'height':400,
                     pointSize: 5,
                     legend: { position: 'bottom' }
                     };

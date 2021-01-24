@@ -240,7 +240,7 @@ function drawSoldAveragePriceChart() {
          }
          //Create a query to spreadsheet for month
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
-         var Que = "select B where is not null";
+         var Que = "select B where B is not null";
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response
@@ -265,7 +265,7 @@ function drawSoldAveragePriceChart() {
                         'height':400,
                         pointSize: 5,
                         legend: { position: 'bottom' }
-                        };
+                       };
          <!--Instantiate and draw our chart, passing in some options.-->
          var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
          chart.draw(chart, options);

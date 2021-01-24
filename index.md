@@ -224,7 +224,7 @@ function drawSoldAveragePriceChart() {
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response
-         var data = query.send();
+         var data = query.send(handleQueryResponse);
          //
          //handler function
          function handleQueryResponse(response) {
@@ -246,6 +246,7 @@ function drawSoldAveragePriceChart() {
          query.setQuery(Que);
          //send query and handle response
          var mon = query.send(handleQueryResponse2);
+         //
          //handler function2
          function handleQueryResponse2(response) {
            // Called when the query response is returned

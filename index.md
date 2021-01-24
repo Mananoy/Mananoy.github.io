@@ -212,10 +212,10 @@ function drawSoldAveragePriceChart() {
       //
       // change data here
       <!--Create a query to spreadsheet.-->
-      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
       <!--Set Query-->
       <!--For Rent EventCount-->
-      var Que = "select B, (SUBSTITUTE(ADDRESS(1,MATCH('" + suburb_name + "',A1:CFJ1),4),1,'')) where A contains 'Rent EventCount'";
+      var Que = "select C, G, K, O, S, W, AA, AE, AI, AM, AQ, AU where A contains '" + suburb_name + "' group by B";
       console.log(Que);
       query.setQuery(Que);
       <!--send query and handle response-->
@@ -245,7 +245,7 @@ function drawSoldAveragePriceChart() {
       var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
       <!--Set Query-->
       <!--For Rent EventCount-->
-      var Que = "select B, (SUBSTITUTE(ADDRESS(1,MATCH('" + suburb_name + "',A1:CFJ1),4),1,'')) where A contains 'Rent AveragePrice'";
+      var Que = "select B, `" + suburb_name + "` where A contains 'Rent AveragePrice'";
       console.log(Que);
       query.setQuery(Que);
       <!--send query and handle response-->
@@ -275,7 +275,7 @@ function drawSoldAveragePriceChart() {
       var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
       <!--Set Query-->
       <!--For Rent EventCount-->
-      Que = "select B, (SUBSTITUTE(ADDRESS(1,MATCH('" + suburb_name + "',A1:CFJ1),4),1,'')) where A contains 'Sold EventCount'";
+      Que = "select B, `" + suburb_name + "` where A contains 'Sold EventCount'";
       console.log(Que);
       query.setQuery(Que);
       <!--send query and handle response-->
@@ -305,7 +305,7 @@ function drawSoldAveragePriceChart() {
       var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
       <!--Set Query-->
       <!--For Rent EventCount-->
-      Que = "select B, (SUBSTITUTE(ADDRESS(1,MATCH('" + suburb_name + "',A1:CFJ1),4),1,'')) where A contains 'Sold AveragePrice'";
+      Que = "select B, `" + suburb_name + "` where A contains 'Sold AveragePrice'";
       console.log(Que);
       query.setQuery(Que);
       <!--send query and handle response-->

@@ -240,7 +240,7 @@ function drawSoldAveragePriceChart() {
          }
          //Create a query to spreadsheet for month
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
-         var Que = "select B";
+         var Que = "select B where is not null";
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response
@@ -258,7 +258,7 @@ function drawSoldAveragePriceChart() {
            return DT2;
          }
          //now we have 2 tables
-         var chart = google.visualization.data.join(mon, data, full);
+         var chart = google.visualization.data.join(mon, data, 'full');
          <!--Set chart options-->
          var options = {'title':'Rent EventCount',
                         'width':680,

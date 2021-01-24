@@ -211,11 +211,11 @@ function drawSoldAveragePriceChart() {
       //
       //
       // change data here
-      updateRentEventCountChart();
-      updateRentAveragePriceChart();
-      updateSoldEventCountChart();
-      updateSoldAveragePriceChart();
-      function updateRentEventCountChart(){
+      updateRentEventCountChart(suburb_name);
+      updateRentAveragePriceChart(suburb_name);
+      updateSoldEventCountChart(suburb_name);
+      updateSoldAveragePriceChart(suburb_name);
+      function updateRentEventCountChart(suburb_name){
          //Create a query to spreadsheet for the data
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
          //Set Query
@@ -238,6 +238,7 @@ function drawSoldAveragePriceChart() {
            console.log(DT);
            return DT;
          }
+         /*                                   
          //Create a query to spreadsheet for month
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
          var Que = "select B where B is not null";
@@ -259,6 +260,7 @@ function drawSoldAveragePriceChart() {
          }
          //now we have 2 tables
          var chart = google.visualization.data.join(mon, data, 'full');
+         */
          /*
          <!--Set chart options-->
          var options = {'title':'Rent EventCount',
@@ -272,9 +274,9 @@ function drawSoldAveragePriceChart() {
          chart.draw(chart, options);
          */
       };
-      function updateRentAveragePriceChart(){};
-      function updateSoldEventCountChart(){};
-      function updateSoldAveragePriceChart(){};
+      function updateRentAveragePriceChart(suburb_name){};
+      function updateSoldEventCountChart(suburb_name){};
+      function updateSoldAveragePriceChart(suburb_name){};
     }
 </script>
 <!--test for google map-->

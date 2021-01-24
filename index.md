@@ -219,8 +219,8 @@ function drawSoldAveragePriceChart() {
          //Create a query to spreadsheet for the data
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
          //Set Query
-         //For Rent EventCount of a specific place in row?  + "` group by A"
-         var Que = "select C, G, K, O, S, W, AA, AE, AI, AM, AQ, AU where A contains '" + suburb_name + "'";
+         //For Rent EventCount of a specific place in row?  + "` group by A".  where A contains '" + suburb_name + "'
+         var Que = "select C, G, K, O, S, W, AA, AE, AI, AM, AQ, AU";
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response
@@ -259,6 +259,7 @@ function drawSoldAveragePriceChart() {
          }
          //now we have 2 tables
          var chart = google.visualization.data.join(mon, data, 'full');
+         /*
          <!--Set chart options-->
          var options = {'title':'Rent EventCount',
                         'width':680,
@@ -269,6 +270,7 @@ function drawSoldAveragePriceChart() {
          <!--Instantiate and draw our chart, passing in some options.-->
          var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
          chart.draw(chart, options);
+         */
       };
       function updateRentAveragePriceChart(){};
       function updateSoldEventCountChart(){};

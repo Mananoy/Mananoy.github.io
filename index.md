@@ -220,7 +220,7 @@ function drawSoldAveragePriceChart() {
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
          //Set Query
          //For Rent EventCount of a specific place in row?  + "` group by A"
-         var Que = "select C, G, K, O, S, W, AA, AE, AI, AM, AQ, AU where A contains '" + suburb_name;
+         var Que = "select C, G, K, O, S, W, AA, AE, AI, AM, AQ, AU where A contains '" + suburb_name + "'";
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response

@@ -234,7 +234,10 @@ function drawSoldAveragePriceChart() {
                       {
                           value = value + String.fromCharCode(counter2+65);
                       }
-                      value = value + String.fromCharCode(counter3+65);
+                      if (counter3 != 0 )
+                      {
+                          value = value + String.fromCharCode(counter3+65);
+                      }
                       list[count] = value;
                       count = count + 1;
                   }

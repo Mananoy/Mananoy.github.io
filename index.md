@@ -143,8 +143,6 @@ function drawSoldAveragePriceChart() {
 <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPfC9HmRWGoP4pluFyWh02pCSnPYVqjM&callback=initMap">
 </script>
-<!--script for generating mapping value for query-->
-<script src="script/test.js"></script>
 <script>
     let map;
     function initMap() {
@@ -370,6 +368,9 @@ function drawSoldAveragePriceChart() {
 
    <!--we would like to get some data from the server. As we cannot run anything on the server we cannot get dynamic data, but we can store the data in JSON files and load them using the Ajax methods provided by jQuery.-->
    <script src="script/json.js"></script>
+   
+   <!--script for jquery-->
+   <script src="script/test.js"></script>
    
    <!--This is required for icon-->
    <script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>

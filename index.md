@@ -263,6 +263,8 @@ function drawSoldAveragePriceChart() {
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
          var array = build_array();
+         console.log("array:");
+         console.log(array);
          var map = mapper(array);
          console.log("map:");
          console.log(map);

@@ -143,6 +143,8 @@ function drawSoldAveragePriceChart() {
 <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPfC9HmRWGoP4pluFyWh02pCSnPYVqjM&callback=initMap">
 </script>
+<!--script for generating mapping value for query-->
+<script src="script/test.js"></script>
 <script>
     let map;
     function initMap() {
@@ -215,30 +217,86 @@ function drawSoldAveragePriceChart() {
       updateRentAveragePriceChart(suburb_name);
       updateSoldEventCountChart(suburb_name);
       updateSoldAveragePriceChart(suburb_name);
+      var array = build_array();
+      function build_array()
+      {
+          var count = 0;
+          for ( var counter1 = 0; counter1 < 26; counter1++)
+          {
+              for ( var counter2 = 0; counter2 < 26; counter2++)
+              {
+                  for ( var counter3 = 0; counter3 < 26; counter3++)
+                  {
+                      var value= ""
+                      if (counter1 != 0 )
+                      {
+                          value = String.fromCharCode(counter1+65);
+                      }
+                      if (counter1 != 0 || counter2 != 0 )
+                      {
+                          value = value + String.fromCharCode(counter2+65);
+                      }
+                      value = value + String.fromCharCode(counter3+65);
+                      list[count] = value;
+                      list = list + 1;
+                  }
+              }
+          }
+          return list;
+      }        
+      function mapper(){
+         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+            $.each(data, function(i, item) {
+                item.value = array[i + 2];
+            });
+         });
+         return data;
+      }
+      function matcher(map,suburb_name){
+         place = fruits.forEach(myFunction);
+         function myFunction(item, index) {
+            if(e == suburb_name)
+            {
+               return item.val;
+            }
+         }
+         return place;
+      }
       function updateRentEventCountChart(suburb_name){
+         //First we need the place of the surburb for query
+         var map = mapper();
+         console.log("map:");
+         console.log(map);
+         var str = matcher(map,suburb_name);
+         console.log("str:");
+         console.log(str);
          //Create a query to spreadsheet for the data
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');
          //Set Query
-         //Test
-         var Que = "select A";
-         console.log(Que);
-         query.setQuery(Que);
-         //send query and handle response
-         var data = query.send(handleQueryResponse);
-         //
-         //handler function
+         var Que = "select B, " + str + " where A contains 'Rent EventCount'";
+         <!--send query and handle response-->
+         query.send(handleQueryResponse);
+         <!--handler function-->
          function handleQueryResponse(response) {
            // Called when the query response is returned
            if (response.isError()) {
              alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
              return;
            }
-           //extract response data
-           var DT = response.getDataTable();
-           console.log(DT);
-           return DT;
+           <!--extract response data-->
+           var data = response.getDataTable();
+           console.log(data);
+           <!--Set chart options-->
+           var options = {'title':'Rent EventCount',
+                          'width':680,
+                          'height':400,
+                          pointSize: 5,
+                          legend: { position: 'bottom' }
+                          };
+           <!--Instantiate and draw our chart, passing in some options.-->
+           var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+           chart.draw(data, options);
          }
-         //document.getElementById("text2").innerHTML = data;
       };
       function updateRentAveragePriceChart(suburb_name){};
       function updateSoldEventCountChart(suburb_name){};

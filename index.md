@@ -215,9 +215,9 @@ function drawSoldAveragePriceChart() {
       updateRentAveragePriceChart(suburb_name);
       updateSoldEventCountChart(suburb_name);
       updateSoldAveragePriceChart(suburb_name);
-      var array = build_array();
       function build_array()
       {
+          var list = [];
           var count = 0;
           for ( var counter1 = 0; counter1 < 26; counter1++)
           {
@@ -236,13 +236,13 @@ function drawSoldAveragePriceChart() {
                       }
                       value = value + String.fromCharCode(counter3+65);
                       list[count] = value;
-                      list = list + 1;
+                      count = count + 1;
                   }
               }
           }
           return list;
       }        
-      function mapper(){
+      function mapper(array){
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             $.each(data, function(i, item) {
                 item.value = array[i + 2];
@@ -262,11 +262,12 @@ function drawSoldAveragePriceChart() {
       }
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
-         var map = mapper();
+         var array = build_array();
+         var map = mapper(array);
          console.log("map:");
          console.log(map);
          var str = matcher(map,suburb_name);
-         console.log("str:");
+         console.log("the col id:");
          console.log(str);
          //Create a query to spreadsheet for the data
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');

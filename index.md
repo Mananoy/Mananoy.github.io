@@ -247,8 +247,8 @@ function drawSoldAveragePriceChart() {
             $.each(data, function(i, item) {
                 item.value = array[i + 2];
             });
+            return data;
          });
-         return data;
       }
       function matcher(map,suburb_name){
          place = fruits.forEach(myFunction);

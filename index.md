@@ -217,10 +217,10 @@ function drawSoldAveragePriceChart() {
       updateSoldAveragePriceChart(suburb_name);
       function updateRentEventCountChart(suburb_name){
          //Create a query to spreadsheet for the data
-         var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
+         var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');
          //Set Query
-         //For Rent EventCount of a specific place in row?  + " group by A".  
-         var Que = "select `Braidwood` ";
+         //Test
+         var Que = "select A";
          console.log(Que);
          query.setQuery(Que);
          //send query and handle response
@@ -238,42 +238,7 @@ function drawSoldAveragePriceChart() {
            console.log(DT);
            return DT;
          }
-         /*                                   
-         //Create a query to spreadsheet for month
-         var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cA2tq2AswcucESWJFgKb7M3U63bWk52LmrXIP6zj60g/edit#gid=456361713');
-         var Que = "select B where B is not null";
-         console.log(Que);
-         query.setQuery(Que);
-         //send query and handle response
-         var mon = query.send(handleQueryResponse2);
-         //
-         //handler function2
-         function handleQueryResponse2(response) {
-           // Called when the query response is returned
-           if (response.isError()) {
-             alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-             return;
-           }
-           <!--extract response data-->
-           var DT2 = response.getDataTable();
-           console.log(DT2);
-           return DT2;
-         }
-         //now we have 2 tables
-         var chart = google.visualization.data.join(mon, data, 'full');
-         */
-         /*
-         <!--Set chart options-->
-         var options = {'title':'Rent EventCount',
-                        'width':680,
-                        'height':400,
-                        pointSize: 5,
-                        legend: { position: 'bottom' }
-                       };
-         <!--Instantiate and draw our chart, passing in some options.-->
-         var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-         chart.draw(chart, options);
-         */
+         //document.getElementById("text2").innerHTML = data;
       };
       function updateRentAveragePriceChart(suburb_name){};
       function updateSoldEventCountChart(suburb_name){};
@@ -347,11 +312,6 @@ function drawSoldAveragePriceChart() {
 
    <!--we would like to get some data from the server. As we cannot run anything on the server we cannot get dynamic data, but we can store the data in JSON files and load them using the Ajax methods provided by jQuery.-->
    <script src="script/json.js"></script>
-
-   <!--The JavaScript code must come at the end so by the time it is executed the DOM is ready. Otherwise the JavaScript code will not find the HTML element.-->
-   <script>
-      document.getElementById("text2").innerHTML = "Text added by JavaScript code";
-   </script>
    
    <!--This is required for icon-->
    <script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>

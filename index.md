@@ -251,7 +251,7 @@ function drawSoldAveragePriceChart() {
          });
       }
       function matcher(map,suburb_name){
-         place = fruits.forEach(myFunction);
+         place = map.forEach(myFunction);
          function myFunction(item, index) {
             if(e == suburb_name)
             {

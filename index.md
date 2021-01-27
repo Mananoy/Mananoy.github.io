@@ -260,15 +260,15 @@ function drawSoldAveragePriceChart() {
             console.log("map produced in mapper:");
             console.log(data);
             place = "";
-            if (suburb_name in data)
-            {
-               console.log("found in map:");
-               console.log("map check:");
-               console.log(data);
-               console.log("further check:");
-               console.log(data.Karaba.id);
-               //place = suburb_name.id
-            }
+            $.each(data, function(key, value) {
+                if (suburb_name == key.id)
+                {
+                   console.log("found in map:");
+                   console.log("further check:");
+                   console.log(key.id);
+                   //place = suburb_name.id
+                }
+            });
             return place;
          });
       };

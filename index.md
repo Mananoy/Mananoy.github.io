@@ -250,7 +250,8 @@ function drawSoldAveragePriceChart() {
           }
           return list;
       }        
-      function mapper(array){
+      function mapper(array, suburb_name){
+         map;
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
             $.each(data, function(key, value) {
@@ -259,12 +260,9 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            return data;
+            map = data;
          });
-      }
-      function matcher(map,suburb_name){
-         console.log("map recived in matcher:");
-         console.log(map);
+         place = undefined;
          place = map.forEach(myFunction);
          function myFunction(item, index){
             if(item.id == suburb_name)
@@ -279,13 +277,15 @@ function drawSoldAveragePriceChart() {
          var array = build_array();
          console.log("array:");
          console.log(array);
-         var map = mapper(array);
-         console.log("map:");
-         console.log(map);
+         var place = mapper(array);
+         console.log("place:");
+         console.log(place);
+         if (place == undefined)
+         {
+            alert("No data found for " + suburb_name);
+            return;
+         }
          /*
-         var str = matcher(map,suburb_name);
-         console.log("the col id:");
-         console.log(str);
          //Create a query to spreadsheet for the data
          var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');
          //Set Query

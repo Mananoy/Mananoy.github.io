@@ -261,13 +261,7 @@ function drawSoldAveragePriceChart() {
             console.log(data);
             map = data;
             place = undefined;
-            place = map.forEach(myFunction);
-            function myFunction(item, index){
-               if(item.id == suburb_name)
-               {
-                  return item.id;
-               }
-            }
+            place = map.suburb_name.id
             return place;
          });
       };

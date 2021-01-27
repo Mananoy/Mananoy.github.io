@@ -252,8 +252,6 @@ function drawSoldAveragePriceChart() {
             console.log(data);
             var index = 2;
             $.each(data, function(key, value) {
-                console.log("array:");
-                console.log(array[index + 2]);
                 value.id = array[index + 2];
                 index = index + 1;
             });
@@ -278,6 +276,7 @@ function drawSoldAveragePriceChart() {
          var map = mapper(array);
          console.log("map:");
          console.log(map);
+         /*
          var str = matcher(map,suburb_name);
          console.log("the col id:");
          console.log(str);
@@ -307,6 +306,7 @@ function drawSoldAveragePriceChart() {
            <!--Instantiate and draw our chart, passing in some options.-->
            var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
            chart.draw(data, options);
+           */
          }
       };
       function updateRentAveragePriceChart(suburb_name){};

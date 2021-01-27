@@ -259,7 +259,12 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            place = data.suburb_name.id
+            place = "";
+            if (suburb_name in data)
+            {
+               console.log("found in map:");
+               place = data.suburb_name.id
+            }
             return place;
          });
       };
@@ -271,7 +276,7 @@ function drawSoldAveragePriceChart() {
          var place = mapper(array, suburb_name);
          console.log("place:");
          console.log(place);
-         if (place == undefined)
+         if (place == "")
          {
             alert("No data found for " + suburb_name);
             return;

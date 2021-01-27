@@ -261,6 +261,10 @@ function drawSoldAveragePriceChart() {
             console.log(data);
             place = "";
             $.each(data, function(key, value) {
+                console.log("key":);
+                console.log(key);
+                console.log("key.id":);
+                console.log(key.id);
                 if (suburb_name == key.id)
                 {
                    console.log("found in map:");

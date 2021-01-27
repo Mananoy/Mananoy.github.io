@@ -254,7 +254,7 @@ function drawSoldAveragePriceChart() {
             $.each(data, function(key, value) {
                 console.log("array:");
                 console.log(array[index + 2]);
-                item.value = array[index + 2];
+                item.id = array[index + 2];
                 index = index + 1;
             });
             return data;
@@ -265,7 +265,7 @@ function drawSoldAveragePriceChart() {
          function myFunction(item, index) {
             if(e == suburb_name)
             {
-               return item.val;
+               return item.id;
             }
          }
          return place;

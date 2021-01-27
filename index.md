@@ -277,7 +277,7 @@ function drawSoldAveragePriceChart() {
          var array = build_array();
          console.log("array:");
          console.log(array);
-         var place = mapper(array);
+         var place = mapper(array, suburb_name);
          console.log("place:");
          console.log(place);
          if (place == undefined)

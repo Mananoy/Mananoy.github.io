@@ -272,8 +272,8 @@ function drawSoldAveragePriceChart() {
                    console.log("did not return:");
                 }
             });
+            return place;
          });
-         return place;
       };
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query

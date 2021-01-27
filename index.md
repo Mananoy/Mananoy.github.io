@@ -265,6 +265,8 @@ function drawSoldAveragePriceChart() {
                 console.log(key);
                 console.log("key.id:");
                 console.log(key.id);
+                console.log("value.id:");
+                console.log(value.id);
                 if (suburb_name == key.id)
                 {
                    console.log("found in map:");

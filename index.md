@@ -263,9 +263,9 @@ function drawSoldAveragePriceChart() {
             if (suburb_name in data)
             {
                console.log("found in map:");
-               console.log("suburb_name.id:");
-               console.log(suburb_name.id);
-               place = suburb_name.id
+               console.log("map check:");
+               console.log(data);
+               //place = suburb_name.id
             }
             return place;
          });

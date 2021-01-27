@@ -228,9 +228,13 @@ function drawSoldAveragePriceChart() {
                       var value= ""
                       if (counter1 != 0)
                       {
-                          value = String.fromCharCode(counter1+65);
+                          value = String.fromCharCode(counter1+64);
                       }
-                      if (counter1 != 0 || counter2 != 0)
+                      if (counter1 != 0 || counter2 == 0)
+                      {
+                          value = value + String.fromCharCode(counter2+65);
+                      }
+                      else if (counter1 != 0 || counter2 != 0)
                       {
                           value = value + String.fromCharCode(counter2+64);
                       }

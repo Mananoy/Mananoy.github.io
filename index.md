@@ -252,20 +252,22 @@ function drawSoldAveragePriceChart() {
       }        
       function mapper(array){
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
-            console.log("data:");
-            console.log(data);
             var index = 2;
             $.each(data, function(key, value) {
-                value.id = array[index + 2];
+                value.id = array[index];
                 index = index + 1;
             });
+            console.log("map produced in mapper:");
+            console.log(data);
             return data;
          });
       }
       function matcher(map,suburb_name){
+         console.log("map recived in matcher:");
+         console.log(map);
          place = map.forEach(myFunction);
-         function myFunction(item, index) {
-            if(e == suburb_name)
+         function myFunction(item, index){
+            if(item.id == suburb_name)
             {
                return item.id;
             }

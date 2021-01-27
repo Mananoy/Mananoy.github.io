@@ -266,6 +266,8 @@ function drawSoldAveragePriceChart() {
                    console.log("found in map:");
                    console.log(value.id);
                    place = value.id
+                   console.log("place in mapper:");
+                   console.log(place);
                 }
             });
             return place;

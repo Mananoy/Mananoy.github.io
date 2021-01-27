@@ -251,7 +251,6 @@ function drawSoldAveragePriceChart() {
           return list;
       }        
       function mapper(array, suburb_name){
-         map;
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
             $.each(data, function(key, value) {
@@ -261,17 +260,17 @@ function drawSoldAveragePriceChart() {
             console.log("map produced in mapper:");
             console.log(data);
             map = data;
-         });
-         place = undefined;
-         place = map.forEach(myFunction);
-         function myFunction(item, index){
-            if(item.id == suburb_name)
-            {
-               return item.id;
+            place = undefined;
+            place = map.forEach(myFunction);
+            function myFunction(item, index){
+               if(item.id == suburb_name)
+               {
+                  return item.id;
+               }
             }
-         }
-         return place;
-      }
+            return place;
+         });
+      };
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
          var array = build_array();

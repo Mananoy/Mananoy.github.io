@@ -259,7 +259,7 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            place = "";
+            place = " ";
             $.each(data, function(key, value) {
                 if (suburb_name == key)
                 {
@@ -280,9 +280,9 @@ function drawSoldAveragePriceChart() {
          console.log("array:");
          console.log(array);
          var place = mapper(array, suburb_name);
-         console.log("place:");
+         console.log("place outside:");
          console.log(place);
-         if (place == "")
+         if (place == " ")
          {
             alert("No data found for " + suburb_name);
             return;

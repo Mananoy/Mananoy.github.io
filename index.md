@@ -259,9 +259,8 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            map = data;
             place = undefined;
-            place = map.suburb_name.id
+            place = data.suburb_name.id
             return place;
          });
       };

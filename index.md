@@ -269,7 +269,6 @@ function drawSoldAveragePriceChart() {
                    console.log("place in mapper:");
                    console.log(place);
                    return place;
-                   console.log("did not return:");
                 }
             });
             return place;
@@ -280,7 +279,7 @@ function drawSoldAveragePriceChart() {
          var array = build_array();
          console.log("array:");
          console.log(array);
-         var place = mapper(array, suburb_name);
+         place = mapper(array, suburb_name);
          console.log("place outside:");
          console.log(place);
          if (place == " ")

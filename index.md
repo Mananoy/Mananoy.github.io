@@ -251,11 +251,11 @@ function drawSoldAveragePriceChart() {
             console.log("data:");
             console.log(data);
             $.each(data, function(item, i) {
-                console.log("i:");
-                console.log(i);
-                console.log("array data:");
-                console.log(array[i + 2]);
-                item.value = array[i + 2];
+                //console.log("i:");
+                //console.log(i);
+                //console.log("array data:");
+                //console.log(array[i + 2]);
+                //item.value = array[i + 2];
             });
             return data;
          });

@@ -248,6 +248,8 @@ function drawSoldAveragePriceChart() {
       }        
       function mapper(array){
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+            console.log("data:");
+            console.log(data);
             $.each(data, function(i, item) {
                 item.value = array[i + 2];
             });

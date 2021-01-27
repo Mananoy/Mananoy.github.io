@@ -226,13 +226,13 @@ function drawSoldAveragePriceChart() {
                   for ( var counter3 = 0; counter3 < 26; counter3++)
                   {
                       var value= ""
-                      if (counter1 != 0 )
+                      if (counter1 != 0)
                       {
-                          value = String.fromCharCode(counter1+65);
+                          value = String.fromCharCode(counter1+64);
                       }
-                      if (counter1 != 0 || counter2 != 0 )
+                      if (counter1 != 0 || counter2 != 0)
                       {
-                          value = value + String.fromCharCode(counter2+65);
+                          value = value + String.fromCharCode(counter2+64);
                       }
                       value = value + String.fromCharCode(counter3+65);
                       list[count] = value;

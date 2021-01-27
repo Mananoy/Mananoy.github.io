@@ -265,6 +265,8 @@ function drawSoldAveragePriceChart() {
                console.log("found in map:");
                console.log("map check:");
                console.log(data);
+               console.log("further check:");
+               console.log(data.Karaba.id);
                //place = suburb_name.id
             }
             return place;

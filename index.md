@@ -259,7 +259,6 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            place = undefined;
             place = data.suburb_name.id
             return place;
          });

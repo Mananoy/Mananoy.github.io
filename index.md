@@ -268,10 +268,11 @@ function drawSoldAveragePriceChart() {
                    place = value.id
                    console.log("place in mapper:");
                    console.log(place);
+                   return place;
                 }
             });
-            return place;
          });
+         return;
       };
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query

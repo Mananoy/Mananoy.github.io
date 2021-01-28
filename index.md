@@ -277,10 +277,26 @@ function drawSoldAveragePriceChart() {
          var array = build_array();
          //console.log("array:");
          //console.log(array);
-         window.place = mapper(array, suburb_name);
-         console.log("place outside:");
-         console.log(window.place);
-         if (window.place == " ")
+         var place = " ";
+         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+            var index = 2;
+            $.each(data, function(key, value) {
+                value.id = array[index];
+                index = index + 1;
+            });
+            //console.log("map produced in mapper:");
+            //console.log(data);
+            $.each(data, function(key, value) {
+                if (suburb_name == key)
+                {
+                   console.log("found in map:");
+                   place = value.id
+                   console.log("place in each:");
+                   console.log(place);
+                }
+            });
+         });
+         if (place == " ")
          {
             alert("No data found for " + suburb_name);
             return;

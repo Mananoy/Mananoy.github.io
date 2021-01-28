@@ -262,8 +262,8 @@ function drawSoldAveragePriceChart() {
                 value.id = array[index];
                 index = index + 1;
             });
-            //console.log("map produced in mapper:");
-            //console.log(data);
+            console.log("map produced in mapper:");
+            console.log(data);
             //console.log("place before each:");
             //console.log(place);
             $.each(data, function(key, value) {

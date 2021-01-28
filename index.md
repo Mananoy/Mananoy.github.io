@@ -250,28 +250,6 @@ function drawSoldAveragePriceChart() {
           }
           return list;
       }
-      function mapper(array, suburb_name){
-         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
-            var index = 2;
-            $.each(data, function(key, value) {
-                value.id = array[index];
-                index = index + 1;
-            });
-            //console.log("map produced in mapper:");
-            //console.log(data);
-            $.each(data, place = function(key, value) {
-                if (suburb_name == key)
-                {
-                   console.log("found in map:");
-                   window.place = value.id
-                   console.log("place in each:");
-                   console.log(window.place);
-                   return window.place;
-                }
-            });
-         });
-         return window.place;
-      };
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
          var array = build_array();
@@ -286,6 +264,8 @@ function drawSoldAveragePriceChart() {
             });
             //console.log("map produced in mapper:");
             //console.log(data);
+            console.log("place before each:");
+            console.log(place);
             $.each(data, function(key, value) {
                 if (suburb_name == key)
                 {

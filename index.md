@@ -296,116 +296,130 @@ function drawSoldAveragePriceChart() {
             }
             //
             //
+            //
+            drawRentEventCountChart();
+            drawRentAveragePriceChart();
+            drawSoldEventCountChart();
+            drawSoldAveragePriceChart();
+            //
             //We now have the id, Create a query to spreadsheet for the data
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            //Set Query
-            query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
-            <!--send query and handle response-->
-            query.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data = response.getDataTable();
-              console.log(data);
-              <!--Set chart options-->
-              var options = {'title':'Rent EventCount',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-              chart.draw(data, options);
+            function drawRentEventCountChart(){
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               //Set Query
+               query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 var data = response.getDataTable();
+                 console.log(data);
+                 <!--Set chart options-->
+                 var options = {'title':'Rent EventCount',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+                 chart.draw(data, options);
+               }
             }
-            <!--Create a query to spreadsheet.-->
-            var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query2.setQuery("select B, " + place + " where A contains 'Rent AveragePrice'");
-            <!--send query and handle response-->
-            query2.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data2 = response.getDataTable();
-              console.log(data2);
-              <!--Set chart options-->
-              var options = {'title':'Rent AveragePrice',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-              chart2.draw(data2, options);
+            function drawRentAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query2.setQuery("select B, " + place + " where A contains 'Rent AveragePrice'");
+               <!--send query and handle response-->
+               query2.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 var data2 = response.getDataTable();
+                 console.log(data2);
+                 <!--Set chart options-->
+                 var options = {'title':'Rent AveragePrice',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+                 chart2.draw(data2, options);
+               }
             }
-            <!--Create a query to spreadsheet.-->
-            var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query3.setQuery("select B, " + place + " where A contains 'Sold EventCount'");
-            <!--send query and handle response-->
-            query3.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data3 = response.getDataTable();
-              console.log(data3);
-              <!--Set chart options-->
-              var options = {'title':'Sold EventCount',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-              chart3.draw(data3, options);
+            function drawSoldEventCountChart(){
+               <!--Create a query to spreadsheet.-->
+               var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query3.setQuery("select B, " + place + " where A contains 'Sold EventCount'");
+               <!--send query and handle response-->
+               query3.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 var data3 = response.getDataTable();
+                 console.log(data3);
+                 <!--Set chart options-->
+                 var options = {'title':'Sold EventCount',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+                 chart3.draw(data3, options);
+               }
             }/*
-            <!--Create a query to spreadsheet.-->
-            var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query4.setQuery("select B, " + place + " where A contains 'Sold AveragePrice'");
-            <!--send query and handle response-->
-            query4.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data4 = response.getDataTable();
-              console.log(data4);
-              <!--Set chart options-->
-              var options = {'title':'Sold AveragePrice',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-              chart4.draw(data4, options);
+            function drawSoldAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query4.setQuery("select B, " + place + " where A contains 'Sold AveragePrice'");
+               <!--send query and handle response-->
+               query4.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 var data4 = response.getDataTable();
+                 console.log(data4);
+                 <!--Set chart options-->
+                 var options = {'title':'Sold AveragePrice',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
+                 chart4.draw(data4, options);
+               }
             }*/
          });
       };

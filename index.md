@@ -253,8 +253,8 @@ function drawSoldAveragePriceChart() {
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
          var array = build_array();
-         //console.log("array:");
-         //console.log(array);
+         console.log("array:");
+         console.log(array);
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
             var place = " ";

@@ -264,8 +264,8 @@ function drawSoldAveragePriceChart() {
             });
             //console.log("map produced in mapper:");
             //console.log(data);
-            console.log("place before each:");
-            console.log(place);
+            //console.log("place before each:");
+            //console.log(place);
             $.each(data, function(key, value) {
                 if (suburb_name == key)
                 {
@@ -279,6 +279,11 @@ function drawSoldAveragePriceChart() {
             {
                alert("No data found for " + suburb_name);
                return;
+            }
+            else
+            {
+               console.log("we have id:");
+               console.log(place);
             }
             /*
             //Create a query to spreadsheet for the data

@@ -249,7 +249,9 @@ function drawSoldAveragePriceChart() {
               }
           }
           return list;
-      }        
+      }   
+      //declare global
+      place = " ";
       function mapper(array, suburb_name){
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;

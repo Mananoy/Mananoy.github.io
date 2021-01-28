@@ -274,7 +274,7 @@ function drawSoldAveragePriceChart() {
             console.log("map produced in mapper:");
             console.log(data);
             $.each(data, function(key, value) {
-                if (suburb_name == key)
+                if (key.includes(suburb_name))
                 {
                    console.log("found in map with id:");
                    place = value.id

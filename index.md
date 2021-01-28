@@ -338,8 +338,8 @@ function drawSoldAveragePriceChart() {
                 return;
               }
               <!--extract response data-->
-              var data = response.getDataTable();
-              console.log(data);
+              var data2 = response.getDataTable();
+              console.log(data2);
               <!--Set chart options-->
               var options = {'title':'Rent AveragePrice',
                              'width':680,
@@ -349,7 +349,7 @@ function drawSoldAveragePriceChart() {
                              };
               <!--Instantiate and draw our chart, passing in some options.-->
               var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-              chart.draw(data, options);
+              chart.draw(data2, options);
             }
             <!--Create a query to spreadsheet.-->
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
@@ -366,8 +366,8 @@ function drawSoldAveragePriceChart() {
                 return;
               }
               <!--extract response data-->
-              var data = response.getDataTable();
-              console.log(data);
+              var data3 = response.getDataTable();
+              console.log(data3);
               <!--Set chart options-->
               var options = {'title':'Sold EventCount',
                              'width':680,
@@ -377,7 +377,7 @@ function drawSoldAveragePriceChart() {
                              };
               <!--Instantiate and draw our chart, passing in some options.-->
               var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-              chart.draw(data, options);
+              chart.draw(data3, options);
             }
             <!--Create a query to spreadsheet.-->
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
@@ -394,8 +394,8 @@ function drawSoldAveragePriceChart() {
                 return;
               }
               <!--extract response data-->
-              var data = response.getDataTable();
-              console.log(data);
+              var data4 = response.getDataTable();
+              console.log(data4);
               <!--Set chart options-->
               var options = {'title':'Sold AveragePrice',
                              'width':680,
@@ -405,7 +405,7 @@ function drawSoldAveragePriceChart() {
                              };
               <!--Instantiate and draw our chart, passing in some options.-->
               var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-              chart.draw(data, options);
+              chart.draw(data4, options);
             }
          });
       };

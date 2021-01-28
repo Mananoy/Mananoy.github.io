@@ -285,11 +285,10 @@ function drawSoldAveragePriceChart() {
                console.log("we have id:");
                console.log(place);
             }
-            /*
-            //Create a query to spreadsheet for the data
+            //We now have the id, Create a query to spreadsheet for the data
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');
             //Set Query
-            var Que = "select B, " + str + " where A contains 'Rent EventCount'";
+            var Que = "select B, " + place + " where A contains 'Rent EventCount'";
             <!--send query and handle response-->
             query.send(handleQueryResponse);
             <!--handler function-->
@@ -313,7 +312,6 @@ function drawSoldAveragePriceChart() {
               var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
               chart.draw(data, options);
             }
-            */
          });
       };
       function updateRentAveragePriceChart(suburb_name){};

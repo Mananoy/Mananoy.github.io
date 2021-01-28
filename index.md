@@ -267,21 +267,20 @@ function drawSoldAveragePriceChart() {
                    window.place = value.id
                    console.log("place in each:");
                    console.log(window.place);
-                   return window.place;
+                   return;
                 }
             });
          });
-         return window.place;
       };
       function updateRentEventCountChart(suburb_name){
          //First we need the place of the surburb for query
          var array = build_array();
          //console.log("array:");
          //console.log(array);
-         place = mapper(array, suburb_name);
+         mapper(array, suburb_name);
          console.log("place outside:");
-         console.log(place);
-         if (place == " ")
+         console.log(window.place);
+         if (window.place == " ")
          {
             alert("No data found for " + suburb_name);
             return;

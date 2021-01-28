@@ -271,28 +271,20 @@ function drawSoldAveragePriceChart() {
                 value.id = array[index];
                 index = index + 1;
             });
-            //console.log("map produced in mapper:");
-            //console.log(data);
-            //console.log("place before each:");
-            //console.log(place);
+            console.log("map produced in mapper:");
+            console.log(data);
             $.each(data, function(key, value) {
                 if (suburb_name == key)
                 {
-                   //console.log("found in map:");
+                   console.log("found in map with id:");
                    place = value.id
-                   //console.log("place in each:");
-                   //console.log(place);
+                   console.log(place);
                 }
             });
             if (place == " ")
             {
                alert("No data found for " + suburb_name);
                return;
-            }
-            else
-            {
-               //console.log("we have id:");
-               //console.log(place);
             }
             //
             //

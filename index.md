@@ -252,8 +252,10 @@ function drawSoldAveragePriceChart() {
       }
       function mapper(array, suburb_name){
          var place = " ";
-         $.getJSON( "https://mananoy.github.io/script/Suburb.json", place = function( data ) {
+         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
+            console.log("place in getJSON:");
+            console.log(place);
             $.each(data, function(key, value) {
                 value.id = array[index];
                 index = index + 1;
@@ -270,9 +272,11 @@ function drawSoldAveragePriceChart() {
                    return place;
                 }
             });
+            console.log("place after each:");
+            console.log(place);
             return place;
          });
-         console.log("place in function:");
+         console.log("place in mapper:");
          console.log(place);
          return place;
       };

@@ -278,7 +278,7 @@ function drawSoldAveragePriceChart() {
          //console.log("array:");
          //console.log(array);
          var place = " ";
-         $.getJSON( "https://mananoy.github.io/script/Suburb.json", place = function( data ) {
+         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
             var place = " ";
             $.each(data, function(key, value) {

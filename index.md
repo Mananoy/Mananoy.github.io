@@ -286,7 +286,7 @@ function drawSoldAveragePriceChart() {
                console.log(place);
             }
             //We now have the id, Create a query to spreadsheet for the data
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1uL0NIY6LZwEVJ4A-QjQVhboYzHM2DPFJJPv7aqvdqds/edit#gid=0');
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             //Set Query
             var Que = "select B, " + place + " where A contains 'Rent EventCount'";
             <!--send query and handle response-->

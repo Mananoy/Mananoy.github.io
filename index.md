@@ -251,7 +251,6 @@ function drawSoldAveragePriceChart() {
           return list;
       }
       function mapper(array, suburb_name){
-         window.place = " ";
          $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
             var index = 2;
             $.each(data, function(key, value) {

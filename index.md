@@ -252,7 +252,7 @@ function drawSoldAveragePriceChart() {
       }
       function mapper(array, suburb_name){
          var place = " ";
-         place = $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+         $.getJSON( "https://mananoy.github.io/script/Suburb.json", place = function( data ) {
             var index = 2;
             $.each(data, function(key, value) {
                 value.id = array[index];
@@ -260,7 +260,7 @@ function drawSoldAveragePriceChart() {
             });
             console.log("map produced in mapper:");
             console.log(data);
-            place = $.each(data, function(key, value) {
+            $.each(data, place = function(key, value) {
                 if (suburb_name == key)
                 {
                    console.log("found in map:");

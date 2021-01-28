@@ -390,7 +390,7 @@ function drawSoldAveragePriceChart() {
                  var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
                  chart3.draw(data3, options);
                }
-            }/*
+            }
             function drawSoldAveragePriceChart(){
                <!--Create a query to spreadsheet.-->
                var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
@@ -420,7 +420,7 @@ function drawSoldAveragePriceChart() {
                  var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
                  chart4.draw(data4, options);
                }
-            }*/
+            }
          });
       };
     }

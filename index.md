@@ -246,6 +246,18 @@ function drawSoldAveragePriceChart() {
                       list[count] = value;
                       count = count + 1;
                   }
+                  // bug fix
+                  if (counter2 == 25 && counter1 == 0)
+                  {
+                     for ( var counter3 = 0; counter3 < 26; counter3++)
+                     {
+                         var value= "";
+                         value = value + String.fromCharCode(counter2+64);
+                         value = value + String.fromCharCode(counter3+65);
+                         list[count] = value;
+                         count = count + 1;
+                     }
+                  }
               }
           }
           return list;

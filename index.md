@@ -183,8 +183,6 @@ function drawSoldAveragePriceChart() {
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
       map.data.addListener('click', function(event) {
-         console.log("feat:");
-         console.log(feat);
          selectSuburb(event.feature);
       });
       //
@@ -197,6 +195,8 @@ function drawSoldAveragePriceChart() {
     //
     // Handle selection
     function selectSuburb(feature) {
+      console.log("feature:");
+      console.log(feature);
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
       // Handle different naming

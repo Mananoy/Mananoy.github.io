@@ -179,18 +179,18 @@ function drawSoldAveragePriceChart() {
       map.data.loadGeoJson('script/features-5.json', {}, function() {});
       map.data.loadGeoJson('script/features-6.json', {}, function() {});
       map.data.loadGeoJson('script/features-7.json', {}, function() {});
-      map.data.loadGeoJson('script/features-8.json', {}, function() {});
-      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
-      // Link Event to Functions
-      map.data.addListener('click', function(event) {
-         selectSuburb(event.feature);
+      map.data.loadGeoJson('script/features-8.json', {}, function() {
+         // initialise Braindwood as selected
+         feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
+         console.log("feat:");
+         console.log(feat);
+         map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
+         });
+         map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
+         // Link Event to Functions
+         map.data.addListener('click', function(event) {
+            selectSuburb(event.feature);
       });
-      //
-      // initialise Braindwood as selected
-      feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
-      console.log("feat:");
-      console.log(feat);
-      map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
     }
     //
     // Handle selection

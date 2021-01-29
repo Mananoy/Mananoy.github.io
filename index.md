@@ -185,11 +185,12 @@ function drawSoldAveragePriceChart() {
          console.log("feat:");
          console.log(feat);
          map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
-         });
-         map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
-         // Link Event to Functions
-         map.data.addListener('click', function(event) {
-            selectSuburb(event.feature);
+      });
+      map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
+      // Link Event to Functions
+      map.data.addListener('click', function(event) {
+         selectSuburb(event.feature);
+         map.panTo(event.latLng);
       });
     }
     //
@@ -211,6 +212,7 @@ function drawSoldAveragePriceChart() {
       suburb_name = feature.getProperty("name");
       suburb_name = capitalizeFirstLetter(suburb_name);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
+      suburb_name = feature.getProperty("name");
       //        
       //
       //

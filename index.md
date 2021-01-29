@@ -149,7 +149,7 @@ function drawSoldAveragePriceChart() {
       // Set basic params
       var mapOptions = {
           center : new google.maps.LatLng(-35.34253036, 149.81762754),
-          zoom : 8,
+          zoom : 11,
           zoomControl: false,
           streetViewControl: false,
           mapTypeControl: false,
@@ -187,7 +187,7 @@ function drawSoldAveragePriceChart() {
       });
       //
       // initialise Braindwood as selected
-      feat = map.data.getFeatureById(25514);
+      feat = map.data.getFeatureById("ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766");
       map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
     }
     //

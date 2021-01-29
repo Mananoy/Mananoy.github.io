@@ -148,7 +148,7 @@ function drawSoldAveragePriceChart() {
     function initMap() {
       // Set basic params
       var mapOptions = {
-          center : new google.maps.LatLng(-35.34253036, 149.81762754)
+          center : new google.maps.LatLng(-35.34253036, 149.81762754),
           zoom : 8,
           zoomControl: false,
           streetViewControl: false,

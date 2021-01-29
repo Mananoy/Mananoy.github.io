@@ -185,11 +185,11 @@ function drawSoldAveragePriceChart() {
       map.data.addListener('click', function(event) {
          selectSuburb(event.feature);
       });
+      //
+      // initialise Braindwood as selected
+      feat = map.data.getFeatureById(25514);
+      map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
     }
-    //
-    // initialise Braindwood as selected
-    feat = map.data.getFeatureById(25514);
-    map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
     //
     // Handle selection
     function selectSuburb(feature) {

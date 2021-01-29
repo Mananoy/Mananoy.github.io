@@ -188,7 +188,7 @@ function drawSoldAveragePriceChart() {
     }
     //
     // initialise Braindwood as selected
-    feat = getFeatureById(25514);
+    feat = map.data.getFeatureById(25514);
     map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
     //
     // Handle selection

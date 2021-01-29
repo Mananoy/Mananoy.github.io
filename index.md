@@ -148,8 +148,8 @@ function drawSoldAveragePriceChart() {
     function initMap() {
       // Set basic params
       var mapOptions = {
-          center : new google.maps.LatLng(-25.51237, 133.49844),
-          zoom : 5,
+          center : new google.maps.LatLng(-35.34253036, 149.81762754)
+          zoom : 8,
           zoomControl: false,
           streetViewControl: false,
           mapTypeControl: false,
@@ -186,6 +186,11 @@ function drawSoldAveragePriceChart() {
          selectSuburb(event.feature);
       });
     }
+    //
+    // initialise Braindwood as selected
+    feat = getFeatureById(25514);
+    map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
+    //
     // Handle selection
     function selectSuburb(feature) {
       map.data.revertStyle();

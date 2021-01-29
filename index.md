@@ -195,8 +195,8 @@ function drawSoldAveragePriceChart() {
     //
     // Handle selection
     function selectSuburb(feature) {
-      console.log("feature:");
-      console.log(feature);
+      console.log("feature id:");
+      console.log(feature.getId());
       map.data.revertStyle();
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
       // Handle different naming

@@ -187,7 +187,7 @@ function drawSoldAveragePriceChart() {
       });
       //
       // initialise Braindwood as selected
-      feat = map.data.getFeatureById(ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766);
+      feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
       console.log("feat:");
       console.log(feat);
       map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});

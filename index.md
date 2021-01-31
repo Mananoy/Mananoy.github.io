@@ -182,9 +182,7 @@ function drawSoldAveragePriceChart() {
       map.data.loadGeoJson('script/features-8.json', {}, function() {
          // initialise Braindwood as selected
          feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
-         console.log("feat:");
-         console.log(feat);
-         map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'red'});
+         map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'blue'});
       });
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
       // Link Event to Functions
@@ -192,12 +190,18 @@ function drawSoldAveragePriceChart() {
          selectSuburb(event.feature);
          map.panTo(event.latLng);
       });
+      map.data.addListener("mouseover", (event) => {
+       map.data.overrideStyle(event.feature, { strokeWeight: 3 });
+      });
+      map.data.addListener("mouseout", (event) => {
+       map.data.overrideStyle(event.feature, { strokeWeight: 1 });
+      });
     }
     //
     // Handle selection
     function selectSuburb(feature) {
       map.data.revertStyle();
-      map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'red'});
+      map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'blue'});
       // Handle different naming
       function capitalizeFirstLetter(str) {
         var splitStr = str.toLowerCase().split(' ');

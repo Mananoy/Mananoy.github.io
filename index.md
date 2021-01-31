@@ -355,6 +355,7 @@ function drawSoldAveragePriceChart() {
                <!--extract response data-->
                var data = response.getDataTable();
                console.log(data);
+               console.log(data.getProperties(1, 1));
                <!--Set chart options-->
                var options = {'title':'Rent EventCount',
                               'width':680,

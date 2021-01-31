@@ -223,6 +223,16 @@ function drawSoldAveragePriceChart() {
       }
       suburb_name = feature.getProperty("name");
       suburb_name = capitalizeFirstLetter(suburb_name);
+      $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+         validity = false;
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                validity = true;
+             }
+         });
+         return validity;
+      });
     }
     //
     // Handle selection
@@ -243,16 +253,6 @@ function drawSoldAveragePriceChart() {
       suburb_name = feature.getProperty("name");
       suburb_name = capitalizeFirstLetter(suburb_name);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
-      $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
-         validity = false;
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                validity = true;
-             }
-         });
-         return validity;
-      });
     }
     //        
     //
@@ -261,6 +261,7 @@ function drawSoldAveragePriceChart() {
     //
     //
     // change data here
+    suburb_name = document.getElementById('selected_suburb_name').innerHTML;
     updateChart(suburb_name);
     function build_array()
     {

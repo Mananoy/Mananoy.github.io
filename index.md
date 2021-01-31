@@ -366,7 +366,7 @@ function drawSoldAveragePriceChart() {
                var data = response.getDataTable();
                console.log(data);
                // check data
-               for (i=0; i<12; i++)
+               for (i=data.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data.getValue(i, 1));
                   if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
@@ -406,7 +406,7 @@ function drawSoldAveragePriceChart() {
                var data2 = response.getDataTable();
                console.log(data2);
                 // check data
-               for (i=0; i<12; i++)
+               for (i=data.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
@@ -446,7 +446,7 @@ function drawSoldAveragePriceChart() {
                var data3 = response.getDataTable();
                console.log(data3);
                 // check data
-               for (i=0; i<12; i++)
+               for (i=data.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
@@ -486,7 +486,7 @@ function drawSoldAveragePriceChart() {
                var data4 = response.getDataTable();
                console.log(data4);
                 // check data
-               for (i=0; i<12; i++)
+               for (i=data.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)

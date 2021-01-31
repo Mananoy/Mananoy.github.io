@@ -250,7 +250,7 @@ function drawSoldAveragePriceChart() {
              }
          });
          return validity;
-      )};
+      });
     };
     //        
     //

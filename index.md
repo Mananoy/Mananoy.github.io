@@ -238,7 +238,9 @@ function drawSoldAveragePriceChart() {
     // Handle selection
     function selectSuburb(feature) {
       map.data.revertStyle();
-      map.data.removeProperty("selected")
+      map.data.forEach(function selectSuburb(feature){
+         feature.removeProperty("selected");
+      })
       feature.setProperty("selected", true);
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'blue'});
       // Handle different naming

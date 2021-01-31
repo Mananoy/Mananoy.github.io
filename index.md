@@ -194,8 +194,8 @@ function drawSoldAveragePriceChart() {
       });
       map.data.addListener("mouseover", (event) => {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
-         console.log("event.feature.fillColor in:");
-         console.log(event.feature.fillColor);
+         console.log("event.feature in:");
+         console.log(event.feature);
          if (event.feature.fillColor != "blue")
          {
             // Handle different naming

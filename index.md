@@ -194,9 +194,9 @@ function drawSoldAveragePriceChart() {
       });
       map.data.addListener("mouseover", (event) => {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
-         console.log("map.data.style.fillColor in:");
-         console.log(map.data.style.fillColor);
-         if (map.data.style.fillColor != "blue" || map.data.style.fillColor == null)
+         console.log("event.feature.style.fillColor in:");
+         console.log(event.feature.style.fillColor);
+         if (event.feature.style.fillColor != "blue")
          {
             // Handle different naming
             function capitalizeFirstLetter(str) {
@@ -230,9 +230,9 @@ function drawSoldAveragePriceChart() {
          return;
       });
       map.data.addListener("mouseout", (event) => {
-         console.log("map.data.style.fillColor out:");
-         console.log(map.data.style.fillColor);
-         if (map.data.style.fillColor != "blue" || map.data.style.fillColor == null)
+         console.log("event.feature.style.fillColor out:");
+         console.log(event.feature.style.fillColor);
+         if (event.feature.style.fillColor != "blue")
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
          }
@@ -406,7 +406,7 @@ function drawSoldAveragePriceChart() {
                var data2 = response.getDataTable();
                console.log(data2);
                 // check data
-               for (i=data.getNumberOfRows(); i<12; i++)
+               for (i=data2.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
@@ -446,7 +446,7 @@ function drawSoldAveragePriceChart() {
                var data3 = response.getDataTable();
                console.log(data3);
                 // check data
-               for (i=data.getNumberOfRows(); i<12; i++)
+               for (i=data3.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
@@ -486,7 +486,7 @@ function drawSoldAveragePriceChart() {
                var data4 = response.getDataTable();
                console.log(data4);
                 // check data
-               for (i=data.getNumberOfRows(); i<12; i++)
+               for (i=data4.getNumberOfRows(); i<12; i++)
                {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)

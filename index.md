@@ -194,8 +194,8 @@ function drawSoldAveragePriceChart() {
       });
       map.data.addListener("mouseover", (event) => {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
-         console.log("map.data.fillColor in:");
-         console.log(map.data.fillColor);
+         console.log("map.data.style.fillColor out:");
+         console.log(map.data.style.fillColor);
          if (map.data.fillColor != "blue")
          {
             // Handle different naming
@@ -230,8 +230,8 @@ function drawSoldAveragePriceChart() {
          return;
       });
       map.data.addListener("mouseout", (event) => {
-         console.log("map.data.fillColor out:");
-         console.log(map.data.fillColor);
+         console.log("map.data.style.fillColor out:");
+         console.log(map.data.style.fillColor);
          if (map.data.fillColor != "blue")
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  

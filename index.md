@@ -147,6 +147,7 @@ function drawSoldAveragePriceChart() {
 </script>
 <script>
     let map;
+    let last_feature = null;
     function initMap() {
       // Set basic params
       var mapOptions = {
@@ -184,6 +185,7 @@ function drawSoldAveragePriceChart() {
       map.data.loadGeoJson('script/features-8.json', {}, function() {
          // initialise Braindwood as selected
          feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
+         last_feature = feat;
          map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'blue'});
       });
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});
@@ -366,7 +368,7 @@ function drawSoldAveragePriceChart() {
                var data = response.getDataTable();
                console.log(data);
                // check data
-               for (i=data.getNumberOfRows(); i<12; i++)
+               for (i=0; i<data.getNumberOfRows(); i++)
                {
                   //console.log(data.getValue(i, 1));
                   if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
@@ -406,7 +408,7 @@ function drawSoldAveragePriceChart() {
                var data2 = response.getDataTable();
                console.log(data2);
                 // check data
-               for (i=data2.getNumberOfRows(); i<12; i++)
+               for (i=0; i<data2.getNumberOfRows(); i++)
                {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
@@ -446,7 +448,7 @@ function drawSoldAveragePriceChart() {
                var data3 = response.getDataTable();
                console.log(data3);
                 // check data
-               for (i=data3.getNumberOfRows(); i<12; i++)
+               for (i=0; i<data3.getNumberOfRows(); i++)
                {
                   //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
@@ -486,7 +488,7 @@ function drawSoldAveragePriceChart() {
                var data4 = response.getDataTable();
                console.log(data4);
                 // check data
-               for (i=data4.getNumberOfRows(); i<12; i++)
+               for (i=0; i<data4.getNumberOfRows(); i++)
                {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)

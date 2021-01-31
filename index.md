@@ -194,9 +194,7 @@ function drawSoldAveragePriceChart() {
       });
       map.data.addListener("mouseover", (event) => {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
-         console.log("event.feature in:");
-         console.log(event.feature);
-         if (event.feature.fillColor != "blue")
+         if (!event.feature.getProperty("selected"))
          {
             // Handle different naming
             function capitalizeFirstLetter(str) {
@@ -230,9 +228,7 @@ function drawSoldAveragePriceChart() {
          return;
       });
       map.data.addListener("mouseout", (event) => {
-         //console.log("event.feature.fillColor out:");
-         //console.log(event.feature.fillColor);
-         if (event.feature.fillColor != "blue")
+         if (!event.feature.getProperty("selected"))
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
          }
@@ -242,6 +238,8 @@ function drawSoldAveragePriceChart() {
     // Handle selection
     function selectSuburb(feature) {
       map.data.revertStyle();
+      map.data.removeProperty("selected")
+      feature.setProperty("selected", true);
       map.data.overrideStyle(feature, {fillOpacity: 0.1, fillColor: 'blue'});
       // Handle different naming
       function capitalizeFirstLetter(str) {

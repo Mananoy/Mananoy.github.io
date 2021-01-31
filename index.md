@@ -196,7 +196,7 @@ function drawSoldAveragePriceChart() {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
          console.log("map.data.style.fillColor in:");
          console.log(map.data.style.fillColor);
-         if (map.data.style.fillColor != "blue")
+         if (map.data.style.fillColor != "blue" || map.data.style.fillColor == null)
          {
             // Handle different naming
             function capitalizeFirstLetter(str) {
@@ -232,7 +232,7 @@ function drawSoldAveragePriceChart() {
       map.data.addListener("mouseout", (event) => {
          console.log("map.data.style.fillColor out:");
          console.log(map.data.style.fillColor);
-         if (map.data.style.fillColor != "blue")
+         if (map.data.style.fillColor != "blue" || map.data.style.fillColor == null)
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
          }

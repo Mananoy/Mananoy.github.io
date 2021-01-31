@@ -356,7 +356,6 @@ function drawSoldAveragePriceChart() {
                var data = response.getDataTable();
                console.log(data);
                // check data
-               ok = true;
                for (i=0; i<12; i++)
                {
                   console.log(data.getValue(i, 1));
@@ -396,6 +395,16 @@ function drawSoldAveragePriceChart() {
                <!--extract response data-->
                var data2 = response.getDataTable();
                console.log(data2);
+                // check data
+               for (i=0; i<12; i++)
+               {
+                  console.log(data.getValue(i, 1));
+                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  {
+                     alert("No data found for Rent Average Price for" + suburb_name);          
+                     return;        
+                  }
+               }
                <!--Set chart options-->
                var options = {'title':'Rent AveragePrice',
                               'width':680,
@@ -426,6 +435,16 @@ function drawSoldAveragePriceChart() {
                <!--extract response data-->
                var data3 = response.getDataTable();
                console.log(data3);
+                // check data
+               for (i=0; i<12; i++)
+               {
+                  console.log(data.getValue(i, 1));
+                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  {
+                     alert("No data found for Sold Event Count for" + suburb_name);          
+                     return;        
+                  }
+               }
                <!--Set chart options-->
                var options = {'title':'Sold EventCount',
                               'width':680,
@@ -456,6 +475,16 @@ function drawSoldAveragePriceChart() {
                <!--extract response data-->
                var data4 = response.getDataTable();
                console.log(data4);
+                // check data
+               for (i=0; i<12; i++)
+               {
+                  console.log(data.getValue(i, 1));
+                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  {
+                     alert("No data found for Sold Average Price for" + suburb_name);          
+                     return;        
+                  }
+               }
                <!--Set chart options-->
                var options = {'title':'Sold AveragePrice',
                               'width':680,

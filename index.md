@@ -191,12 +191,37 @@ function drawSoldAveragePriceChart() {
          map.panTo(event.latLng);
       });
       map.data.addListener("mouseover", (event) => {
-       map.data.overrideStyle(event.feature, { strokeWeight: 3 });
+         map.data.overrideStyle(event.feature, {strokeWeight: 3});
+         validity = checkData(event.feature);
+         if (validity == true){
+            map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'green' });
+         }
+         else
+         {
+            map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'red' });
+         }
       });
       map.data.addListener("mouseout", (event) => {
-       map.data.overrideStyle(event.feature, { strokeWeight: 1 });
+         map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});
       });
     }
+    //
+    //handle validity
+    function checkData(feature){
+      // Handle different naming
+      function capitalizeFirstLetter(str) {
+        var splitStr = str.toLowerCase().split(' ');
+        for (var i = 0; i < splitStr.length; i++) {
+            // You do not need to check if i is larger than splitStr length, as your for does that for you
+            // Assign it back to the array
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+        }
+        // Directly return the joined string
+        return splitStr.join(' '); 
+      }
+      suburb_name = feature.getProperty("name");
+      suburb_name = capitalizeFirstLetter(suburb_name);
+    };
     //
     // Handle selection
     function selectSuburb(feature) {
@@ -216,219 +241,229 @@ function drawSoldAveragePriceChart() {
       suburb_name = feature.getProperty("name");
       suburb_name = capitalizeFirstLetter(suburb_name);
       document.getElementById('selected_suburb_name').innerHTML = suburb_name;
-      suburb_name = feature.getProperty("name");
-      //        
-      //
-      //
-      //        
-      //
-      //
-      // change data here
-      updateChart(suburb_name);
-      function build_array()
-      {
-          var list = [];
-          var count = 0;
-          var lock = false;
-          for ( var counter1 = 0; counter1 < 26; counter1++)
-          {
-              for ( var counter2 = 0; counter2 < 26; counter2++)
-              {
-                  for ( var counter3 = 0; counter3 < 26; counter3++)
-                  {
-                      var value= ""
-                      if (counter1 != 0)
-                      {
-                          value = String.fromCharCode(counter1+64);
-                      }
-                      if ( (counter1 != 0 || counter2 == 0) && lock == true)
-                      {
-                          value = value + String.fromCharCode(counter2+65);
-                      }
-                      else if (counter1 != 0 || counter2 != 0)
-                      {
-                          value = value + String.fromCharCode(counter2+64);
-                      }
-                      if(counter3 == 25){
-                          lock = true;
-                      }
-                      value = value + String.fromCharCode(counter3+65);
-                      list[count] = value;
-                      count = count + 1;
-                  }
-                  // bug fix
-                  if (counter2 == 25 && counter1 == 0)
-                  {
-                     for ( var counter3 = 0; counter3 < 26; counter3++)
-                     {
-                         var value= "";
-                         value = value + String.fromCharCode(counter2+65);
-                         value = value + String.fromCharCode(counter3+65);
-                         list[count] = value;
-                         count = count + 1;
-                     }
-                  }
-              }
-          }
-          return list;
-      }
-      function updateChart(suburb_name){
-         //First we need the place of the surburb for query
-         var array = build_array();
-         //console.log("array:");
-         //console.log(array);
-         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
-            var index = 2;
-            var place = " ";
-            $.each(data, function(key, value) {
-                value.id = array[index];
-                index = index + 1;
-            });
-            console.log("map produced in mapper:");
-            console.log(data);
-            $.each(data, function(key, value) {
-                if (key.includes(suburb_name))
-                {
-                   console.log("found in map with id:");
-                   place = value.id
-                   console.log(place);
-                }
-            });
-            if (place == " ")
-            {
-               alert("No data found for " + suburb_name);
-               return;
-            }
-            //
-            //
-            //
-            drawRentEventCountChart();
-            drawRentAveragePriceChart();
-            drawSoldEventCountChart();
-            drawSoldAveragePriceChart();
-            //
-            //We now have the id, Create a query to spreadsheet for the data
-            function drawRentEventCountChart(){
-               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               //Set Query
-               query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 var data = response.getDataTable();
-                 console.log(data);
-                 <!--Set chart options-->
-                 var options = {'title':'Rent EventCount',
-                                'width':680,
-                                'height':400,
-                                pointSize: 5,
-                                legend: { position: 'bottom' }
-                                };
-                 <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-                 chart.draw(data, options);
-               }
-            }
-            function drawRentAveragePriceChart(){
-               <!--Create a query to spreadsheet.-->
-               var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               <!--Set Query-->
-               <!--For Rent EventCount-->
-               query2.setQuery("select B, " + place + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 var data2 = response.getDataTable();
-                 console.log(data2);
-                 <!--Set chart options-->
-                 var options = {'title':'Rent AveragePrice',
-                                'width':680,
-                                'height':400,
-                                pointSize: 5,
-                                legend: { position: 'bottom' }
-                                };
-                 <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-                 chart2.draw(data2, options);
-               }
-            }
-            function drawSoldEventCountChart(){
-               <!--Create a query to spreadsheet.-->
-               var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               <!--Set Query-->
-               <!--For Rent EventCount-->
-               query3.setQuery("select B, " + place + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query3.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 var data3 = response.getDataTable();
-                 console.log(data3);
-                 <!--Set chart options-->
-                 var options = {'title':'Sold EventCount',
-                                'width':680,
-                                'height':400,
-                                pointSize: 5,
-                                legend: { position: 'bottom' }
-                                };
-                 <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-                 chart3.draw(data3, options);
-               }
-            }
-            function drawSoldAveragePriceChart(){
-               <!--Create a query to spreadsheet.-->
-               var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               <!--Set Query-->
-               <!--For Rent EventCount-->
-               query4.setQuery("select B, " + place + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query4.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 var data4 = response.getDataTable();
-                 console.log(data4);
-                 <!--Set chart options-->
-                 var options = {'title':'Sold AveragePrice',
-                                'width':680,
-                                'height':400,
-                                pointSize: 5,
-                                legend: { position: 'bottom' }
-                                };
-                 <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-                 chart4.draw(data4, options);
-               }
-            }
+      $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+         validity = false;
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                validity = true;
+             }
          });
-      };
+         return validity;
+      )};
+    };
+    //        
+    //
+    //
+    //        
+    //
+    //
+    // change data here
+    updateChart(suburb_name);
+    function build_array()
+    {
+        var list = [];
+        var count = 0;
+        var lock = false;
+        for ( var counter1 = 0; counter1 < 26; counter1++)
+        {
+            for ( var counter2 = 0; counter2 < 26; counter2++)
+            {
+                for ( var counter3 = 0; counter3 < 26; counter3++)
+                {
+                    var value= ""
+                    if (counter1 != 0)
+                    {
+                        value = String.fromCharCode(counter1+64);
+                    }
+                    if ( (counter1 != 0 || counter2 == 0) && lock == true)
+                    {
+                        value = value + String.fromCharCode(counter2+65);
+                    }
+                    else if (counter1 != 0 || counter2 != 0)
+                    {
+                        value = value + String.fromCharCode(counter2+64);
+                    }
+                    if(counter3 == 25){
+                        lock = true;
+                    }
+                    value = value + String.fromCharCode(counter3+65);
+                    list[count] = value;
+                    count = count + 1;
+                }
+                // bug fix
+                if (counter2 == 25 && counter1 == 0)
+                {
+                   for ( var counter3 = 0; counter3 < 26; counter3++)
+                   {
+                       var value= "";
+                       value = value + String.fromCharCode(counter2+65);
+                       value = value + String.fromCharCode(counter3+65);
+                       list[count] = value;
+                       count = count + 1;
+                   }
+                }
+            }
+        }
+        return list;
     }
+    function updateChart(suburb_name){
+       //First we need the place of the surburb for query
+       var array = build_array();
+       //console.log("array:");
+       //console.log(array);
+       $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+          var index = 2;
+          var place = " ";
+          $.each(data, function(key, value) {
+              value.id = array[index];
+              index = index + 1;
+          });
+          console.log("map produced in mapper:");
+          console.log(data);
+          $.each(data, function(key, value) {
+              if (key.includes(suburb_name))
+              {
+                 console.log("found in map with id:");
+                 place = value.id
+                 console.log(place);
+              }
+          });
+          if (place == " ")
+          {
+             alert("No data found for " + suburb_name);
+             return;
+          }
+          //
+          //
+          //
+          drawRentEventCountChart();
+          drawRentAveragePriceChart();
+          drawSoldEventCountChart();
+          drawSoldAveragePriceChart();
+          //
+          //We now have the id, Create a query to spreadsheet for the data
+          function drawRentEventCountChart(){
+             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+             //Set Query
+             query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
+             <!--send query and handle response-->
+             query.send(handleQueryResponse);
+             <!--handler function-->
+             function handleQueryResponse(response) {
+               // Called when the query response is returned
+               if (response.isError()) {
+                 alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                 return;
+               }
+               <!--extract response data-->
+               var data = response.getDataTable();
+               console.log(data);
+               <!--Set chart options-->
+               var options = {'title':'Rent EventCount',
+                              'width':680,
+                              'height':400,
+                              pointSize: 5,
+                              legend: { position: 'bottom' }
+                              };
+               <!--Instantiate and draw our chart, passing in some options.-->
+               var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+               chart.draw(data, options);
+             }
+          }
+          function drawRentAveragePriceChart(){
+             <!--Create a query to spreadsheet.-->
+             var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+             <!--Set Query-->
+             <!--For Rent EventCount-->
+             query2.setQuery("select B, " + place + " where A contains 'Rent AveragePrice'");
+             <!--send query and handle response-->
+             query2.send(handleQueryResponse);
+             <!--handler function-->
+             function handleQueryResponse(response) {
+               // Called when the query response is returned
+               if (response.isError()) {
+                 alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                 return;
+               }
+               <!--extract response data-->
+               var data2 = response.getDataTable();
+               console.log(data2);
+               <!--Set chart options-->
+               var options = {'title':'Rent AveragePrice',
+                              'width':680,
+                              'height':400,
+                              pointSize: 5,
+                              legend: { position: 'bottom' }
+                              };
+               <!--Instantiate and draw our chart, passing in some options.-->
+               var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+               chart2.draw(data2, options);
+             }
+          }
+          function drawSoldEventCountChart(){
+             <!--Create a query to spreadsheet.-->
+             var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+             <!--Set Query-->
+             <!--For Rent EventCount-->
+             query3.setQuery("select B, " + place + " where A contains 'Sold EventCount'");
+             <!--send query and handle response-->
+             query3.send(handleQueryResponse);
+             <!--handler function-->
+             function handleQueryResponse(response) {
+               // Called when the query response is returned
+               if (response.isError()) {
+                 alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                 return;
+               }
+               <!--extract response data-->
+               var data3 = response.getDataTable();
+               console.log(data3);
+               <!--Set chart options-->
+               var options = {'title':'Sold EventCount',
+                              'width':680,
+                              'height':400,
+                              pointSize: 5,
+                              legend: { position: 'bottom' }
+                              };
+               <!--Instantiate and draw our chart, passing in some options.-->
+               var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+               chart3.draw(data3, options);
+             }
+          }
+          function drawSoldAveragePriceChart(){
+             <!--Create a query to spreadsheet.-->
+             var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+             <!--Set Query-->
+             <!--For Rent EventCount-->
+             query4.setQuery("select B, " + place + " where A contains 'Sold AveragePrice'");
+             <!--send query and handle response-->
+             query4.send(handleQueryResponse);
+             <!--handler function-->
+             function handleQueryResponse(response) {
+               // Called when the query response is returned
+               if (response.isError()) {
+                 alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                 return;
+               }
+               <!--extract response data-->
+               var data4 = response.getDataTable();
+               console.log(data4);
+               <!--Set chart options-->
+               var options = {'title':'Sold AveragePrice',
+                              'width':680,
+                              'height':400,
+                              pointSize: 5,
+                              legend: { position: 'bottom' }
+                              };
+               <!--Instantiate and draw our chart, passing in some options.-->
+               var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
+               chart4.draw(data4, options);
+             }
+          }
+       });
+    };
+  }
 </script>
 <!--test for google map-->
 

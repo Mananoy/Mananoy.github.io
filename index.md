@@ -398,8 +398,8 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data.getValue(i, 1));
-                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  console.log(data2.getValue(i, 1));
+                  if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
                   {
                      alert("No data found for Rent Average Price for" + suburb_name);          
                      return;        
@@ -438,8 +438,8 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data.getValue(i, 1));
-                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  console.log(data3.getValue(i, 1));
+                  if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
                   {
                      alert("No data found for Sold Event Count for" + suburb_name);          
                      return;        
@@ -478,8 +478,8 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data.getValue(i, 1));
-                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  console.log(data4.getValue(i, 1));
+                  if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)
                   {
                      alert("No data found for Sold Average Price for" + suburb_name);          
                      return;        

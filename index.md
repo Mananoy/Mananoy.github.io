@@ -212,20 +212,23 @@ function drawSoldAveragePriceChart() {
             $.each(data, function(key, value) {
                 if (key.includes(suburb_name))
                 {
-                   map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'darkgreen' });
+                   map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'chartreuse' });
                    validity = true;
                    return;
                 }
             });
             if (validity == false) 
             {
-                map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'red' });
+               map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'red' });
             }
             return;
          });
       });
       map.data.addListener("mouseout", (event) => {
-         map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});
+         if (map.data.fillColor != "blue")
+         {
+            map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
+         }
       });
     }
     //
@@ -358,10 +361,10 @@ function drawSoldAveragePriceChart() {
                // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data.getValue(i, 1));
+                  //console.log(data.getValue(i, 1));
                   if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
                   {
-                     alert("No data found for Rent Event Count for" + suburb_name);          
+                     alert("Data found for Rent Event Count for " + suburb_name + " are inaccurate or wrong");          
                      return;        
                   }
                }
@@ -398,10 +401,10 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data2.getValue(i, 1));
+                  //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
                   {
-                     alert("No data found for Rent Average Price for" + suburb_name);          
+                     alert("Data found for Rent Average Price for " + suburb_name + " are inaccurate or wrong");          
                      return;        
                   }
                }
@@ -438,10 +441,10 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data3.getValue(i, 1));
+                  //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
                   {
-                     alert("No data found for Sold Event Count for" + suburb_name);          
+                     alert("Data found for Sold Event Count for " + suburb_name + " are inaccurate or wrong");          
                      return;        
                   }
                }
@@ -478,10 +481,10 @@ function drawSoldAveragePriceChart() {
                 // check data
                for (i=0; i<12; i++)
                {
-                  console.log(data4.getValue(i, 1));
+                  //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)
                   {
-                     alert("No data found for Sold Average Price for" + suburb_name);          
+                     alert("Data found for Sold Average Price for " + suburb_name + " are inaccurate or wrong");          
                      return;        
                   }
                }

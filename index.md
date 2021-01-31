@@ -194,35 +194,38 @@ function drawSoldAveragePriceChart() {
       });
       map.data.addListener("mouseover", (event) => {
          map.data.overrideStyle(event.feature, {strokeWeight: 3});
-         // Handle different naming
-         function capitalizeFirstLetter(str) {
-           var splitStr = str.toLowerCase().split(' ');
-           for (var i = 0; i < splitStr.length; i++) {
-               // You do not need to check if i is larger than splitStr length, as your for does that for you
-               // Assign it back to the array
-               splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-           }
-           // Directly return the joined string
-           return splitStr.join(' '); 
-         }
-         suburb_name = event.feature.getProperty("name");
-         suburb_name = capitalizeFirstLetter(suburb_name);
-         $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
-            validity = false;
-            $.each(data, function(key, value) {
-                if (key.includes(suburb_name))
-                {
-                   map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'chartreuse' });
-                   validity = true;
-                   return;
-                }
-            });
-            if (validity == false) 
-            {
-               map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'red' });
+         if (map.data.fillColor != "blue")
+         {
+            // Handle different naming
+            function capitalizeFirstLetter(str) {
+              var splitStr = str.toLowerCase().split(' ');
+              for (var i = 0; i < splitStr.length; i++) {
+                  // You do not need to check if i is larger than splitStr length, as your for does that for you
+                  // Assign it back to the array
+                  splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+              }
+              // Directly return the joined string
+              return splitStr.join(' '); 
             }
-            return;
-         });
+            suburb_name = event.feature.getProperty("name");
+            suburb_name = capitalizeFirstLetter(suburb_name);
+            $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+               validity = false;
+               $.each(data, function(key, value) {
+                   if (key.includes(suburb_name))
+                   {
+                      map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'chartreuse' });
+                      validity = true;
+                      return;
+                   }
+               });
+               if (validity == false) 
+               {
+                  map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'red' });
+               }
+            });
+         }
+         return;
       });
       map.data.addListener("mouseout", (event) => {
          if (map.data.fillColor != "blue")

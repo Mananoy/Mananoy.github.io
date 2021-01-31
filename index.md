@@ -359,8 +359,8 @@ function drawSoldAveragePriceChart() {
                ok = true;
                for (i=0; i<12; i++)
                {
-                  console.log(data.getValue(1, i));
-                  if(data.getValue(1, i) == "None" || data.getValue(1, i) == null)
+                  console.log(data.getValue(i, 1));
+                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
                   {
                      alert("No data found for Rent Event Count for" + suburb_name);          
                      return;        

@@ -147,7 +147,6 @@ function drawSoldAveragePriceChart() {
 </script>
 <script>
     let map;
-    let last_feature = null;
     function initMap() {
       // Set basic params
       var mapOptions = {
@@ -185,7 +184,7 @@ function drawSoldAveragePriceChart() {
       map.data.loadGeoJson('script/features-8.json', {}, function() {
          // initialise Braindwood as selected
          feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
-         last_feature = feat;
+         feat.setProperty("selected", true);
          map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'blue'});
       });
       map.data.setStyle({fillOpacity: 0.0, strokeWeight: 1, strokeColor: 'lightslategrey'});

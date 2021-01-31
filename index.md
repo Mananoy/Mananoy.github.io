@@ -338,10 +338,10 @@ function drawSoldAveragePriceChart() {
           drawSoldEventCountChart();
           drawSoldAveragePriceChart();
           //
-          //We now have the id, Create a query to spreadsheet for the data
+          // We now have the id, Create a query to spreadsheet for the data
           function drawRentEventCountChart(){
              var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-             //Set Query
+             // Set Query
              query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
              <!--send query and handle response-->
              query.send(handleQueryResponse);
@@ -355,8 +355,17 @@ function drawSoldAveragePriceChart() {
                <!--extract response data-->
                var data = response.getDataTable();
                console.log(data);
-               console.log("here:");
-               console.log(data.getValue(1, 1));
+               // check data
+               ok = true;
+               for (i=0; i<12; i++)
+               {
+                  console.log(data.getValue(1, i));
+                  if(data.getValue(1, i) == "None" || data.getValue(1, i) == null)
+                  {
+                     alert("No data found for Rent Event Count for" + suburb_name);          
+                     return;        
+                  }
+               }
                <!--Set chart options-->
                var options = {'title':'Rent EventCount',
                               'width':680,

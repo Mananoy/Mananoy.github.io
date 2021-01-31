@@ -139,6 +139,8 @@ function drawSoldAveragePriceChart() {
 <!--test for google chart-->
 
 
+
+
 <!--test for google map-->
 <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPfC9HmRWGoP4pluFyWh02pCSnPYVqjM&callback=initMap">
@@ -221,7 +223,7 @@ function drawSoldAveragePriceChart() {
       }
       suburb_name = feature.getProperty("name");
       suburb_name = capitalizeFirstLetter(suburb_name);
-    };
+    }
     //
     // Handle selection
     function selectSuburb(feature) {
@@ -251,7 +253,7 @@ function drawSoldAveragePriceChart() {
          });
          return validity;
       });
-    };
+    }
     //        
     //
     //
@@ -463,7 +465,6 @@ function drawSoldAveragePriceChart() {
           }
        });
     };
-  }
 </script>
 <!--test for google map-->
 

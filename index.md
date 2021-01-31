@@ -212,7 +212,7 @@ function drawSoldAveragePriceChart() {
             $.each(data, function(key, value) {
                 if (key.includes(suburb_name))
                 {
-                   map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'green' });
+                   map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'darkgreen' });
                    validity = true;
                    return;
                 }

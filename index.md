@@ -369,9 +369,9 @@ function drawSoldAveragePriceChart() {
                for (i=0; i<data.getNumberOfRows(); i++)
                {
                   //console.log(data.getValue(i, 1));
-                  if(data.getValue(i, 1) == "None" || data.getValue(i, 1) == null)
+                  if(data.getValue(i, 1) == "None")
                   {
-                     data.setValue(i, 1, Null);
+                     data.setValue(i, 1, null);
                   }
                }
                <!--Set chart options-->
@@ -409,9 +409,9 @@ function drawSoldAveragePriceChart() {
                for (i=0; i<data2.getNumberOfRows(); i++)
                {
                   //console.log(data2.getValue(i, 1));
-                  if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
+                  if(data2.getValue(i, 1) == "None")
                   {
-                     data2.setValue(i, 1, Null);       
+                     data2.setValue(i, 1, null);       
                   }
                }
                <!--Set chart options-->
@@ -449,9 +449,9 @@ function drawSoldAveragePriceChart() {
                for (i=0; i<data3.getNumberOfRows(); i++)
                {
                   //console.log(data3.getValue(i, 1));
-                  if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
+                  if(data3.getValue(i, 1) == "None")
                   {
-                     data3.setValue(i, 1, Null);        
+                     data3.setValue(i, 1, null);        
                   }
                }
                <!--Set chart options-->
@@ -489,9 +489,9 @@ function drawSoldAveragePriceChart() {
                for (i=0; i<data4.getNumberOfRows(); i++)
                {
                   //console.log(data4.getValue(i, 1));
-                  if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)
+                  if(data4.getValue(i, 1) == "None")
                   {
-                     data4.setValue(i, 1, Null);     
+                     data4.setValue(i, 1, null);     
                   }
                }
                <!--Set chart options-->

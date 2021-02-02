@@ -194,7 +194,6 @@ function drawSoldAveragePriceChart() {
          map.panTo(event.latLng);
       });
       map.data.addListener("mouseover", (event) => {
-         map.data.overrideStyle(event.feature, {strokeWeight: 3});
          if (!event.feature.getProperty("selected"))
          {
             // Handle different naming
@@ -215,7 +214,7 @@ function drawSoldAveragePriceChart() {
                $.each(data, function(key, value) {
                    if (key.includes(suburb_name))
                    {
-                      map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'chartreuse' });
+                      map.data.overrideStyle(event.feature, { fillOpacity: 0.1, fillColor: 'chartreuse', strokeWeight: 3 });
                       validity = true;
                       return;
                    }

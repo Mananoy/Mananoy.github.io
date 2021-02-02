@@ -364,7 +364,6 @@ function drawSoldAveragePriceChart() {
                }
                <!--extract response data-->
                var data = response.getDataTable();
-               console.log(data);
                // check data
                for (i=0; i<data.getNumberOfRows(); i++)
                {
@@ -386,11 +385,8 @@ function drawSoldAveragePriceChart() {
                      data.removeColumn(2);
                      break;
                   }
-                  if(i==0)
-                  {
-                     console.log(data.getColumnType(1));   
-                  }
                }
+               console.log(data);
                <!--Set chart options-->
                var options = {'title':'Rent EventCount',
                               'width':680,
@@ -421,8 +417,7 @@ function drawSoldAveragePriceChart() {
                }
                <!--extract response data-->
                var data2 = response.getDataTable();
-               console.log(data2);
-                // check data
+               // check data
                for (i=0; i<data2.getNumberOfRows(); i++)
                {
                   //console.log(data2.getValue(i, 1));
@@ -443,11 +438,8 @@ function drawSoldAveragePriceChart() {
                      data2.removeColumn(2);
                      break;      
                   }
-                  if(i==0)
-                  {
-                     console.log(data2.getColumnType(1));        
-                  }
                }
+               console.log(data2);
                <!--Set chart options-->
                var options = {'title':'Rent AveragePrice',
                               'width':680,
@@ -478,8 +470,7 @@ function drawSoldAveragePriceChart() {
                }
                <!--extract response data-->
                var data3 = response.getDataTable();
-               console.log(data3);
-                // check data
+               // check data
                for (i=0; i<data3.getNumberOfRows(); i++)
                {
                   //console.log(data3.getValue(i, 1));
@@ -500,11 +491,8 @@ function drawSoldAveragePriceChart() {
                      data3.removeColumn(2);
                      break;    
                   }
-                  if(i==0)
-                  {
-                     console.log(data3.getColumnType(1));   
-                  }
                }
+               console.log(data3);
                <!--Set chart options-->
                var options = {'title':'Sold EventCount',
                               'width':680,
@@ -535,8 +523,7 @@ function drawSoldAveragePriceChart() {
                }
                <!--extract response data-->
                var data4 = response.getDataTable();
-               console.log(data4);
-                // check data
+               // check data
                for (i=0; i<data4.getNumberOfRows(); i++)
                {
                   //console.log(data4.getValue(i, 1));
@@ -557,11 +544,8 @@ function drawSoldAveragePriceChart() {
                      data4.removeColumn(2);
                      break;
                   }
-                  if(i==0)
-                  {
-                     console.log(data4.getColumnType(1));         
-                  }
                }
+               console.log(data4);
                <!--Set chart options-->
                var options = {'title':'Sold AveragePrice',
                               'width':680,

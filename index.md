@@ -371,7 +371,20 @@ function drawSoldAveragePriceChart() {
                   //console.log(data.getValue(i, 1));
                   if(data.getValue(i, 1) == "None")
                   {
-                     data.setValue(i, 1, );
+                     data.insertColumn(1, 'number', data.getColumnLabel(1));
+                     // copy values from column 2 (old column 1) to column 1, converted to numbers
+                     for (var i = 0; i < data.getNumberOfRows(); i++) {
+                         var val = data.getValue(i, 2);
+                         if (val != '' && val != null) {
+                             data.setValue(i, 1, new Number(val).valueOf());
+                         }
+                         else if (val == "None"){
+                             data.setValue(i, 1, new Number(null).valueOf());
+                         }
+                     }
+                     // remove column 2 (the old column 1)
+                     data.removeColumn(2);
+                     break;
                   }
                   if(i==0)
                   {
@@ -415,7 +428,20 @@ function drawSoldAveragePriceChart() {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None")
                   {
-                     data2.setValue(i, 1, );       
+                     data2.insertColumn(1, 'number', data.getColumnLabel(1));
+                     // copy values from column 2 (old column 1) to column 1, converted to numbers
+                     for (var i = 0; i < data2.getNumberOfRows(); i++) {
+                         var val = data2.getValue(i, 2);
+                         if (val != '' && val != null) {
+                             data2.setValue(i, 1, new Number(val).valueOf());
+                         }
+                         else if (val == "None"){
+                             data2.setValue(i, 1, new Number(null).valueOf());
+                         }
+                     }
+                     // remove column 2 (the old column 1)
+                     data2.removeColumn(2);
+                     break;      
                   }
                   if(i==0)
                   {
@@ -459,7 +485,20 @@ function drawSoldAveragePriceChart() {
                   //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None")
                   {
-                     data3.setValue(i, 1, );        
+                     data3.insertColumn(1, 'number', data3.getColumnLabel(1));
+                     // copy values from column 2 (old column 1) to column 1, converted to numbers
+                     for (var i = 0; i < data3.getNumberOfRows(); i++) {
+                         var val = data3.getValue(i, 2);
+                         if (val != '' && val != null) {
+                             data3.setValue(i, 1, new Number(val).valueOf());
+                         }
+                         else if (val == "None"){
+                             data3.setValue(i, 1, new Number(null).valueOf());
+                         }
+                     }
+                     // remove column 2 (the old column 1)
+                     data3.removeColumn(2);
+                     break;    
                   }
                   if(i==0)
                   {
@@ -503,7 +542,20 @@ function drawSoldAveragePriceChart() {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None")
                   {
-                     data4.setValue(i, 1, );     
+                     data4.insertColumn(1, 'number', data.getColumnLabel(1));
+                     // copy values from column 2 (old column 1) to column 1, converted to numbers
+                     for (var i = 0; i < data4.getNumberOfRows(); i++) {
+                         var val = data4.getValue(i, 2);
+                         if (val != '' && val != null) {
+                             data4.setValue(i, 1, new Number(val).valueOf());
+                         }
+                         else if (val == "None"){
+                             data4.setValue(i, 1, new Number(null).valueOf());
+                         }
+                     }
+                     // remove column 2 (the old column 1)
+                     data4.removeColumn(2);
+                     break;
                   }
                   if(i==0)
                   {

@@ -428,7 +428,7 @@ function drawSoldAveragePriceChart() {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None")
                   {
-                     data2.insertColumn(1, 'number', data.getColumnLabel(1));
+                     data2.insertColumn(1, 'number', data2.getColumnLabel(1));
                      // copy values from column 2 (old column 1) to column 1, converted to numbers
                      for (var i = 0; i < data2.getNumberOfRows(); i++) {
                          var val = data2.getValue(i, 2);
@@ -542,7 +542,7 @@ function drawSoldAveragePriceChart() {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None")
                   {
-                     data4.insertColumn(1, 'number', data.getColumnLabel(1));
+                     data4.insertColumn(1, 'number', data4.getColumnLabel(1));
                      // copy values from column 2 (old column 1) to column 1, converted to numbers
                      for (var i = 0; i < data4.getNumberOfRows(); i++) {
                          var val = data4.getValue(i, 2);

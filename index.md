@@ -222,7 +222,7 @@ function drawSoldAveragePriceChart() {
                });
                if (validity == false) 
                {
-                  map.data.overrideStyle(event.feature, { clickable: false, fillOpacity: 0.1, fillColor: 'red' });
+                  map.data.overrideStyle(event.feature, { clickable: false });
                }
             });
          }

@@ -379,7 +379,8 @@ function drawSoldAveragePriceChart() {
                               'width':680,
                               'height':400,
                               pointSize: 5,
-                              legend: { position: 'bottom' }
+                              legend: { position: 'bottom' },
+                              interpolateNulls
                               };
                <!--Instantiate and draw our chart, passing in some options.-->
                var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
@@ -418,7 +419,8 @@ function drawSoldAveragePriceChart() {
                               'width':680,
                               'height':400,
                               pointSize: 5,
-                              legend: { position: 'bottom' }
+                              legend: { position: 'bottom' },
+                              interpolateNulls
                               };
                <!--Instantiate and draw our chart, passing in some options.-->
                var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
@@ -457,7 +459,8 @@ function drawSoldAveragePriceChart() {
                               'width':680,
                               'height':400,
                               pointSize: 5,
-                              legend: { position: 'bottom' }
+                              legend: { position: 'bottom' },
+                              interpolateNulls
                               };
                <!--Instantiate and draw our chart, passing in some options.-->
                var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
@@ -496,7 +499,8 @@ function drawSoldAveragePriceChart() {
                               'width':680,
                               'height':400,
                               pointSize: 5,
-                              legend: { position: 'bottom' }
+                              legend: { position: 'bottom' },
+                              interpolateNulls
                               };
                <!--Instantiate and draw our chart, passing in some options.-->
                var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));

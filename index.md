@@ -410,7 +410,7 @@ function drawSoldAveragePriceChart() {
                   //console.log(data2.getValue(i, 1));
                   if(data2.getValue(i, 1) == "None" || data2.getValue(i, 1) == null)
                   {
-                     data.setValue(i, 1, null);       
+                     data2.setValue(i, 1, null);       
                   }
                }
                <!--Set chart options-->
@@ -449,7 +449,7 @@ function drawSoldAveragePriceChart() {
                   //console.log(data3.getValue(i, 1));
                   if(data3.getValue(i, 1) == "None" || data3.getValue(i, 1) == null)
                   {
-                     data.setValue(i, 1, null);        
+                     data3.setValue(i, 1, null);        
                   }
                }
                <!--Set chart options-->
@@ -488,7 +488,7 @@ function drawSoldAveragePriceChart() {
                   //console.log(data4.getValue(i, 1));
                   if(data4.getValue(i, 1) == "None" || data4.getValue(i, 1) == null)
                   {
-                     data.setValue(i, 1, null);     
+                     data4.setValue(i, 1, null);     
                   }
                }
                <!--Set chart options-->

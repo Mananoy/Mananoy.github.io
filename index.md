@@ -375,7 +375,7 @@ function drawSoldAveragePriceChart() {
                   }
                   if(i==0)
                   {
-                     getColumnType(columnIndex);   
+                     getColumnType(1);   
                   }
                }
                <!--Set chart options-->
@@ -419,7 +419,7 @@ function drawSoldAveragePriceChart() {
                   }
                   if(i==0)
                   {
-                     getColumnType(columnIndex);        
+                     getColumnType(1);        
                   }
                }
                <!--Set chart options-->
@@ -463,7 +463,7 @@ function drawSoldAveragePriceChart() {
                   }
                   if(i==0)
                   {
-                     getColumnType(columnIndex);   
+                     getColumnType(1);   
                   }
                }
                <!--Set chart options-->
@@ -507,7 +507,7 @@ function drawSoldAveragePriceChart() {
                   }
                   if(i==0)
                   {
-                     getColumnType(columnIndex);         
+                     getColumnType(1);         
                   }
                }
                <!--Set chart options-->

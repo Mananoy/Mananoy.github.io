@@ -601,9 +601,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2019 = value.id
-                console.log(place2019);
+                //console.log(place2019);
              }
          });
          if (place2019 == " ")
@@ -624,9 +624,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2018 = value.id
-                console.log(place2018);
+                //console.log(place2018);
              }
          });
          if (place2018 == " ")
@@ -647,9 +647,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2017 = value.id
-                console.log(place2017);
+                //console.log(place2017);
              }
          });
          if (place2017 == " ")
@@ -670,9 +670,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2016 = value.id
-                console.log(place2016);
+                //console.log(place2016);
              }
          });
          if (place2016 == " ")
@@ -693,9 +693,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2015 = value.id
-                console.log(place2015);
+                //console.log(place2015);
              }
          });
          if (place2015 == " ")
@@ -716,9 +716,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2014 = value.id
-                console.log(place2014);
+                //console.log(place2014);
              }
          });
          if (place2014 == " ")
@@ -739,9 +739,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2013 = value.id
-                console.log(place2013);
+                //console.log(place2013);
              }
          });
          if (place2013 == " ")
@@ -762,9 +762,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2012 = value.id
-                console.log(place2012);
+                //console.log(place2012);
              }
          });
          if (place2012 == " ")
@@ -785,9 +785,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2011 = value.id
-                console.log(place2011);
+                //console.log(place2011);
              }
          });
          if (place2011 == " ")
@@ -808,9 +808,9 @@ function drawSoldAveragePriceChart() {
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
-                console.log("found in map with id:");
+                //console.log("found in map with id:");
                 place2010 = value.id
-                console.log(place2010);
+                //console.log(place2010);
              }
          });
          if (place2010 == " ")

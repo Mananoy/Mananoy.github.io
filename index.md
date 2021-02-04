@@ -561,6 +561,12 @@ function drawSoldAveragePriceChart() {
           }
        });
     };
+    //
+    //
+    //
+    //
+    //
+    //
     function change_date(str){
       // we nned to get the place
       var suburb_name = document.getElementById('selected_suburb_name').innerHTML;
@@ -815,7 +821,7 @@ function drawSoldAveragePriceChart() {
       });
       var check = false;
       while (check == false){
-         if (place2019 != " " && place2018 != " " && place2017 != " " && place2016 != " " && place2015 != " " && place2014 != " " && place2013 != " " && place2012 != " " && place2011 != " " && place2010 != " " && )
+         if (place2019 != " " && place2018 != " " && place2017 != " " && place2016 != " " && place2015 != " " && place2014 != " " && place2013 != " " && place2012 != " " && place2011 != " " && place2010 != " ")
          {
             check == true;
             console.log("update complete");

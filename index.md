@@ -561,9 +561,13 @@ function drawSoldAveragePriceChart() {
           }
        });
     };
-    function change_year(str){
+    function change_date(str){
       // we nned to get the place
       var suburb_name = document.getElementById('selected_suburb_name').innerHTML;
+      console.log("name:");
+      console.log(suburb_name);
+      console.log("str:");
+      console.log(str);
       //First we build an array
       var array = build_array();
       //console.log("array:");
@@ -601,7 +605,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2019 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2018
       $.getJSON( "https://mananoy.github.io/script/Suburb2018.json", function( data ) {
          var index = 2;
@@ -624,7 +628,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2018 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2017
       $.getJSON( "https://mananoy.github.io/script/Suburb2017.json", function( data ) {
          var index = 2;
@@ -647,7 +651,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2017 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2016
       $.getJSON( "https://mananoy.github.io/script/Suburb2016.json", function( data ) {
          var index = 2;
@@ -670,7 +674,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2016 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2015
       $.getJSON( "https://mananoy.github.io/script/Suburb2015.json", function( data ) {
          var index = 2;
@@ -693,7 +697,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2015 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2014
       $.getJSON( "https://mananoy.github.io/script/Suburb2014.json", function( data ) {
          var index = 2;
@@ -716,7 +720,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2014 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2013
       $.getJSON( "https://mananoy.github.io/script/Suburb2013.json", function( data ) {
          var index = 2;
@@ -739,7 +743,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2013 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2012
       $.getJSON( "https://mananoy.github.io/script/Suburb2012.json", function( data ) {
          var index = 2;
@@ -762,7 +766,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2012 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2011
       $.getJSON( "https://mananoy.github.io/script/Suburb2011.json", function( data ) {
          var index = 2;
@@ -785,7 +789,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2011 data found for " + suburb_name);
             return;
          }
-      }
+      });
       // 2010
       $.getJSON( "https://mananoy.github.io/script/Suburb2010.json", function( data ) {
          var index = 2;
@@ -808,8 +812,16 @@ function drawSoldAveragePriceChart() {
             alert("No 2010 data found for " + suburb_name);
             return;
          }
+      });
+      var check = false;
+      while (check == false){
+         if (place2019 != " " && place2018 != " " && place2017 != " " && place2016 != " " && place2015 != " " && place2014 != " " && place2013 != " " && place2012 != " " && place2011 != " " && place2010 != " " && )
+         {
+            check == true;
+            console.log("update complete");
+         }
       }
-      //
+      /*
       //
       // prepare for query
       // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
@@ -836,6 +848,7 @@ function drawSoldAveragePriceChart() {
       else if (str == "10y"){
          
       }
+      */
     }
 </script>
 <!--test for google map-->
@@ -859,7 +872,8 @@ function drawSoldAveragePriceChart() {
    <div id="map_canvas"></div>
    
    <!--display suburb name-->
-   <h2 id="selected_suburb_name" text-align="center">Braidwood</h2>
+   <h2 id="selected_suburb_name" style="text-align: center">Braidwood</h2>
+   <a class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
    
    <!--Div that will hold the pie chart-->
    <!--Table and divs that hold the pie charts-->

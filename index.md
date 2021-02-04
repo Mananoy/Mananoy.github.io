@@ -894,13 +894,11 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
-              /*
               // need to halve the rows
               for (i=6; i<12; i++)
               {
                  data.removeRow(i);                                
               }
-              */
               console.log(data);
               // Set chart options
               var options = {'title':'Rent EventCount',
@@ -952,6 +950,11 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
+              // need to halve the rows
+              for (i=6; i<12; i++)
+              {
+                 data2.removeRow(i);                                
+              }
               console.log(data2);
               // Set chart options
               var options = {'title':'Rent AveragePrice',
@@ -1002,6 +1005,11 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
+              // need to halve the rows
+              for (i=6; i<12; i++)
+              {
+                 data3.removeRow(i);                                
+              }
               console.log(data3);
               // Set chart options
               var options = {'title':'Sold EventCount',
@@ -1051,6 +1059,11 @@ function drawSoldAveragePriceChart() {
                     data4.removeColumn(2);
                     break;
                  }
+              }
+              // need to halve the rows
+              for (i=6; i<12; i++)
+              {
+                 data4.removeRow(i);                                
               }
               console.log(data4);
               // Set chart options

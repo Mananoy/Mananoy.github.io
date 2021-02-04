@@ -596,8 +596,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2019 produced in mapper:");
-         console.log(data);
+         //console.log("map 2019 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -619,8 +619,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2018 produced in mapper:");
-         console.log(data);
+         //console.log("map 2018 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -642,8 +642,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2017 produced in mapper:");
-         console.log(data);
+         //console.log("map 2017 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -665,8 +665,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2016 produced in mapper:");
-         console.log(data);
+         //console.log("map 2016 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -688,8 +688,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2015 produced in mapper:");
-         console.log(data);
+         //console.log("map 2015 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -711,8 +711,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2014 produced in mapper:");
-         console.log(data);
+         //console.log("map 2014 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -734,8 +734,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2013 produced in mapper:");
-         console.log(data);
+         //console.log("map 2013 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -757,8 +757,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2012 produced in mapper:");
-         console.log(data);
+         //console.log("map 2012 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -780,8 +780,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2011 produced in mapper:");
-         console.log(data);
+         //console.log("map 2011 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -803,8 +803,8 @@ function drawSoldAveragePriceChart() {
              value.id = array[index];
              index = index + 1;
          });
-         console.log("map 2010 produced in mapper:");
-         console.log(data);
+         //console.log("map 2010 produced in mapper:");
+         //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
@@ -915,7 +915,7 @@ function drawSoldAveragePriceChart() {
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
-            query.setQuery("select B, C where A contains 'Rent AveragePrice'");
+            query.setQuery("select B, " + place2019 + " where A contains 'Rent AveragePrice'");
             <!--send query and handle response-->
             query.send(handleQueryResponse);
             <!--handler function-->
@@ -970,7 +970,7 @@ function drawSoldAveragePriceChart() {
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
-            query.setQuery("select B, C where A contains 'Sold EventCount'");
+            query.setQuery("select B, " + place2019 + " where A contains 'Sold EventCount'");
             <!--send query and handle response-->
             query.send(handleQueryResponse);
             <!--handler function-->
@@ -1025,7 +1025,7 @@ function drawSoldAveragePriceChart() {
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
-            query.setQuery("select B, C where A contains 'Sold AveragePrice'");
+            query.setQuery("select B, " + place2019 + " where A contains 'Sold AveragePrice'");
             <!--send query and handle response-->
             query.send(handleQueryResponse);
             <!--handler function-->

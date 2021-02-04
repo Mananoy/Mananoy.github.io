@@ -879,7 +879,9 @@ function drawSoldAveragePriceChart() {
    
    <!--display suburb name-->
    <h2 id="selected_suburb_name" style="text-align: center">Braidwood</h2>
-   <a class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
+   <div style="text-align: center;">
+      <a class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
+   </div>
    
    <!--Div that will hold the pie chart-->
    <!--Table and divs that hold the pie charts-->

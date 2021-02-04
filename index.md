@@ -858,224 +858,237 @@ function drawSoldAveragePriceChart() {
          //
          ///*
          if (str == "6m"){
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            // Set Query
-            query.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
-            <!--send query and handle response-->
-            query.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data = response.getDataTable();
-              // check data
-              for (i=0; i<data.getNumberOfRows(); i++)
-              {
-                 //console.log(data.getValue(i, 1));
-                 if(data.getValue(i, 1) == "None")
-                 {
-                    data.insertColumn(1, 'number', data.getColumnLabel(1));
-                    // copy values from column 2 (old column 1) to column 1, converted to numbers
-                    for (var i = 0; i < data.getNumberOfRows(); i++) {
-                        var val = data.getValue(i, 2);
-                        if (val != '' && val != null) {
-                            data.setValue(i, 1, new Number(val).valueOf());
-                        }
-                        else if (val == "None"){
-                            data.setValue(i, 1, new Number(null).valueOf());
-                        }
-                    }
-                    // remove column 2 (the old column 1)
-                    data.removeColumn(2);
-                    break;
+            halfRentEventCountChart();
+            halfRentAveragePriceChart();
+            halfSoldEventCountChart();
+            halfSoldAveragePriceChart();
+            //
+            function halfRentEventCountChart(){
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               // Set Query
+               query.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
                  }
-              }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data.removeRow(6);                                
-              }
-              console.log(data);
-              // Set chart options
-              var options = {'title':'Rent EventCount',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' },
-                             interpolateNulls: true
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-              chart.draw(data, options);
+                 <!--extract response data-->
+                 var data = response.getDataTable();
+                 // check data
+                 for (i=0; i<data.getNumberOfRows(); i++)
+                 {
+                    //console.log(data.getValue(i, 1));
+                    if(data.getValue(i, 1) == "None")
+                    {
+                       data.insertColumn(1, 'number', data.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data.getNumberOfRows(); i++) {
+                           var val = data.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data.removeColumn(2);
+                       break;
+                    }
+                 }
+                 // need to halve the rows
+                 for (i=6; i<12; i++)
+                 {
+                    data.removeRow(6);                                
+                 }
+                 console.log(data);
+                 // Set chart options
+                 var options = {'title':'Rent EventCount',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' },
+                                interpolateNulls: true
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+                 chart.draw(data, options);
+               }
             }
-            <!--Rent AveragePrice-->
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query.setQuery("select B, " + place2019 + " where A contains 'Rent AveragePrice'");
-            <!--send query and handle response-->
-            query.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data2 = response.getDataTable();
-              // check data
-              for (i=0; i<data2.getNumberOfRows(); i++)
-              {
-                 //console.log(data2.getValue(i, 1));
-                 if(data2.getValue(i, 1) == "None")
-                 {
-                    data2.insertColumn(1, 'number', data2.getColumnLabel(1));
-                    // copy values from column 2 (old column 1) to column 1, converted to numbers
-                    for (var i = 0; i < data2.getNumberOfRows(); i++) {
-                        var val = data2.getValue(i, 2);
-                        if (val != '' && val != null) {
-                            data2.setValue(i, 1, new Number(val).valueOf());
-                        }
-                        else if (val == "None"){
-                            data2.setValue(i, 1, new Number(null).valueOf());
-                        }
-                    }
-                    // remove column 2 (the old column 1)
-                    data2.removeColumn(2);
-                    break;
+            function halfRentAveragePriceChart(){
+               <!--Rent AveragePrice-->
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query.setQuery("select B, " + place2019 + " where A contains 'Rent AveragePrice'");
+               <!--send query and handle response-->
+               query.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
                  }
-              }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data2.removeRow(6);                                
-              }
-              console.log(data2);
-              // Set chart options
-              var options = {'title':'Rent AveragePrice',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-              chart.draw(data2, options);
+                 <!--extract response data-->
+                 var data2 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2.getValue(i, 1));
+                    if(data2.getValue(i, 1) == "None")
+                    {
+                       data2.insertColumn(1, 'number', data2.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2.getNumberOfRows(); i++) {
+                           var val = data2.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2.removeColumn(2);
+                       break;
+                    }
+                 }
+                 // need to halve the rows
+                 for (i=6; i<12; i++)
+                 {
+                    data2.removeRow(6);                                
+                 }
+                 console.log(data2);
+                 // Set chart options
+                 var options = {'title':'Rent AveragePrice',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+                 chart.draw(data2, options);
+               }
             }
-            <!--Sold EventCount-->
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query.setQuery("select B, " + place2019 + " where A contains 'Sold EventCount'");
-            <!--send query and handle response-->
-            query.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data3 = response.getDataTable();
-              // check data
-              for (i=0; i<data3.getNumberOfRows(); i++)
-              {
-                 //console.log(data3.getValue(i, 1));
-                 if(data3.getValue(i, 1) == "None")
-                 {
-                    data3.insertColumn(1, 'number', data3.getColumnLabel(1));
-                    // copy values from column 2 (old column 1) to column 1, converted to numbers
-                    for (var i = 0; i < data3.getNumberOfRows(); i++) {
-                        var val = data3.getValue(i, 2);
-                        if (val != '' && val != null) {
-                            data3.setValue(i, 1, new Number(val).valueOf());
-                        }
-                        else if (val == "None"){
-                            data3.setValue(i, 1, new Number(null).valueOf());
-                        }
-                    }
-                    // remove column 2 (the old column 1)
-                    data3.removeColumn(2);
-                    break;
+            function halfSoldEventCountChart(){
+               <!--Sold EventCount-->
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query.setQuery("select B, " + place2019 + " where A contains 'Sold EventCount'");
+               <!--send query and handle response-->
+               query.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
                  }
-              }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data3.removeRow(6);                                
-              }
-              console.log(data3);
-              // Set chart options
-              var options = {'title':'Sold EventCount',
-                              'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-              chart.draw(data3, options);
+                 <!--extract response data-->
+                 var data3 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data3.getNumberOfRows(); i++)
+                 {
+                    //console.log(data3.getValue(i, 1));
+                    if(data3.getValue(i, 1) == "None")
+                    {
+                       data3.insertColumn(1, 'number', data3.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data3.getNumberOfRows(); i++) {
+                           var val = data3.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data3.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data3.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data3.removeColumn(2);
+                       break;
+                    }
+                 }
+                 // need to halve the rows
+                 for (i=6; i<12; i++)
+                 {
+                    data3.removeRow(6);                                
+                 }
+                 console.log(data3);
+                 // Set chart options
+                 var options = {'title':'Sold EventCount',
+                                 'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+                 chart.draw(data3, options);
+               }
             }
-            <!--Sold AveragePrice-->
-            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-            <!--Set Query-->
-            <!--For Rent EventCount-->
-            query.setQuery("select B, " + place2019 + " where A contains 'Sold AveragePrice'");
-            <!--send query and handle response-->
-            query.send(handleQueryResponse);
-            <!--handler function-->
-            function handleQueryResponse(response) {
-              // Called when the query response is returned
-              if (response.isError()) {
-                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                return;
-              }
-              <!--extract response data-->
-              var data4 = response.getDataTable();
-              // check data
-              for (i=0; i<data4.getNumberOfRows(); i++)
-              {
-                 //console.log(data4.getValue(i, 1));
-                 if(data4.getValue(i, 1) == "None")
-                 {
-                    data4.insertColumn(1, 'number', data4.getColumnLabel(1));
-                    // copy values from column 2 (old column 1) to column 1, converted to numbers
-                    for (var i = 0; i < data4.getNumberOfRows(); i++) {
-                        var val = data4.getValue(i, 2);
-                        if (val != '' && val != null) {
-                            data4.setValue(i, 1, new Number(val).valueOf());
-                        }
-                        else if (val == "None"){
-                            data4.setValue(i, 1, new Number(null).valueOf());
-                        }
-                    }
-                    // remove column 2 (the old column 1)
-                    data4.removeColumn(2);
-                    break;
+            function halfSoldAveragePriceChart(){
+               <!--Sold AveragePrice-->
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query.setQuery("select B, " + place2019 + " where A contains 'Sold AveragePrice'");
+               <!--send query and handle response-->
+               query.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
                  }
-              }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data4.removeRow(6);                                
-              }
-              console.log(data4);
-              // Set chart options
-              var options = {'title':'Sold AveragePrice',
-                             'width':680,
-                             'height':400,
-                             pointSize: 5,
-                             legend: { position: 'bottom' }
-                             };
-              <!--Instantiate and draw our chart, passing in some options.-->
-              var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-              chart.draw(data4, options);
+                 <!--extract response data-->
+                 var data4 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data4.getNumberOfRows(); i++)
+                 {
+                    //console.log(data4.getValue(i, 1));
+                    if(data4.getValue(i, 1) == "None")
+                    {
+                       data4.insertColumn(1, 'number', data4.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data4.getNumberOfRows(); i++) {
+                           var val = data4.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data4.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data4.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data4.removeColumn(2);
+                       break;
+                    }
+                 }
+                 // need to halve the rows
+                 for (i=6; i<12; i++)
+                 {
+                    data4.removeRow(6);                                
+                 }
+                 console.log(data4);
+                 // Set chart options
+                 var options = {'title':'Sold AveragePrice',
+                                'width':680,
+                                'height':400,
+                                pointSize: 5,
+                                legend: { position: 'bottom' }
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
+                 chart.draw(data4, options);
+               }
             }
          }
          else if (str == "1y"){

@@ -826,6 +826,7 @@ function drawSoldAveragePriceChart() {
             check = true;
             console.log("update complete");
          }
+         console.log("updating...");
       }
       /*
       //

@@ -856,11 +856,10 @@ function drawSoldAveragePriceChart() {
          //
          //
          //
-         /*
-         function drawRentEventCountChart(){
+         if (str == "6m"){
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             // Set Query
-            query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
+            query.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
             <!--send query and handle response-->
             query.send(handleQueryResponse);
             <!--handler function-->
@@ -894,8 +893,13 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
+              // need to halve the rows
+              for (i=6; i<data.getNumberOfRows(); i++)
+              {
+                 data.removeRow(i);                                
+              }
               console.log(data);
-              <!--Set chart options-->
+              // Set chart options
               var options = {'title':'Rent EventCount',
                              'width':680,
                              'height':400,
@@ -907,9 +911,7 @@ function drawSoldAveragePriceChart() {
               var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
               chart.draw(data, options);
             }
-         }
-         function drawRentAveragePriceChart() {   
-            <!--Create a query to spreadsheet.-->
+            <!--Rent AveragePrice-->
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
@@ -925,8 +927,35 @@ function drawSoldAveragePriceChart() {
               }
               <!--extract response data-->
               var data = response.getDataTable();
+              // check data
+              for (i=0; i<data.getNumberOfRows(); i++)
+              {
+                 //console.log(data.getValue(i, 1));
+                 if(data.getValue(i, 1) == "None")
+                 {
+                    data.insertColumn(1, 'number', data.getColumnLabel(1));
+                    // copy values from column 2 (old column 1) to column 1, converted to numbers
+                    for (var i = 0; i < data.getNumberOfRows(); i++) {
+                        var val = data.getValue(i, 2);
+                        if (val != '' && val != null) {
+                            data.setValue(i, 1, new Number(val).valueOf());
+                        }
+                        else if (val == "None"){
+                            data.setValue(i, 1, new Number(null).valueOf());
+                        }
+                    }
+                    // remove column 2 (the old column 1)
+                    data.removeColumn(2);
+                    break;
+                 }
+              }
+              // need to halve the rows
+              for (i=6; i<data.getNumberOfRows(); i++)
+              {
+                 data.removeRow(i);                                
+              }
               console.log(data);
-              <!--Set chart options-->
+              // Set chart options
               var options = {'title':'Rent AveragePrice',
                              'width':680,
                              'height':400,
@@ -937,9 +966,7 @@ function drawSoldAveragePriceChart() {
               var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
               chart.draw(data, options);
             }
-         }
-         function drawSoldEventCountChart() {   
-            <!--Create a query to spreadsheet.-->
+            <!--Sold EventCount-->
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
@@ -955,8 +982,35 @@ function drawSoldAveragePriceChart() {
               }
               <!--extract response data-->
               var data = response.getDataTable();
+              // check data
+              for (i=0; i<data.getNumberOfRows(); i++)
+              {
+                 //console.log(data.getValue(i, 1));
+                 if(data.getValue(i, 1) == "None")
+                 {
+                    data.insertColumn(1, 'number', data.getColumnLabel(1));
+                    // copy values from column 2 (old column 1) to column 1, converted to numbers
+                    for (var i = 0; i < data.getNumberOfRows(); i++) {
+                        var val = data.getValue(i, 2);
+                        if (val != '' && val != null) {
+                            data.setValue(i, 1, new Number(val).valueOf());
+                        }
+                        else if (val == "None"){
+                            data.setValue(i, 1, new Number(null).valueOf());
+                        }
+                    }
+                    // remove column 2 (the old column 1)
+                    data.removeColumn(2);
+                    break;
+                 }
+              }
+              // need to halve the rows
+              for (i=6; i<data.getNumberOfRows(); i++)
+              {
+                 data.removeRow(i);                                
+              }
               console.log(data);
-              <!--Set chart options-->
+              // Set chart options
               var options = {'title':'Sold EventCount',
                               'width':680,
                              'height':400,
@@ -967,9 +1021,7 @@ function drawSoldAveragePriceChart() {
               var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
               chart.draw(data, options);
             }
-         }
-         function drawSoldAveragePriceChart() {   
-            <!--Create a query to spreadsheet.-->
+            <!--Sold AveragePrice-->
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             <!--Set Query-->
             <!--For Rent EventCount-->
@@ -985,8 +1037,35 @@ function drawSoldAveragePriceChart() {
               }
               <!--extract response data-->
               var data = response.getDataTable();
+              // check data
+              for (i=0; i<data.getNumberOfRows(); i++)
+              {
+                 //console.log(data.getValue(i, 1));
+                 if(data.getValue(i, 1) == "None")
+                 {
+                    data.insertColumn(1, 'number', data.getColumnLabel(1));
+                    // copy values from column 2 (old column 1) to column 1, converted to numbers
+                    for (var i = 0; i < data.getNumberOfRows(); i++) {
+                        var val = data.getValue(i, 2);
+                        if (val != '' && val != null) {
+                            data.setValue(i, 1, new Number(val).valueOf());
+                        }
+                        else if (val == "None"){
+                            data.setValue(i, 1, new Number(null).valueOf());
+                        }
+                    }
+                    // remove column 2 (the old column 1)
+                    data.removeColumn(2);
+                    break;
+                 }
+              }
+              // need to halve the rows
+              for (i=6; i<data.getNumberOfRows(); i++)
+              {
+                 data.removeRow(i);                                
+              }
               console.log(data);
-              <!--Set chart options-->
+              // Set chart options
               var options = {'title':'Sold AveragePrice',
                              'width':680,
                              'height':400,
@@ -998,19 +1077,15 @@ function drawSoldAveragePriceChart() {
               chart.draw(data, options);
             }
          }
-         if (str == "6m"){
-            
-         }
          else if (str == "1y"){
-
+            //
          }
          else if (str == "5y"){
-
+            //
          }
          else if (str == "10y"){
-
+            //
          }
-         */
       });
     }
 </script>

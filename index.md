@@ -818,15 +818,26 @@ function drawSoldAveragePriceChart() {
             alert("No 2010 data found for " + suburb_name);
             return;
          }
-         var check = false;
-         while (check == false){
-            if (place2019 != " " && place2018 != " " && place2017 != " " && place2016 != " " && place2015 != " " && place2014 != " " && place2013 != " " && place2012 != " " && place2011 != " " && place2010 != " ")
-            {
-               check = true;
-               console.log("update complete");
-            }
-            console.log("updating...");
-         }
+         console.log("place2019: ");
+         console.log(place2019);
+         console.log("place2018: ");
+         console.log(place2018);
+         console.log("place2017: ");
+         console.log(place2017);
+         console.log("place2016: ");
+         console.log(place2016);
+         console.log("place2015: ");
+         console.log(place2015);
+         console.log("place2014: ");
+         console.log(place2014);
+         console.log("place2013: ");
+         console.log(place2013);
+         console.log("place2012: ");
+         console.log(place2012);
+         console.log("place2011: ");
+         console.log(place2011);
+         console.log("place2010: ");
+         console.log(place2010);
       });
       
       /*

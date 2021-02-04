@@ -209,7 +209,7 @@ function drawSoldAveragePriceChart() {
             }
             suburb_name = event.feature.getProperty("name");
             suburb_name = capitalizeFirstLetter(suburb_name);
-            $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+            $.getJSON( "https://mananoy.github.io/script/Suburb2019.json", function( data ) {
                validity = false;
                $.each(data, function(key, value) {
                    if (key.includes(suburb_name))

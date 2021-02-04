@@ -576,8 +576,8 @@ function drawSoldAveragePriceChart() {
       console.log(str);
       //First we build an array
       var array = build_array();
-      //console.log("array:");
-      //console.log(array);
+      console.log("array:");
+      console.log(array);
       // now we get the suburb list
       var place2019 = " ";
       var place2018 = " ";

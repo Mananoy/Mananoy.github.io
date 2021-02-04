@@ -318,7 +318,7 @@ function drawSoldAveragePriceChart() {
        var array = build_array();
        //console.log("array:");
        //console.log(array);
-       $.getJSON( "https://mananoy.github.io/script/Suburb.json", function( data ) {
+       $.getJSON( "https://mananoy.github.io/script/Suburb2019.json", function( data ) {
           var index = 2;
           var place = " ";
           $.each(data, function(key, value) {
@@ -561,6 +561,282 @@ function drawSoldAveragePriceChart() {
           }
        });
     };
+    function change_year(str){
+      // we nned to get the place
+      var suburb_name = document.getElementById('selected_suburb_name').innerHTML;
+      //First we build an array
+      var array = build_array();
+      //console.log("array:");
+      //console.log(array);
+      // now we get the suburb list
+      var place2019 = " ";
+      var place2018 = " ";
+      var place2017 = " ";
+      var place2016 = " ";
+      var place2015 = " ";
+      var place2014 = " ";
+      var place2013 = " ";
+      var place2012 = " ";
+      var place2011 = " ";
+      var place2010 = " ";
+      // 2019
+      $.getJSON( "https://mananoy.github.io/script/Suburb2019.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2019 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2019 = value.id
+                console.log(place2019);
+             }
+         });
+         if (place2019 == " ")
+         {
+            alert("No 2019 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2018
+      $.getJSON( "https://mananoy.github.io/script/Suburb2018.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2018 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2018 = value.id
+                console.log(place2018);
+             }
+         });
+         if (place2018 == " ")
+         {
+            alert("No 2018 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2017
+      $.getJSON( "https://mananoy.github.io/script/Suburb2017.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2017 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2017 = value.id
+                console.log(place2017);
+             }
+         });
+         if (place2017 == " ")
+         {
+            alert("No 2017 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2016
+      $.getJSON( "https://mananoy.github.io/script/Suburb2016.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2016 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2016 = value.id
+                console.log(place2016);
+             }
+         });
+         if (place2016 == " ")
+         {
+            alert("No 2016 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2015
+      $.getJSON( "https://mananoy.github.io/script/Suburb2015.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2015 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2015 = value.id
+                console.log(place2015);
+             }
+         });
+         if (place2015 == " ")
+         {
+            alert("No 2015 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2014
+      $.getJSON( "https://mananoy.github.io/script/Suburb2014.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2014 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2014 = value.id
+                console.log(place2014);
+             }
+         });
+         if (place2014 == " ")
+         {
+            alert("No 2014 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2013
+      $.getJSON( "https://mananoy.github.io/script/Suburb2013.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2013 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2013 = value.id
+                console.log(place2013);
+             }
+         });
+         if (place2013 == " ")
+         {
+            alert("No 2013 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2012
+      $.getJSON( "https://mananoy.github.io/script/Suburb2012.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2012 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2012 = value.id
+                console.log(place2012);
+             }
+         });
+         if (place2012 == " ")
+         {
+            alert("No 2012 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2011
+      $.getJSON( "https://mananoy.github.io/script/Suburb2011.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2011 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2011 = value.id
+                console.log(place2011);
+             }
+         });
+         if (place2011 == " ")
+         {
+            alert("No 2011 data found for " + suburb_name);
+            return;
+         }
+      }
+      // 2010
+      $.getJSON( "https://mananoy.github.io/script/Suburb2010.json", function( data ) {
+         var index = 2;
+         $.each(data, function(key, value) {
+             value.id = array[index];
+             index = index + 1;
+         });
+         console.log("map 2010 produced in mapper:");
+         console.log(data);
+         $.each(data, function(key, value) {
+             if (key.includes(suburb_name))
+             {
+                console.log("found in map with id:");
+                place2010 = value.id
+                console.log(place2010);
+             }
+         });
+         if (place2010 == " ")
+         {
+            alert("No 2010 data found for " + suburb_name);
+            return;
+         }
+      }
+      //
+      //
+      // prepare for query
+      // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
+      // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
+      // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
+      // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
+      // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
+      // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
+      // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
+      // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
+      // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
+      // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
+      //
+      //
+      if (str == "6m"){
+         
+      }
+      else if (str == "1y"){
+         
+      }
+      else if (str == "5y"){
+         
+      }
+      else if (str == "10y"){
+         
+      }
+    }
 </script>
 <!--test for google map-->
 
@@ -599,6 +875,8 @@ function drawSoldAveragePriceChart() {
        <td><div id="SoldAveragePrice_div" style="border: 1px solid #ccc"></div></td>
      </tr>
    </table>
+   <br/>
+   <br/>
    <br/>
    <br/>
    <br/>

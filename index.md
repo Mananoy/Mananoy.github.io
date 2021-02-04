@@ -894,7 +894,7 @@ function drawSoldAveragePriceChart() {
                  }
               }
               // need to halve the rows
-              for (i=6; i<data.getNumberOfRows(); i++)
+              for (i=6; i<12; i++)
               {
                  data.removeRow(i);                                
               }
@@ -950,7 +950,7 @@ function drawSoldAveragePriceChart() {
                  }
               }
               // need to halve the rows
-              for (i=6; i<data2.getNumberOfRows(); i++)
+              for (i=6; i<12; i++)
               {
                  data2.removeRow(i);                                
               }
@@ -1005,7 +1005,7 @@ function drawSoldAveragePriceChart() {
                  }
               }
               // need to halve the rows
-              for (i=6; i<data3.getNumberOfRows(); i++)
+              for (i=6; i<12; i++)
               {
                  data3.removeRow(i);                                
               }
@@ -1060,7 +1060,7 @@ function drawSoldAveragePriceChart() {
                  }
               }
               // need to halve the rows
-              for (i=6; i<data4.getNumberOfRows(); i++)
+              for (i=6; i<12; i++)
               {
                  data4.removeRow(i);                                
               }

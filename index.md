@@ -818,6 +818,7 @@ function drawSoldAveragePriceChart() {
             alert("No 2010 data found for " + suburb_name);
             return;
          }
+         /*
          console.log("place2019: ");
          console.log(place2019);
          console.log("place2018: ");
@@ -838,36 +839,179 @@ function drawSoldAveragePriceChart() {
          console.log(place2011);
          console.log("place2010: ");
          console.log(place2010);
+         */
+         //
+         // prepare for query
+         // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
+         // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
+         // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
+         // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
+         // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
+         // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
+         // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
+         // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
+         // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
+         // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
+         //
+         //
+         //
+         //
+         /*
+         function drawRentEventCountChart(){
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            // Set Query
+            query.setQuery("select B, " + place + " where A contains 'Rent EventCount'");
+            <!--send query and handle response-->
+            query.send(handleQueryResponse);
+            <!--handler function-->
+            function handleQueryResponse(response) {
+              // Called when the query response is returned
+              if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+              }
+              <!--extract response data-->
+              var data = response.getDataTable();
+              // check data
+              for (i=0; i<data.getNumberOfRows(); i++)
+              {
+                 //console.log(data.getValue(i, 1));
+                 if(data.getValue(i, 1) == "None")
+                 {
+                    data.insertColumn(1, 'number', data.getColumnLabel(1));
+                    // copy values from column 2 (old column 1) to column 1, converted to numbers
+                    for (var i = 0; i < data.getNumberOfRows(); i++) {
+                        var val = data.getValue(i, 2);
+                        if (val != '' && val != null) {
+                            data.setValue(i, 1, new Number(val).valueOf());
+                        }
+                        else if (val == "None"){
+                            data.setValue(i, 1, new Number(null).valueOf());
+                        }
+                    }
+                    // remove column 2 (the old column 1)
+                    data.removeColumn(2);
+                    break;
+                 }
+              }
+              console.log(data);
+              <!--Set chart options-->
+              var options = {'title':'Rent EventCount',
+                             'width':680,
+                             'height':400,
+                             pointSize: 5,
+                             legend: { position: 'bottom' },
+                             interpolateNulls: true
+                             };
+              <!--Instantiate and draw our chart, passing in some options.-->
+              var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+              chart.draw(data, options);
+            }
+         }
+         function drawRentAveragePriceChart() {   
+            <!--Create a query to spreadsheet.-->
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            <!--Set Query-->
+            <!--For Rent EventCount-->
+            query.setQuery("select B, C where A contains 'Rent AveragePrice'");
+            <!--send query and handle response-->
+            query.send(handleQueryResponse);
+            <!--handler function-->
+            function handleQueryResponse(response) {
+              // Called when the query response is returned
+              if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+              }
+              <!--extract response data-->
+              var data = response.getDataTable();
+              console.log(data);
+              <!--Set chart options-->
+              var options = {'title':'Rent AveragePrice',
+                             'width':680,
+                             'height':400,
+                             pointSize: 5,
+                             legend: { position: 'bottom' }
+                             };
+              <!--Instantiate and draw our chart, passing in some options.-->
+              var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+              chart.draw(data, options);
+            }
+         }
+         function drawSoldEventCountChart() {   
+            <!--Create a query to spreadsheet.-->
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            <!--Set Query-->
+            <!--For Rent EventCount-->
+            query.setQuery("select B, C where A contains 'Sold EventCount'");
+            <!--send query and handle response-->
+            query.send(handleQueryResponse);
+            <!--handler function-->
+            function handleQueryResponse(response) {
+              // Called when the query response is returned
+              if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+              }
+              <!--extract response data-->
+              var data = response.getDataTable();
+              console.log(data);
+              <!--Set chart options-->
+              var options = {'title':'Sold EventCount',
+                              'width':680,
+                             'height':400,
+                             pointSize: 5,
+                             legend: { position: 'bottom' }
+                             };
+              <!--Instantiate and draw our chart, passing in some options.-->
+              var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+              chart.draw(data, options);
+            }
+         }
+         function drawSoldAveragePriceChart() {   
+            <!--Create a query to spreadsheet.-->
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            <!--Set Query-->
+            <!--For Rent EventCount-->
+            query.setQuery("select B, C where A contains 'Sold AveragePrice'");
+            <!--send query and handle response-->
+            query.send(handleQueryResponse);
+            <!--handler function-->
+            function handleQueryResponse(response) {
+              // Called when the query response is returned
+              if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+              }
+              <!--extract response data-->
+              var data = response.getDataTable();
+              console.log(data);
+              <!--Set chart options-->
+              var options = {'title':'Sold AveragePrice',
+                             'width':680,
+                             'height':400,
+                             pointSize: 5,
+                             legend: { position: 'bottom' }
+                             };
+              <!--Instantiate and draw our chart, passing in some options.-->
+              var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
+              chart.draw(data, options);
+            }
+         }
+         if (str == "6m"){
+            
+         }
+         else if (str == "1y"){
+
+         }
+         else if (str == "5y"){
+
+         }
+         else if (str == "10y"){
+
+         }
+         */
       });
-      
-      /*
-      //
-      // prepare for query
-      // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
-      // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
-      // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
-      // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
-      // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
-      // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
-      // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
-      // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
-      // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
-      // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
-      //
-      //
-      if (str == "6m"){
-         
-      }
-      else if (str == "1y"){
-         
-      }
-      else if (str == "5y"){
-         
-      }
-      else if (str == "10y"){
-         
-      }
-      */
     }
 </script>
 <!--test for google map-->

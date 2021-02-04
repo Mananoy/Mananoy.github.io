@@ -823,7 +823,7 @@ function drawSoldAveragePriceChart() {
       while (check == false){
          if (place2019 != " " && place2018 != " " && place2017 != " " && place2016 != " " && place2015 != " " && place2014 != " " && place2013 != " " && place2012 != " " && place2011 != " " && place2010 != " ")
          {
-            check == true;
+            check = true;
             console.log("update complete");
          }
       }

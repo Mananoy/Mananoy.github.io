@@ -570,8 +570,8 @@ function drawSoldAveragePriceChart() {
     function change_date(str){
       // we nned to get the place
       var suburb_name = document.getElementById('selected_suburb_name').innerHTML;
-      console.log("name:");
-      console.log(suburb_name);
+      //console.log("name:");
+      //console.log(suburb_name);
       console.log("str:");
       console.log(str);
       //First we build an array

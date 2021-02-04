@@ -856,7 +856,7 @@ function drawSoldAveragePriceChart() {
          //
          //
          //
-         /*
+         ///*
          if (str == "6m"){
             var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
             // Set Query
@@ -894,11 +894,13 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
+              /*
               // need to halve the rows
               for (i=6; i<12; i++)
               {
                  data.removeRow(i);                                
               }
+              */
               console.log(data);
               // Set chart options
               var options = {'title':'Rent EventCount',
@@ -950,11 +952,6 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data2.removeRow(i);                                
-              }
               console.log(data2);
               // Set chart options
               var options = {'title':'Rent AveragePrice',
@@ -1004,11 +1001,6 @@ function drawSoldAveragePriceChart() {
                     data3.removeColumn(2);
                     break;
                  }
-              }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data3.removeRow(i);                                
               }
               console.log(data3);
               // Set chart options
@@ -1060,11 +1052,6 @@ function drawSoldAveragePriceChart() {
                     break;
                  }
               }
-              // need to halve the rows
-              for (i=6; i<12; i++)
-              {
-                 data4.removeRow(i);                                
-              }
               console.log(data4);
               // Set chart options
               var options = {'title':'Sold AveragePrice',
@@ -1087,7 +1074,7 @@ function drawSoldAveragePriceChart() {
          else if (str == "10y"){
             //
          }
-         */
+         //*/
       });
     }
 </script>

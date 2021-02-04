@@ -897,7 +897,7 @@ function drawSoldAveragePriceChart() {
               // need to halve the rows
               for (i=6; i<12; i++)
               {
-                 data.removeRow(i);                                
+                 data.removeRow(6);                                
               }
               console.log(data);
               // Set chart options
@@ -953,7 +953,7 @@ function drawSoldAveragePriceChart() {
               // need to halve the rows
               for (i=6; i<12; i++)
               {
-                 data2.removeRow(i);                                
+                 data2.removeRow(6);                                
               }
               console.log(data2);
               // Set chart options
@@ -1008,7 +1008,7 @@ function drawSoldAveragePriceChart() {
               // need to halve the rows
               for (i=6; i<12; i++)
               {
-                 data3.removeRow(i);                                
+                 data3.removeRow(6);                                
               }
               console.log(data3);
               // Set chart options
@@ -1063,7 +1063,7 @@ function drawSoldAveragePriceChart() {
               // need to halve the rows
               for (i=6; i<12; i++)
               {
-                 data4.removeRow(i);                                
+                 data4.removeRow(6);                                
               }
               console.log(data4);
               // Set chart options

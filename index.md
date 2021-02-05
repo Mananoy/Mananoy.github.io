@@ -2669,7 +2669,7 @@ function drawSoldAveragePriceChart() {
                     }
                  }
                //// 2010
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
+               var query2010 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
                // Set Query
                query2010.setQuery("select B, " + place2010 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->

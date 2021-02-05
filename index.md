@@ -1517,16 +1517,16 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -1762,16 +1762,16 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -2007,16 +2007,16 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -2252,16 +2252,16 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -2705,26 +2705,26 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
-                 console.log("data2014:");
-                 console.log(data2014);
-                 console.log("data2013:");
-                 console.log(data2013);
-                 console.log("data2012:");
-                 console.log(data2012);
-                 console.log("data2011:");
-                 console.log(data2011);
-                 console.log("data2010:");
-                 console.log(data2010);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
+                 //console.log("data2014:");
+                 //console.log(data2014);
+                 //console.log("data2013:");
+                 //console.log(data2013);
+                 //console.log("data2012:");
+                 //console.log(data2012);
+                 //console.log("data2011:");
+                 //console.log(data2011);
+                 //console.log("data2010:");
+                 //console.log(data2010);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -3175,26 +3175,26 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
-                 console.log("data2014:");
-                 console.log(data2014);
-                 console.log("data2013:");
-                 console.log(data2013);
-                 console.log("data2012:");
-                 console.log(data2012);
-                 console.log("data2011:");
-                 console.log(data2011);
-                 console.log("data2010:");
-                 console.log(data2010);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
+                 //console.log("data2014:");
+                 //console.log(data2014);
+                 //console.log("data2013:");
+                 //console.log(data2013);
+                 //console.log("data2012:");
+                 //console.log(data2012);
+                 //console.log("data2011:");
+                 //console.log(data2011);
+                 //console.log("data2010:");
+                 //console.log(data2010);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -3645,26 +3645,26 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
-                 console.log("data2014:");
-                 console.log(data2014);
-                 console.log("data2013:");
-                 console.log(data2013);
-                 console.log("data2012:");
-                 console.log(data2012);
-                 console.log("data2011:");
-                 console.log(data2011);
-                 console.log("data2010:");
-                 console.log(data2010);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
+                 //console.log("data2014:");
+                 //console.log(data2014);
+                 //console.log("data2013:");
+                 //console.log(data2013);
+                 //console.log("data2012:");
+                 //console.log(data2012);
+                 //console.log("data2011:");
+                 //console.log(data2011);
+                 //console.log("data2010:");
+                 //console.log(data2010);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');
@@ -4115,26 +4115,26 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-                 console.log("data2019:");
-                 console.log(data2019);
-                 console.log("data2018:");
-                 console.log(data2018);
-                 console.log("data2017:");
-                 console.log(data2017);
-                 console.log("data2016:");
-                 console.log(data2016);
-                 console.log("data2015:");
-                 console.log(data2015);
-                 console.log("data2014:");
-                 console.log(data2014);
-                 console.log("data2013:");
-                 console.log(data2013);
-                 console.log("data2012:");
-                 console.log(data2012);
-                 console.log("data2011:");
-                 console.log(data2011);
-                 console.log("data2010:");
-                 console.log(data2010);
+                 //console.log("data2019:");
+                 //console.log(data2019);
+                 //console.log("data2018:");
+                 //console.log(data2018);
+                 //console.log("data2017:");
+                 //console.log(data2017);
+                 //console.log("data2016:");
+                 //console.log(data2016);
+                 //console.log("data2015:");
+                 //console.log(data2015);
+                 //console.log("data2014:");
+                 //console.log(data2014);
+                 //console.log("data2013:");
+                 //console.log(data2013);
+                 //console.log("data2012:");
+                 //console.log(data2012);
+                 //console.log("data2011:");
+                 //console.log(data2011);
+                 //console.log("data2010:");
+                 //console.log(data2010);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
                  table.addColumn('string', 'Month');

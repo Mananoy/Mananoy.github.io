@@ -858,7 +858,7 @@ function drawSoldAveragePriceChart() {
          //
          ///*
          if (str == "6m"){
-            RentEventCountChart();
+            halfRentEventCountChart();
             halfRentAveragePriceChart();
             halfSoldEventCountChart();
             halfSoldAveragePriceChart();
@@ -1321,9 +1321,9 @@ function drawSoldAveragePriceChart() {
             // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
             // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
             fiveRentEventCountChart();
-            fiveRentAveragePriceChart();
-            fiveSoldEventCountChart();
-            fiveSoldAveragePriceChart();
+            //fiveRentAveragePriceChart();
+            //fiveSoldEventCountChart();
+            //fiveSoldAveragePriceChart();
             //
             // We now have the id, Create a query to spreadsheet for the data
             function fiveRentEventCountChart(){

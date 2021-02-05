@@ -1808,7 +1808,7 @@ function drawSoldAveragePriceChart() {
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-                 chart2.draw(data2, options);
+                 chart2.draw(table, options);
                }
                }
                }
@@ -2053,7 +2053,7 @@ function drawSoldAveragePriceChart() {
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-                 chart3.draw(data3, options);
+                 chart3.draw(table, options);
                }
                }
                }
@@ -2298,7 +2298,7 @@ function drawSoldAveragePriceChart() {
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-                 chart4.draw(data4, options);
+                 chart4.draw(table, options);
                }
                }
                }

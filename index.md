@@ -1536,23 +1536,23 @@ function drawSoldAveragePriceChart() {
                  var table = new google.visualization.DataTable();
                  for (i=0; i<data2015.getNumberOfRows(); i++)
                  {
-                    table.addRow([data.2015.getValue(i, 0), data.2015.getValue(i, 1)]);
+                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
                  }
                  for (i=0; i<data2016.getNumberOfRows(); i++)
                  {
-                    table.addRow([data.2016.getValue(i, 0), data.2016.getValue(i, 1)]);
+                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
                  }
                  for (i=0; i<data2017.getNumberOfRows(); i++)
                  {
-                    table.addRow([data.2017.getValue(i, 0), data.2017.getValue(i, 1)]);
+                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
                  }
                  for (i=0; i<data2018.getNumberOfRows(); i++)
                  {
-                    table.addRow([data.2018.getValue(i, 0), data.2018.getValue(i, 1)]);
+                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
                  }
                  for (i=0; i<data2019.getNumberOfRows(); i++)
                  {
-                    table.addRow([data.2019.getValue(i, 0), data.2019.getValue(i, 1)]);
+                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
                  }
                  console.log("combined data:");
                  console.log(table);

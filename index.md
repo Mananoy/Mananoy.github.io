@@ -1371,7 +1371,7 @@ function drawSoldAveragePriceChart() {
                     }
                  }
                //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
                // Set Query
                query2018.setQuery("select B, " + place2018 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
@@ -1408,7 +1408,7 @@ function drawSoldAveragePriceChart() {
                     }
                  }
                //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
                // Set Query
                query2017.setQuery("select B, " + place2017 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
@@ -1445,7 +1445,7 @@ function drawSoldAveragePriceChart() {
                     }
                  }
                //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
                // Set Query
                query2016.setQuery("select B, " + place2016 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
@@ -1482,7 +1482,7 @@ function drawSoldAveragePriceChart() {
                     }
                  }
                //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
                // Set Query
                query2015.setQuery("select B, " + place2015 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
@@ -1530,6 +1530,8 @@ function drawSoldAveragePriceChart() {
                  console.log(data2015);
                  // now we have all the datatable we need, we need to combine them
                  var table = new google.visualization.DataTable();
+                 table.addColumn('string', 'Month');
+                 table.addColumn('number', 'Price');
                  for (i=0; i<data2015.getNumberOfRows(); i++)
                  {
                     table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);

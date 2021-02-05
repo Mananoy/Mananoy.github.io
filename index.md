@@ -1370,8 +1370,7 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-               }
-               // 2018
+               //// 2018
                var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
                // Set Query
                query2018.setQuery("select B, " + place2018 + " where A contains 'Rent EventCount'");
@@ -1408,8 +1407,7 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-               }
-               // 2017
+               //// 2017
                var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
                // Set Query
                query2017.setQuery("select B, " + place2017 + " where A contains 'Rent EventCount'");
@@ -1446,8 +1444,7 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-               }
-               // 2016
+               //// 2016
                var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
                // Set Query
                query2016.setQuery("select B, " + place2016 + " where A contains 'Rent EventCount'");
@@ -1484,8 +1481,7 @@ function drawSoldAveragePriceChart() {
                        break;
                     }
                  }
-               }
-               // 2015
+               //// 2015
                var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
                // Set Query
                query2015.setQuery("select B, " + place2015 + " where A contains 'Rent EventCount'");
@@ -1567,6 +1563,10 @@ function drawSoldAveragePriceChart() {
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
                  chart.draw(data, options);
+               }
+               }
+               }
+               }
                }
             }
             /*

@@ -1555,8 +1555,8 @@ function drawSoldAveragePriceChart() {
                  console.log(table);
                  <!--Set chart options-->
                  var options = {'title':'Rent EventCount',
-                                'width':680,
-                                'height':400,
+                                'width':780,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1800,8 +1800,8 @@ function drawSoldAveragePriceChart() {
                  console.log(table);
                  <!--Set chart options-->
                  var options = {'title':'Rent AveragePrice',
-                                'width':680,
-                                'height':400,
+                                'width':780,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -2045,8 +2045,8 @@ function drawSoldAveragePriceChart() {
                  console.log(table);
                  <!--Set chart options-->
                  var options = {'title':'Sold EventCount',
-                                'width':680,
-                                'height':400,
+                                'width':780,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -2290,8 +2290,8 @@ function drawSoldAveragePriceChart() {
                  console.log(table);
                  <!--Set chart options-->
                  var options = {'title':'Sold AveragePrice',
-                                'width':680,
-                                'height':400,
+                                'width':780,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -2307,7 +2307,492 @@ function drawSoldAveragePriceChart() {
             }
          }
          else if (str == "10y"){
+            // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
+            // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
+            // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
+            // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
+            // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
+            // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
+            // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
+            // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
+            // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
+            // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
+            tenRentEventCountChart();
+            //tenRentAveragePriceChart();
+            //tenSoldEventCountChart();
+            //tenSoldAveragePriceChart();
             //
+            // We now have the id, Create a query to spreadsheet for the data
+            function tenRentEventCountChart(){
+               var data2019;
+               var data2018;
+               var data2017;
+               var data2016;
+               var data2015;
+               var data2014;
+               var data2013;
+               var data2012;
+               var data2011;
+               var data2010;
+               //
+               // 2019
+               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+               // Set Query
+               query2019.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2019.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2019 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2019.getValue(i, 1));
+                    if(data2019.getValue(i, 1) == "None")
+                    {
+                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
+                           var val = data2019.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2019.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2019.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2019.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2018
+               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
+               // Set Query
+               query2018.setQuery("select B, " + place2018 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2018.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2018 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2018.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2018.getValue(i, 1));
+                    if(data2018.getValue(i, 1) == "None")
+                    {
+                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
+                           var val = data2018.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2018.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2018.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2018.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2017
+               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
+               // Set Query
+               query2017.setQuery("select B, " + place2017 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2017.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2017 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2017.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2017.getValue(i, 1));
+                    if(data2017.getValue(i, 1) == "None")
+                    {
+                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
+                           var val = data2017.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2017.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2017.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2017.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2016
+               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
+               // Set Query
+               query2016.setQuery("select B, " + place2016 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2016.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2016 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2016.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2016.getValue(i, 1));
+                    if(data2016.getValue(i, 1) == "None")
+                    {
+                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
+                           var val = data2016.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2016.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2016.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2016.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2015
+               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
+               // Set Query
+               query2015.setQuery("select B, " + place2015 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2015.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2015 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2015.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2015.getValue(i, 1));
+                    if(data2015.getValue(i, 1) == "None")
+                    {
+                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
+                           var val = data2015.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2015.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2015.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2015.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2014
+               var query2014 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783');
+               // Set Query
+               query2014.setQuery("select B, " + place2014 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2014.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2014 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2014.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2014.getValue(i, 1));
+                    if(data2014.getValue(i, 1) == "None")
+                    {
+                       data2014.insertColumn(1, 'number', data2014.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2014.getNumberOfRows(); i++) {
+                           var val = data2014.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2014.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2014.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2014.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2013
+               var query2013 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366');
+               // Set Query
+               query2013.setQuery("select B, " + place2013 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2013.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2013 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2013.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2013.getValue(i, 1));
+                    if(data2013.getValue(i, 1) == "None")
+                    {
+                       data2013.insertColumn(1, 'number', data2013.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2013.getNumberOfRows(); i++) {
+                           var val = data2013.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2013.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2013.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2013.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2012
+               var query2012 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241');
+               // Set Query
+               query2012.setQuery("select B, " + place2012 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2012.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2012 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2012.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2012.getValue(i, 1));
+                    if(data2012.getValue(i, 1) == "None")
+                    {
+                       data2012.insertColumn(1, 'number', data2012.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2012.getNumberOfRows(); i++) {
+                           var val = data2012.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2012.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2012.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2012.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2011
+               var query2011 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414');
+               // Set Query
+               query2011.setQuery("select B, " + place2011 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2011.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2011 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2011.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2011.getValue(i, 1));
+                    if(data2011.getValue(i, 1) == "None")
+                    {
+                       data2011.insertColumn(1, 'number', data2011.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2011.getNumberOfRows(); i++) {
+                           var val = data2011.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2011.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2011.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2011.removeColumn(2);
+                       break;
+                    }
+                 }
+               //// 2010
+               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
+               // Set Query
+               query2010.setQuery("select B, " + place2010 + " where A contains 'Rent EventCount'");
+               <!--send query and handle response-->
+               query2010.send(handleQueryResponse);
+               <!--handler function-->
+               function handleQueryResponse(response) {
+                 // Called when the query response is returned
+                 if (response.isError()) {
+                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                   return;
+                 }
+                 <!--extract response data-->
+                 data2010 = response.getDataTable();
+                 // check data
+                 for (i=0; i<data2010.getNumberOfRows(); i++)
+                 {
+                    //console.log(data2010.getValue(i, 1));
+                    if(data2010.getValue(i, 1) == "None")
+                    {
+                       data2010.insertColumn(1, 'number', data2010.getColumnLabel(1));
+                       // copy values from column 2 (old column 1) to column 1, converted to numbers
+                       for (var i = 0; i < data2010.getNumberOfRows(); i++) {
+                           var val = data2010.getValue(i, 2);
+                           if (val != '' && val != null) {
+                               data2010.setValue(i, 1, new Number(val).valueOf());
+                           }
+                           else if (val == "None"){
+                               data2010.setValue(i, 1, new Number(null).valueOf());
+                           }
+                       }
+                       // remove column 2 (the old column 1)
+                       data2010.removeColumn(2);
+                       break;
+                    }
+                 }
+                 console.log("data2019:");
+                 console.log(data2019);
+                 console.log("data2018:");
+                 console.log(data2018);
+                 console.log("data2017:");
+                 console.log(data2017);
+                 console.log("data2016:");
+                 console.log(data2016);
+                 console.log("data2015:");
+                 console.log(data2015);
+                 console.log("data2014:");
+                 console.log(data2014);
+                 console.log("data2013:");
+                 console.log(data2013);
+                 console.log("data2012:");
+                 console.log(data2012);
+                 console.log("data2011:");
+                 console.log(data2011);
+                 console.log("data2010:");
+                 console.log(data2010);
+                 // now we have all the datatable we need, we need to combine them
+                 var table = new google.visualization.DataTable();
+                 table.addColumn('string', 'Month');
+                 table.addColumn('number', 'Price');
+                 for (i=0; i<data2010.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2010.getValue(i, 0), data2010.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2011.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2011.getValue(i, 0), data2011.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2012.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2012.getValue(i, 0), data2012.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2013.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2013.getValue(i, 0), data2013.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2014.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2014.getValue(i, 0), data2014.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2015.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2016.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2017.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2018.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
+                 }
+                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 {
+                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
+                 }
+                 console.log("combined data:");
+                 console.log(table);
+                 <!--Set chart options-->
+                 var options = {'title':'Rent EventCount',
+                                'width':880,
+                                'height':500,
+                                pointSize: 5,
+                                legend: { position: 'bottom' },
+                                interpolateNulls: true
+                                };
+                 <!--Instantiate and draw our chart, passing in some options.-->
+                 var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
+                 chart.draw(table, options);
+               }
+               }
+               }
+               }
+               }
+               }
+               }
+               }
+               }
+               }
+            }
          }
       });
     }

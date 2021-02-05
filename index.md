@@ -1564,7 +1564,7 @@ function drawSoldAveragePriceChart() {
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-                 chart.draw(data, options);
+                 chart.draw(table, options);
                }
                }
                }

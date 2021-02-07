@@ -580,16 +580,8 @@ function drawSoldAveragePriceChart() {
       console.log(array);
       // now we get the suburb list
       var place2019 = " ";
-      var place2018 = " ";
-      var place2017 = " ";
-      var place2016 = " ";
-      var place2015 = " ";
-      var place2014 = " ";
-      var place2013 = " ";
-      var place2012 = " ";
-      var place2011 = " ";
-      var place2010 = " ";
-      // 2019
+      var placeCombi = " ";
+      // place2019
       $.getJSON( "https://mananoy.github.io/script/Suburb2019.json", function( data ) {
          var index = 2;
          $.each(data, function(key, value) {
@@ -612,247 +604,39 @@ function drawSoldAveragePriceChart() {
             return;
          }
       });
-      // 2018
-      $.getJSON( "https://mananoy.github.io/script/Suburb2018.json", function( data ) {
+      // placeCombi
+      $.getJSON( "https://mananoy.github.io/script/SuburbCombi.json", function( data ) {
          var index = 2;
          $.each(data, function(key, value) {
              value.id = array[index];
              index = index + 1;
          });
-         //console.log("map 2018 produced in mapper:");
+         //console.log("map-combi produced in mapper:");
          //console.log(data);
          $.each(data, function(key, value) {
              if (key.includes(suburb_name))
              {
                 //console.log("found in map with id:");
-                place2018 = value.id
-                //console.log(place2018);
+                placeCombi = value.id
+                //console.log(placeCombi);
              }
          });
-         if (place2018 == " ")
+         if (placeCombi == " ")
          {
-            alert("No 2018 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2017
-      $.getJSON( "https://mananoy.github.io/script/Suburb2017.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2017 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2017 = value.id
-                //console.log(place2017);
-             }
-         });
-         if (place2017 == " ")
-         {
-            alert("No 2017 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2016
-      $.getJSON( "https://mananoy.github.io/script/Suburb2016.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2016 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2016 = value.id
-                //console.log(place2016);
-             }
-         });
-         if (place2016 == " ")
-         {
-            alert("No 2016 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2015
-      $.getJSON( "https://mananoy.github.io/script/Suburb2015.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2015 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2015 = value.id
-                //console.log(place2015);
-             }
-         });
-         if (place2015 == " ")
-         {
-            alert("No 2015 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2014
-      $.getJSON( "https://mananoy.github.io/script/Suburb2014.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2014 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2014 = value.id
-                //console.log(place2014);
-             }
-         });
-         if (place2014 == " ")
-         {
-            alert("No 2014 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2013
-      $.getJSON( "https://mananoy.github.io/script/Suburb2013.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2013 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2013 = value.id
-                //console.log(place2013);
-             }
-         });
-         if (place2013 == " ")
-         {
-            alert("No 2013 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2012
-      $.getJSON( "https://mananoy.github.io/script/Suburb2012.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2012 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2012 = value.id
-                //console.log(place2012);
-             }
-         });
-         if (place2012 == " ")
-         {
-            alert("No 2012 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2011
-      $.getJSON( "https://mananoy.github.io/script/Suburb2011.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2011 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2011 = value.id
-                //console.log(place2011);
-             }
-         });
-         if (place2011 == " ")
-         {
-            alert("No 2011 data found for " + suburb_name);
-            return;
-         }
-      });
-      // 2010
-      $.getJSON( "https://mananoy.github.io/script/Suburb2010.json", function( data ) {
-         var index = 2;
-         $.each(data, function(key, value) {
-             value.id = array[index];
-             index = index + 1;
-         });
-         //console.log("map 2010 produced in mapper:");
-         //console.log(data);
-         $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
-             {
-                //console.log("found in map with id:");
-                place2010 = value.id
-                //console.log(place2010);
-             }
-         });
-         if (place2010 == " ")
-         {
-            alert("No 2010 data found for " + suburb_name);
+            alert("No combi data found for " + suburb_name);
             return;
          }
          /*
          console.log("place2019: ");
          console.log(place2019);
-         console.log("place2018: ");
-         console.log(place2018);
-         console.log("place2017: ");
-         console.log(place2017);
-         console.log("place2016: ");
-         console.log(place2016);
-         console.log("place2015: ");
-         console.log(place2015);
-         console.log("place2014: ");
-         console.log(place2014);
-         console.log("place2013: ");
-         console.log(place2013);
-         console.log("place2012: ");
-         console.log(place2012);
-         console.log("place2011: ");
-         console.log(place2011);
-         console.log("place2010: ");
-         console.log(place2010);
+         console.log("placeCombi: ");
+         console.log(placeCombi);
          */
          //
          // prepare for query
          // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
-         // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
-         // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
-         // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
-         // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
-         // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
-         // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
-         // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
-         // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
-         // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
-         //
+         // 5y: https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312
+         // 10y: https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581
          //
          //
          //
@@ -1309,35 +1093,19 @@ function drawSoldAveragePriceChart() {
             }
          }
          else if (str == "5y"){
-            // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
-            // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
-            // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
-            // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
-            // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
-            // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
-            // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
-            // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
-            // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
-            // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
-            fiveRentEventCountChart();
-            fiveRentAveragePriceChart();
-            fiveSoldEventCountChart();
-            fiveSoldAveragePriceChart();
+            // 5y: https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312
+            drawRentEventCountChart();
+            drawRentAveragePriceChart();
+            drawSoldEventCountChart();
+            drawSoldAveragePriceChart();
             //
             // We now have the id, Create a query to spreadsheet for the data
-            function fiveRentEventCountChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            function drawRentEventCountChart(){
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312');
                // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
+               query.setQuery("select B, " + placeCombi + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -1346,243 +1114,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data.getValue(i, 1));
+                    if(data.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data.insertColumn(1, 'number', data.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data.getNumberOfRows(); i++) {
+                           var val = data.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
+                       data.removeColumn(2);
                        break;
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data);
                  <!--Set chart options-->
                  var options = {'title':'Rent EventCount',
-                                'width':780,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-                 chart.draw(table, options);
-               }
-               }
-               }
-               }
+                 chart.draw(data, options);
                }
             }
-            function fiveRentAveragePriceChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Rent AveragePrice'");
+            function drawRentAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query2.setQuery("select B, " + placeCombi + " where A contains 'Rent AveragePrice'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query2.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -1591,243 +1167,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data2 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data2.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data2.getValue(i, 1));
+                    if(data2.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data2.insertColumn(1, 'number', data2.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data2.getNumberOfRows(); i++) {
+                           var val = data2.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data2.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data2.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
-                       break;
+                       data2.removeColumn(2);
+                       break;      
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data2);
                  <!--Set chart options-->
                  var options = {'title':'Rent AveragePrice',
-                                'width':780,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-                 chart2.draw(table, options);
-               }
-               }
-               }
-               }
+                 chart2.draw(data2, options);
                }
             }
-            function fiveSoldEventCountChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Sold EventCount'");
+            function drawSoldEventCountChart(){
+               <!--Create a query to spreadsheet.-->
+               var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query3.setQuery("select B, " + placeCombi + " where A contains 'Sold EventCount'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query3.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -1836,243 +1220,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data3 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data3.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data3.getValue(i, 1));
+                    if(data3.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data3.insertColumn(1, 'number', data3.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data3.getNumberOfRows(); i++) {
+                           var val = data3.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data3.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data3.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
-                       break;
+                       data3.removeColumn(2);
+                       break;    
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data3);
                  <!--Set chart options-->
                  var options = {'title':'Sold EventCount',
-                                'width':780,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-                 chart3.draw(table, options);
-               }
-               }
-               }
-               }
+                 chart3.draw(data3, options);
                }
             }
-            function fiveSoldAveragePriceChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Sold AveragePrice'");
+            function drawSoldAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query4.setQuery("select B, " + placeCombi + " where A contains 'Sold AveragePrice'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query4.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -2081,266 +1273,58 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data4 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data4.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data4.getValue(i, 1));
+                    if(data4.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data4.insertColumn(1, 'number', data4.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data4.getNumberOfRows(); i++) {
+                           var val = data4.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data4.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
-                           }
+                               data4.setValue(i, 1, new Number(null).valueOf());
+                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
+                       data4.removeColumn(2);
                        break;
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data4);
                  <!--Set chart options-->
                  var options = {'title':'Sold AveragePrice',
-                                'width':780,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-                 chart4.draw(table, options);
-               }
-               }
-               }
-               }
+                 chart4.draw(data4, options);
                }
             }
          }
          else if (str == "10y"){
-            // 2019: https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582
-            // 2018: https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731
-            // 2017: https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128
-            // 2016: https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136
-            // 2015: https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855
-            // 2014: https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783
-            // 2013: https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366
-            // 2012: https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241
-            // 2011: https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414
-            // 2010: https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479
-            tenRentEventCountChart();
-            tenRentAveragePriceChart();
-            tenSoldEventCountChart();
-            tenSoldAveragePriceChart();
+            // y10: https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581
+            drawRentEventCountChart();
+            drawRentAveragePriceChart();
+            drawSoldEventCountChart();
+            drawSoldAveragePriceChart();
             //
             // We now have the id, Create a query to spreadsheet for the data
-            function tenRentEventCountChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               var data2014;
-               var data2013;
-               var data2012;
-               var data2011;
-               var data2010;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
+            function drawRentEventCountChart(){
+               var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581');
                // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
+               query.setQuery("select B, " + placeCombi + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -2349,468 +1333,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data.getValue(i, 1));
+                    if(data.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data.insertColumn(1, 'number', data.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data.getNumberOfRows(); i++) {
+                           var val = data.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
+                       data.removeColumn(2);
                        break;
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2014
-               var query2014 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783');
-               // Set Query
-               query2014.setQuery("select B, " + place2014 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2014.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2014 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2014.getValue(i, 1));
-                    if(data2014.getValue(i, 1) == "None")
-                    {
-                       data2014.insertColumn(1, 'number', data2014.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2014.getNumberOfRows(); i++) {
-                           var val = data2014.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2014.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2014.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2014.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2013
-               var query2013 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366');
-               // Set Query
-               query2013.setQuery("select B, " + place2013 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2013.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2013 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2013.getValue(i, 1));
-                    if(data2013.getValue(i, 1) == "None")
-                    {
-                       data2013.insertColumn(1, 'number', data2013.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2013.getNumberOfRows(); i++) {
-                           var val = data2013.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2013.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2013.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2013.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2012
-               var query2012 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241');
-               // Set Query
-               query2012.setQuery("select B, " + place2012 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2012.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2012 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2012.getValue(i, 1));
-                    if(data2012.getValue(i, 1) == "None")
-                    {
-                       data2012.insertColumn(1, 'number', data2012.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2012.getNumberOfRows(); i++) {
-                           var val = data2012.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2012.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2012.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2012.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2011
-               var query2011 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414');
-               // Set Query
-               query2011.setQuery("select B, " + place2011 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2011.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2011 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2011.getValue(i, 1));
-                    if(data2011.getValue(i, 1) == "None")
-                    {
-                       data2011.insertColumn(1, 'number', data2011.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2011.getNumberOfRows(); i++) {
-                           var val = data2011.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2011.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2011.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2011.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2010
-               var query2010 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
-               // Set Query
-               query2010.setQuery("select B, " + place2010 + " where A contains 'Rent EventCount'");
-               <!--send query and handle response-->
-               query2010.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2010 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2010.getValue(i, 1));
-                    if(data2010.getValue(i, 1) == "None")
-                    {
-                       data2010.insertColumn(1, 'number', data2010.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2010.getNumberOfRows(); i++) {
-                           var val = data2010.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2010.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2010.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2010.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 //console.log("data2014:");
-                 //console.log(data2014);
-                 //console.log("data2013:");
-                 //console.log(data2013);
-                 //console.log("data2012:");
-                 //console.log(data2012);
-                 //console.log("data2011:");
-                 //console.log(data2011);
-                 //console.log("data2010:");
-                 //console.log(data2010);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2010.getValue(i, 0), data2010.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2011.getValue(i, 0), data2011.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2012.getValue(i, 0), data2012.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2013.getValue(i, 0), data2013.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2014.getValue(i, 0), data2014.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data);
                  <!--Set chart options-->
                  var options = {'title':'Rent EventCount',
-                                'width':880,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
                  var chart = new google.visualization.LineChart(document.getElementById('RentEventCount_div'));
-                 chart.draw(table, options);
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
+                 chart.draw(data, options);
                }
             }
-            function tenRentAveragePriceChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               var data2014;
-               var data2013;
-               var data2012;
-               var data2011;
-               var data2010;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Rent AveragePrice'");
+            function drawRentAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query2 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query2.setQuery("select B, " + placeCombi + " where A contains 'Rent AveragePrice'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query2.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -2819,468 +1386,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data2 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data2.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data2.getValue(i, 1));
+                    if(data2.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data2.insertColumn(1, 'number', data2.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data2.getNumberOfRows(); i++) {
+                           var val = data2.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data2.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data2.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
-                       break;
+                       data2.removeColumn(2);
+                       break;      
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2014
-               var query2014 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783');
-               // Set Query
-               query2014.setQuery("select B, " + place2014 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2014.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2014 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2014.getValue(i, 1));
-                    if(data2014.getValue(i, 1) == "None")
-                    {
-                       data2014.insertColumn(1, 'number', data2014.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2014.getNumberOfRows(); i++) {
-                           var val = data2014.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2014.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2014.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2014.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2013
-               var query2013 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366');
-               // Set Query
-               query2013.setQuery("select B, " + place2013 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2013.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2013 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2013.getValue(i, 1));
-                    if(data2013.getValue(i, 1) == "None")
-                    {
-                       data2013.insertColumn(1, 'number', data2013.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2013.getNumberOfRows(); i++) {
-                           var val = data2013.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2013.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2013.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2013.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2012
-               var query2012 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241');
-               // Set Query
-               query2012.setQuery("select B, " + place2012 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2012.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2012 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2012.getValue(i, 1));
-                    if(data2012.getValue(i, 1) == "None")
-                    {
-                       data2012.insertColumn(1, 'number', data2012.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2012.getNumberOfRows(); i++) {
-                           var val = data2012.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2012.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2012.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2012.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2011
-               var query2011 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414');
-               // Set Query
-               query2011.setQuery("select B, " + place2011 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2011.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2011 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2011.getValue(i, 1));
-                    if(data2011.getValue(i, 1) == "None")
-                    {
-                       data2011.insertColumn(1, 'number', data2011.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2011.getNumberOfRows(); i++) {
-                           var val = data2011.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2011.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2011.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2011.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2010
-               var query2010 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
-               // Set Query
-               query2010.setQuery("select B, " + place2010 + " where A contains 'Rent AveragePrice'");
-               <!--send query and handle response-->
-               query2010.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2010 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2010.getValue(i, 1));
-                    if(data2010.getValue(i, 1) == "None")
-                    {
-                       data2010.insertColumn(1, 'number', data2010.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2010.getNumberOfRows(); i++) {
-                           var val = data2010.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2010.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2010.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2010.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 //console.log("data2014:");
-                 //console.log(data2014);
-                 //console.log("data2013:");
-                 //console.log(data2013);
-                 //console.log("data2012:");
-                 //console.log(data2012);
-                 //console.log("data2011:");
-                 //console.log(data2011);
-                 //console.log("data2010:");
-                 //console.log(data2010);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2010.getValue(i, 0), data2010.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2011.getValue(i, 0), data2011.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2012.getValue(i, 0), data2012.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2013.getValue(i, 0), data2013.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2014.getValue(i, 0), data2014.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data2);
                  <!--Set chart options-->
                  var options = {'title':'Rent AveragePrice',
-                                'width':880,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
-                 chart.draw(table, options);
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
+                 var chart2 = new google.visualization.LineChart(document.getElementById('RentAveragePrice_div'));
+                 chart2.draw(data2, options);
                }
             }
-            function tenSoldEventCountChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               var data2014;
-               var data2013;
-               var data2012;
-               var data2011;
-               var data2010;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Sold EventCount'");
+            function drawSoldEventCountChart(){
+               <!--Create a query to spreadsheet.-->
+               var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query3.setQuery("select B, " + placeCombi + " where A contains 'Sold EventCount'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query3.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -3289,468 +1439,51 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data3 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data3.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data3.getValue(i, 1));
+                    if(data3.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data3.insertColumn(1, 'number', data3.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data3.getNumberOfRows(); i++) {
+                           var val = data3.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data3.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
+                               data3.setValue(i, 1, new Number(null).valueOf());
                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
-                       break;
+                       data3.removeColumn(2);
+                       break;    
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2014
-               var query2014 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783');
-               // Set Query
-               query2014.setQuery("select B, " + place2014 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2014.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2014 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2014.getValue(i, 1));
-                    if(data2014.getValue(i, 1) == "None")
-                    {
-                       data2014.insertColumn(1, 'number', data2014.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2014.getNumberOfRows(); i++) {
-                           var val = data2014.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2014.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2014.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2014.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2013
-               var query2013 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366');
-               // Set Query
-               query2013.setQuery("select B, " + place2013 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2013.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2013 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2013.getValue(i, 1));
-                    if(data2013.getValue(i, 1) == "None")
-                    {
-                       data2013.insertColumn(1, 'number', data2013.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2013.getNumberOfRows(); i++) {
-                           var val = data2013.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2013.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2013.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2013.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2012
-               var query2012 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241');
-               // Set Query
-               query2012.setQuery("select B, " + place2012 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2012.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2012 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2012.getValue(i, 1));
-                    if(data2012.getValue(i, 1) == "None")
-                    {
-                       data2012.insertColumn(1, 'number', data2012.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2012.getNumberOfRows(); i++) {
-                           var val = data2012.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2012.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2012.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2012.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2011
-               var query2011 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414');
-               // Set Query
-               query2011.setQuery("select B, " + place2011 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2011.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2011 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2011.getValue(i, 1));
-                    if(data2011.getValue(i, 1) == "None")
-                    {
-                       data2011.insertColumn(1, 'number', data2011.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2011.getNumberOfRows(); i++) {
-                           var val = data2011.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2011.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2011.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2011.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2010
-               var query2010 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
-               // Set Query
-               query2010.setQuery("select B, " + place2010 + " where A contains 'Sold EventCount'");
-               <!--send query and handle response-->
-               query2010.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2010 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2010.getValue(i, 1));
-                    if(data2010.getValue(i, 1) == "None")
-                    {
-                       data2010.insertColumn(1, 'number', data2010.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2010.getNumberOfRows(); i++) {
-                           var val = data2010.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2010.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2010.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2010.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 //console.log("data2014:");
-                 //console.log(data2014);
-                 //console.log("data2013:");
-                 //console.log(data2013);
-                 //console.log("data2012:");
-                 //console.log(data2012);
-                 //console.log("data2011:");
-                 //console.log(data2011);
-                 //console.log("data2010:");
-                 //console.log(data2010);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2010.getValue(i, 0), data2010.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2011.getValue(i, 0), data2011.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2012.getValue(i, 0), data2012.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2013.getValue(i, 0), data2013.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2014.getValue(i, 0), data2014.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data3);
                  <!--Set chart options-->
                  var options = {'title':'Sold EventCount',
-                                'width':880,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
-                 chart.draw(table, options);
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
+                 var chart3 = new google.visualization.LineChart(document.getElementById('SoldEventCount_div'));
+                 chart3.draw(data3, options);
                }
             }
-            function tenSoldAveragePriceChart(){
-               var data2019;
-               var data2018;
-               var data2017;
-               var data2016;
-               var data2015;
-               var data2014;
-               var data2013;
-               var data2012;
-               var data2011;
-               var data2010;
-               //
-               // 2019
-               var query2019 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
-               // Set Query
-               query2019.setQuery("select B, " + place2019 + " where A contains 'Sold AveragePrice'");
+            function drawSoldAveragePriceChart(){
+               <!--Create a query to spreadsheet.-->
+               var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581');
+               <!--Set Query-->
+               <!--For Rent EventCount-->
+               query4.setQuery("select B, " + placeCombi + " where A contains 'Sold AveragePrice'");
                <!--send query and handle response-->
-               query2019.send(handleQueryResponse);
+               query4.send(handleQueryResponse);
                <!--handler function-->
                function handleQueryResponse(response) {
                  // Called when the query response is returned
@@ -3759,448 +1492,41 @@ function drawSoldAveragePriceChart() {
                    return;
                  }
                  <!--extract response data-->
-                 data2019 = response.getDataTable();
+                 var data4 = response.getDataTable();
                  // check data
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
+                 for (i=0; i<data4.getNumberOfRows(); i++)
                  {
-                    //console.log(data2019.getValue(i, 1));
-                    if(data2019.getValue(i, 1) == "None")
+                    //console.log(data4.getValue(i, 1));
+                    if(data4.getValue(i, 1) == "None")
                     {
-                       data2019.insertColumn(1, 'number', data2019.getColumnLabel(1));
+                       data4.insertColumn(1, 'number', data4.getColumnLabel(1));
                        // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2019.getNumberOfRows(); i++) {
-                           var val = data2019.getValue(i, 2);
+                       for (var i = 0; i < data4.getNumberOfRows(); i++) {
+                           var val = data4.getValue(i, 2);
                            if (val != '' && val != null) {
-                               data2019.setValue(i, 1, new Number(val).valueOf());
+                               data4.setValue(i, 1, new Number(val).valueOf());
                            }
                            else if (val == "None"){
-                               data2019.setValue(i, 1, new Number(null).valueOf());
-                           }
+                               data4.setValue(i, 1, new Number(null).valueOf());
+                            }
                        }
                        // remove column 2 (the old column 1)
-                       data2019.removeColumn(2);
+                       data4.removeColumn(2);
                        break;
                     }
                  }
-               //// 2018
-               var query2018 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1S3dR1tc61lfRZCq1vT1-thZF-D1jEXPyIG9zj1OXD5s/edit#gid=1187331731');
-               // Set Query
-               query2018.setQuery("select B, " + place2018 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2018.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2018 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2018.getValue(i, 1));
-                    if(data2018.getValue(i, 1) == "None")
-                    {
-                       data2018.insertColumn(1, 'number', data2018.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2018.getNumberOfRows(); i++) {
-                           var val = data2018.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2018.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2018.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2018.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2017
-               var query2017 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ljxOszGC8yWhG_DqveGBtfOW6xt91ajONE5NiyGddkc/edit#gid=1078369128');
-               // Set Query
-               query2017.setQuery("select B, " + place2017 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2017.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2017 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2017.getValue(i, 1));
-                    if(data2017.getValue(i, 1) == "None")
-                    {
-                       data2017.insertColumn(1, 'number', data2017.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2017.getNumberOfRows(); i++) {
-                           var val = data2017.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2017.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2017.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2017.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2016
-               var query2016 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zk82_ZQMoxvj75BSxjOY6hO6kduOOG4i3izuIo9P4bc/edit#gid=1331133136');
-               // Set Query
-               query2016.setQuery("select B, " + place2016 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2016.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2016 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2016.getValue(i, 1));
-                    if(data2016.getValue(i, 1) == "None")
-                    {
-                       data2016.insertColumn(1, 'number', data2016.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2016.getNumberOfRows(); i++) {
-                           var val = data2016.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2016.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2016.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2016.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2015
-               var query2015 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1--9F_5QceNX51tHtOSGm4JOmN1M39jq_hcFZ6wtoJJA/edit#gid=72003855');
-               // Set Query
-               query2015.setQuery("select B, " + place2015 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2015.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2015 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2015.getValue(i, 1));
-                    if(data2015.getValue(i, 1) == "None")
-                    {
-                       data2015.insertColumn(1, 'number', data2015.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2015.getNumberOfRows(); i++) {
-                           var val = data2015.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2015.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2015.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2015.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2014
-               var query2014 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1l_Ma6QsqytRAG9fkzuVUsq2Bp5-HXAKEaOQpR7-Bq3E/edit#gid=293612783');
-               // Set Query
-               query2014.setQuery("select B, " + place2014 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2014.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2014 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2014.getValue(i, 1));
-                    if(data2014.getValue(i, 1) == "None")
-                    {
-                       data2014.insertColumn(1, 'number', data2014.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2014.getNumberOfRows(); i++) {
-                           var val = data2014.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2014.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2014.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2014.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2013
-               var query2013 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1tGwUMJAnBHnf0LwN1hR2_e2ueJY4r4ezyHQYqsOt5BE/edit#gid=593572366');
-               // Set Query
-               query2013.setQuery("select B, " + place2013 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2013.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2013 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2013.getValue(i, 1));
-                    if(data2013.getValue(i, 1) == "None")
-                    {
-                       data2013.insertColumn(1, 'number', data2013.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2013.getNumberOfRows(); i++) {
-                           var val = data2013.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2013.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2013.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2013.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2012
-               var query2012 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QAzU_fds7qiXjVMzHwdpwukrusL_y0zHosL0_PLawNE/edit#gid=1415192241');
-               // Set Query
-               query2012.setQuery("select B, " + place2012 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2012.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2012 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2012.getValue(i, 1));
-                    if(data2012.getValue(i, 1) == "None")
-                    {
-                       data2012.insertColumn(1, 'number', data2012.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2012.getNumberOfRows(); i++) {
-                           var val = data2012.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2012.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2012.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2012.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2011
-               var query2011 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1dDMefA5kppqLKb7VbTImhSQGMNvJpLtys-tS3FVYPiE/edit#gid=956444414');
-               // Set Query
-               query2011.setQuery("select B, " + place2011 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2011.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2011 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2011.getValue(i, 1));
-                    if(data2011.getValue(i, 1) == "None")
-                    {
-                       data2011.insertColumn(1, 'number', data2011.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2011.getNumberOfRows(); i++) {
-                           var val = data2011.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2011.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2011.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2011.removeColumn(2);
-                       break;
-                    }
-                 }
-               //// 2010
-               var query2010 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18oUAi9Hz62GAjWLJiNnKSKbNY9YONhjKBg3J_9bR5tM/edit#gid=359162479');
-               // Set Query
-               query2010.setQuery("select B, " + place2010 + " where A contains 'Sold AveragePrice'");
-               <!--send query and handle response-->
-               query2010.send(handleQueryResponse);
-               <!--handler function-->
-               function handleQueryResponse(response) {
-                 // Called when the query response is returned
-                 if (response.isError()) {
-                   alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                   return;
-                 }
-                 <!--extract response data-->
-                 data2010 = response.getDataTable();
-                 // check data
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    //console.log(data2010.getValue(i, 1));
-                    if(data2010.getValue(i, 1) == "None")
-                    {
-                       data2010.insertColumn(1, 'number', data2010.getColumnLabel(1));
-                       // copy values from column 2 (old column 1) to column 1, converted to numbers
-                       for (var i = 0; i < data2010.getNumberOfRows(); i++) {
-                           var val = data2010.getValue(i, 2);
-                           if (val != '' && val != null) {
-                               data2010.setValue(i, 1, new Number(val).valueOf());
-                           }
-                           else if (val == "None"){
-                               data2010.setValue(i, 1, new Number(null).valueOf());
-                           }
-                       }
-                       // remove column 2 (the old column 1)
-                       data2010.removeColumn(2);
-                       break;
-                    }
-                 }
-                 //console.log("data2019:");
-                 //console.log(data2019);
-                 //console.log("data2018:");
-                 //console.log(data2018);
-                 //console.log("data2017:");
-                 //console.log(data2017);
-                 //console.log("data2016:");
-                 //console.log(data2016);
-                 //console.log("data2015:");
-                 //console.log(data2015);
-                 //console.log("data2014:");
-                 //console.log(data2014);
-                 //console.log("data2013:");
-                 //console.log(data2013);
-                 //console.log("data2012:");
-                 //console.log(data2012);
-                 //console.log("data2011:");
-                 //console.log(data2011);
-                 //console.log("data2010:");
-                 //console.log(data2010);
-                 // now we have all the datatable we need, we need to combine them
-                 var table = new google.visualization.DataTable();
-                 table.addColumn('string', 'Month');
-                 table.addColumn('number', 'Price');
-                 for (i=0; i<data2010.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2010.getValue(i, 0), data2010.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2011.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2011.getValue(i, 0), data2011.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2012.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2012.getValue(i, 0), data2012.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2013.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2013.getValue(i, 0), data2013.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2014.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2014.getValue(i, 0), data2014.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2015.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2015.getValue(i, 0), data2015.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2016.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2016.getValue(i, 0), data2016.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2017.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2017.getValue(i, 0), data2017.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2018.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2018.getValue(i, 0), data2018.getValue(i, 1)]);
-                 }
-                 for (i=0; i<data2019.getNumberOfRows(); i++)
-                 {
-                    table.addRow([data2019.getValue(i, 0), data2019.getValue(i, 1)]);
-                 }
-                 console.log("combined data:");
-                 console.log(table);
+                 console.log(data4);
                  <!--Set chart options-->
                  var options = {'title':'Sold AveragePrice',
-                                'width':880,
-                                'height':500,
+                                'width':680,
+                                'height':400,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
                                 };
                  <!--Instantiate and draw our chart, passing in some options.-->
-                 var chart = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
-                 chart.draw(table, options);
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
-               }
+                 var chart4 = new google.visualization.LineChart(document.getElementById('SoldAveragePrice_div'));
+                 chart4.draw(data4, options);
                }
             }
          }

@@ -238,6 +238,7 @@ function drawSoldAveragePriceChart() {
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
             infoWindow.close();
+            map.data.overrideStyle(event.feature, { clickable: true });
          }
       });
     }

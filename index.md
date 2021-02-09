@@ -237,7 +237,8 @@ function drawSoldAveragePriceChart() {
       map.data.addListener("mouseout", (event) => {
          if (!event.feature.getProperty("selected"))
          {
-            map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
+            map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});
+            setTimeout('', 3000);
             infoWindow.close();
          }
       });

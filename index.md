@@ -228,7 +228,7 @@ function drawSoldAveragePriceChart() {
                   var contentString = 'No Data Found';
                   infoWindow.setContent(contentString);
                   infoWindow.setPosition(event.latLng);
-                  infoWindow.open(map);
+                  setTimeout(function(){infoWindow.open(map)}, 3000);
                }
             });
          }
@@ -238,7 +238,7 @@ function drawSoldAveragePriceChart() {
          if (!event.feature.getProperty("selected"))
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});
-            setTimeout(function(){infoWindow.close()}, 3000);
+            setTimeout(function(){infoWindow.close()}, 5000);
          }
       });
     }

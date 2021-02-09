@@ -151,7 +151,7 @@ function drawSoldAveragePriceChart() {
       // Set basic params
       var mapOptions = {
           center : new google.maps.LatLng(-33.82979121, 151.21463429),
-          zoom : 10,
+          zoom : 12,
           zoomControl: false,
           streetViewControl: false,
           mapTypeControl: false,
@@ -649,6 +649,11 @@ function drawSoldAveragePriceChart() {
          //
          //
          if (str == "6m"){
+            //if ( document.getElementById("MyElement").classList.contains('MyClass') )
+            document.getElementById("6m").classList.add('active');
+            document.getElementById("1y").classList.remove('active');
+            document.getElementById("5y").classList.remove('active');
+            document.getElementById("10y").classList.remove('active');
             halfRentEventCountChart();
             halfRentAveragePriceChart();
             halfSoldEventCountChart();
@@ -883,6 +888,10 @@ function drawSoldAveragePriceChart() {
             }
          }
          else if (str == "1y"){
+            document.getElementById("6m").classList.remove('active');
+            document.getElementById("1y").classList.add('active');
+            document.getElementById("5y").classList.remove('active');
+            document.getElementById("10y").classList.remove('active');
             drawRentEventCountChart();
             drawRentAveragePriceChart();
             drawSoldEventCountChart();
@@ -1101,6 +1110,10 @@ function drawSoldAveragePriceChart() {
             }
          }
          else if (str == "5y"){
+            document.getElementById("6m").classList.remove('active');
+            document.getElementById("1y").classList.remove('active');
+            document.getElementById("5y").classList.add('active');
+            document.getElementById("10y").classList.remove('active');
             // 5y: https://docs.google.com/spreadsheets/d/1Qkj7ewOxP_QT_KJK6XwnYUkv-2XH3ELKHaA9j-PCzgQ/edit#gid=1642783312
             drawRentEventCountChart();
             drawRentAveragePriceChart();
@@ -1320,6 +1333,10 @@ function drawSoldAveragePriceChart() {
             }
          }
          else if (str == "10y"){
+            document.getElementById("6m").classList.remove('active');
+            document.getElementById("1y").classList.remove('active');
+            document.getElementById("5y").classList.remove('active');
+            document.getElementById("10y").classList.add('active');
             // y10: https://docs.google.com/spreadsheets/d/1yVXpX60uElp56-ZXsetStI-glJzvvx_sh_hJZ4ljxs8/edit#gid=1618603581
             drawRentEventCountChart();
             drawRentAveragePriceChart();
@@ -1564,10 +1581,10 @@ function drawSoldAveragePriceChart() {
    <!--display suburb name-->
    <h2 id="selected_suburb_name" style="text-align: center">North Sydney</h2>
    <div style="text-align: center; color: white;">
-      <a class="btn btn-primary active" onclick="change_date('6m')" role="button">6m</a>
-      <a class="btn btn-primary active" onclick="change_date('1y')" role="button">1y</a>
-      <a class="btn btn-primary active" onclick="change_date('5y')" role="button">5y</a>
-      <a class="btn btn-primary active" onclick="change_date('10y')" role="button">10y</a>
+      <a id="6m" class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
+      <a id="1y" class="btn btn-primary active" onclick="change_date('1y')" role="button">1y</a>
+      <a id="5y" class="btn btn-primary" onclick="change_date('5y')" role="button">5y</a>
+      <a id="10y" class="btn btn-primary" onclick="change_date('10y')" role="button">10y</a>
    </div>
    
    <!--Div that will hold the pie chart-->

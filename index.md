@@ -221,7 +221,11 @@ function drawSoldAveragePriceChart() {
                });
                if (validity == false) 
                {
+                  var infowindow = new google.maps.InfoWindow({
+                      content: "None Data Found"
+                  });
                   map.data.overrideStyle(event.feature, { clickable: false });
+                  infowindow.open(map);
                }
             });
          }

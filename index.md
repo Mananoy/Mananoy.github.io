@@ -901,6 +901,7 @@ function drawSoldAveragePriceChart() {
             function drawRentEventCountChart(){
                var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
                // Set Query
+               console.log("select B, " + place2019 + " where A contains 'Rent EventCount'");
                query.setQuery("select B, " + place2019 + " where A contains 'Rent EventCount'");
                <!--send query and handle response-->
                query.send(handleQueryResponse);

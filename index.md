@@ -150,7 +150,7 @@ function drawSoldAveragePriceChart() {
     function initMap() {
       // Set basic params
       var mapOptions = {
-          center : new google.maps.LatLng(-35.34253036, 149.81762754),
+          center : new google.maps.LatLng(-33.82979121, 151.21463429),
           zoom : 10,
           zoomControl: false,
           streetViewControl: false,
@@ -183,7 +183,7 @@ function drawSoldAveragePriceChart() {
       map.data.loadGeoJson('script/features-7.json', {}, function() {});
       map.data.loadGeoJson('script/features-8.json', {}, function() {
          // initialise Braindwood as selected
-         feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.766');
+         feat = map.data.getFeatureById('ckan_91e70237_d9d1_4719_a82f_e71b811154c6.3276');
          feat.setProperty("selected", true);
          map.data.overrideStyle(feat, {fillOpacity: 0.1, fillColor: 'blue'});
       });
@@ -1562,7 +1562,7 @@ function drawSoldAveragePriceChart() {
    <div id="map_canvas"></div>
    
    <!--display suburb name-->
-   <h2 id="selected_suburb_name" style="text-align: center">Braidwood</h2>
+   <h2 id="selected_suburb_name" style="text-align: center">Sydney</h2>
    <div style="text-align: center; color: white;">
       <a class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
       <a class="btn btn-primary" onclick="change_date('1y')" role="button">1y</a>

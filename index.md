@@ -173,6 +173,8 @@ function drawSoldAveragePriceChart() {
       document.getElementById("map_canvas").style.height = (window.innerHeight - 110).toString() + "px"
       // Show map
       map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+      // declared here for checking the feature
+      var feat;
       // Load boundary data and set style
       map.data.loadGeoJson('script/features-1.json', {}, function() {});
       map.data.loadGeoJson('script/features-2.json', {}, function() {});
@@ -197,7 +199,12 @@ function drawSoldAveragePriceChart() {
       infoWindow = new google.maps.InfoWindow;
       var mouse_moved = false;
       map.data.addListener("mouseover", (event) => {
-         mouse_moved = true;
+         if (event.feature != feat)
+         {
+            mouse_moved = true;
+         }
+         // update the feature
+         feat = event.feature;
          if (!event.feature.getProperty("selected"))
          {
             // Handle different naming

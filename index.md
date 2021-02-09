@@ -238,8 +238,7 @@ function drawSoldAveragePriceChart() {
          if (!event.feature.getProperty("selected"))
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});
-            setTimeout('', 3000);
-            infoWindow.close();
+            setTimeout(function(){infoWindow.close()}, 3000);
          }
       });
     }

@@ -228,7 +228,7 @@ function drawSoldAveragePriceChart() {
                   var contentString = 'No Data Found';
                   infoWindow.setContent(contentString);
                   infoWindow.setPosition(event.latLng);
-                  setTimeout(function(){infoWindow.open(map)}, 3000);
+                  setTimeout(function(){infoWindow.open(map)}, 1000);
                }
             });
          }

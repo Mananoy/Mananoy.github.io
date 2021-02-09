@@ -193,6 +193,8 @@ function drawSoldAveragePriceChart() {
          selectSuburb(event.feature);
          map.panTo(event.latLng);
       });
+      // info window created here
+      infoWindow = new google.maps.InfoWindow;
       map.data.addListener("mouseover", (event) => {
          if (!event.feature.getProperty("selected"))
          {
@@ -222,7 +224,6 @@ function drawSoldAveragePriceChart() {
                if (validity == false) 
                {
                   map.data.overrideStyle(event.feature, { clickable: false });
-                  infoWindow = new google.maps.InfoWindow;
                   var contentString = 'No Data Found';
                   infoWindow.setContent(contentString);
                   infoWindow.setPosition(event.latLng);
@@ -236,6 +237,7 @@ function drawSoldAveragePriceChart() {
          if (!event.feature.getProperty("selected"))
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
+            infoWindow.close();
          }
       });
     }

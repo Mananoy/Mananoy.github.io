@@ -195,7 +195,9 @@ function drawSoldAveragePriceChart() {
       });
       // info window created here
       infoWindow = new google.maps.InfoWindow;
+      var mouse_moved = false;
       map.data.addListener("mouseover", (event) => {
+         mouse_moved = true;
          if (!event.feature.getProperty("selected"))
          {
             // Handle different naming
@@ -238,7 +240,10 @@ function drawSoldAveragePriceChart() {
          {
             map.data.overrideStyle(event.feature, {fillOpacity: 0.0, strokeWeight: 1});  
             infoWindow.close();
+         }
+         if (mouse_moved == true){
             map.data.overrideStyle(event.feature, { clickable: true });
+            mouse_moved = false;
          }
       });
     }

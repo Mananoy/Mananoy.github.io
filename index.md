@@ -225,7 +225,7 @@ function drawSoldAveragePriceChart() {
                       content: "None Data Found"
                   });
                   map.data.overrideStyle(event.feature, { clickable: false });
-                  infowindow.open(map);
+                  infowindow.open(map,event.latLng);
                }
             });
          }

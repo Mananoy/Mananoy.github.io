@@ -20,7 +20,7 @@ function drawRentEventCountChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select B, C where A contains 'Rent EventCount'");
+   query.setQuery("select B, PQ where A contains 'Rent EventCount'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->
@@ -50,7 +50,7 @@ function drawRentAveragePriceChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select B, C where A contains 'Rent AveragePrice'");
+   query.setQuery("select B, PQ where A contains 'Rent AveragePrice'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->
@@ -80,7 +80,7 @@ function drawSoldEventCountChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select B, C where A contains 'Sold EventCount'");
+   query.setQuery("select B, PQ where A contains 'Sold EventCount'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->
@@ -110,7 +110,7 @@ function drawSoldAveragePriceChart() {
    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1i4G3n-sSk3A4voH2DCKKIzK7G5PFBwEE6XVZRQRci_g/edit#gid=531570582');
    <!--Set Query-->
    <!--For Rent EventCount-->
-   query.setQuery("select B, C where A contains 'Sold AveragePrice'");
+   query.setQuery("select B, PQ where A contains 'Sold AveragePrice'");
    <!--send query and handle response-->
    query.send(handleQueryResponse);
    <!--handler function-->

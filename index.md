@@ -1562,7 +1562,7 @@ function drawSoldAveragePriceChart() {
    <div id="map_canvas"></div>
    
    <!--display suburb name-->
-   <h2 id="selected_suburb_name" style="text-align: center">Sydney</h2>
+   <h2 id="selected_suburb_name" style="text-align: center">North Sydney</h2>
    <div style="text-align: center; color: white;">
       <a class="btn btn-primary" onclick="change_date('6m')" role="button">6m</a>
       <a class="btn btn-primary" onclick="change_date('1y')" role="button">1y</a>

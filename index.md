@@ -653,6 +653,17 @@ function drawSoldAveragePriceChart() {
          });
          if (placeCombi == " ")
          {
+             $.each(data, function(key, value) {
+                if (key.includes(suburb_name))
+                {
+                    //console.log("found in map with id:");
+                    placeCombi = value.id
+                    //console.log(placeCombi);
+                }
+             });
+         }
+         if (placeCombi == " ")
+         {
             alert("No combi data found for " + suburb_name);
             return;
          }

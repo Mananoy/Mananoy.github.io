@@ -336,13 +336,24 @@ function drawSoldAveragePriceChart() {
           console.log("map produced in mapper:");
           console.log(data);
           $.each(data, function(key, value) {
-              if (key.includes(suburb_name))
+              if (key == suburb_name)
               {
-                 console.log("found in map with id:");
-                 place = value.id
-                 console.log(place);
+                 //console.log("found in map with id:");
+                 place2019 = value.id
+                 //console.log(place2019);
               }
           });
+          if (place2019 == " ")
+          {
+              $.each(data, function(key, value) {
+                 if (key.includes(suburb_name))
+                 {
+                     //console.log("found in map with id:");
+                     place2019 = value.id
+                     //console.log(place2019);
+                 }
+              });
+          }
           if (place == " ")
           {
              alert("No data found for " + suburb_name);
@@ -599,13 +610,24 @@ function drawSoldAveragePriceChart() {
          //console.log("map 2019 produced in mapper:");
          //console.log(data);
          $.each(data, function(key, value) {
-             if (key.includes(suburb_name))
+             if (key == suburb_name)
              {
                 //console.log("found in map with id:");
                 place2019 = value.id
                 //console.log(place2019);
              }
          });
+         if (place2019 == " ")
+         {
+             $.each(data, function(key, value) {
+                if (key.includes(suburb_name))
+                {
+                    //console.log("found in map with id:");
+                    place2019 = value.id
+                    //console.log(place2019);
+                }
+             });
+         }
          if (place2019 == " ")
          {
             alert("No 2019 data found for " + suburb_name);

@@ -339,18 +339,18 @@ function drawSoldAveragePriceChart() {
               if (key == suburb_name)
               {
                  //console.log("found in map with id:");
-                 place2019 = value.id
-                 //console.log(place2019);
+                 place = value.id
+                 //console.log(place);
               }
           });
-          if (place2019 == " ")
+          if (place == " ")
           {
               $.each(data, function(key, value) {
                  if (key.includes(suburb_name))
                  {
                      //console.log("found in map with id:");
-                     place2019 = value.id
-                     //console.log(place2019);
+                     place = value.id
+                     //console.log(place);
                  }
               });
           }

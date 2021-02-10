@@ -1559,7 +1559,7 @@ function drawSoldAveragePriceChart() {
       });
     }
     function find(){
-      var name = document.getElementById("search").innertext;
+      var name = document.getElementById("search").value;
       console.log("name here: " + name);
     }
 </script>

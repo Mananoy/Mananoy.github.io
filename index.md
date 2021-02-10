@@ -1558,6 +1558,10 @@ function drawSoldAveragePriceChart() {
          }
       });
     }
+    function search(){
+      var name = document.getElementById("search").innertext;
+      console.log("name here: "name);
+    }
 </script>
 <!--test for google map-->
 
@@ -1579,6 +1583,12 @@ function drawSoldAveragePriceChart() {
    <!--Div that will hold the map-->
    <div id="map_canvas"></div>
    
+   <!--search method-->
+   <form>
+   <label>Search by name:</label><br>
+   <input type="text" id="search">
+   </form>
+   <a id="search_button" class="btn btn-info" onclick="search()" role="button">Search</a>
    <!--display suburb name-->
    <h2 id="selected_suburb_name" style="text-align: center">North Sydney</h2>
    <div style="text-align: center; color: white;">

@@ -1196,7 +1196,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Rent EventCount',
                                 'width':750,
-                                'height':400,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1249,7 +1249,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Rent AveragePrice',
                                 'width':750,
-                                'height':400,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1302,7 +1302,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Sold EventCount',
                                 'width':750,
-                                'height':400,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1355,7 +1355,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Sold AveragePrice',
                                 'width':750,
-                                'height':400,
+                                'height':500,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1419,7 +1419,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Rent EventCount',
                                 'width':900,
-                                'height':400,
+                                'height':700,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1472,7 +1472,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Rent AveragePrice',
                                 'width':900,
-                                'height':400,
+                                'height':700,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1525,7 +1525,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Sold EventCount',
                                 'width':900,
-                                'height':400,
+                                'height':700,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true
@@ -1578,7 +1578,7 @@ function drawSoldAveragePriceChart() {
                  <!--Set chart options-->
                  var options = {'title':'Sold AveragePrice',
                                 'width':900,
-                                'height':400,
+                                'height':700,
                                 pointSize: 5,
                                 legend: { position: 'bottom' },
                                 interpolateNulls: true

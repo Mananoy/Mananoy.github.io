@@ -1584,15 +1584,15 @@ function drawSoldAveragePriceChart() {
    <div id="map_canvas"></div>
    
    <!--search method-->
+   <br>
    <div>
    <p>OR</p>
    </div>
    <form>
    <label>Search by name:</label><br>
    <input type="text" id="search">
-   </form>
-   <br>
    <a id="search_button" class="btn btn-info" onclick="search()" role="button">Search</a>
+   </form>
    <!--display suburb name-->
    <h2 id="selected_suburb_name" style="text-align: center">North Sydney</h2>
    <div style="text-align: center; color: white;">

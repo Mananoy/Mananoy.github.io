@@ -1591,7 +1591,7 @@ function drawSoldAveragePriceChart() {
    <form>
    <label>Search by name:</label><br>
    <input type="text" id="search">
-   <a id="search_button" class="btn btn-info" onclick="search()" role="button">Search</a>
+   <a id="search_button" class="btn btn-info" onclick="search()" role="button" style="padding: .2rem .75rem; margin: 0;">Search</a>
    </form>
    <!--display suburb name-->
    <h2 id="selected_suburb_name" style="text-align: center">North Sydney</h2>

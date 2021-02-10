@@ -1621,10 +1621,10 @@ function drawSoldAveragePriceChart() {
    
    <!--search method-->
    <br>
-   <div>
+   <div style="text-align: center">
    <p>OR</p>
    </div>
-   <form>
+   <form style="text-align: center">
    <label>Search by name:</label><br>
    <input type="text" id="search">
    <a id="search_button" class="btn btn-info" onclick="find()" role="button" style="padding: .2rem .75rem; margin: 0;">Search</a>

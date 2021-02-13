@@ -1691,13 +1691,13 @@ function drawSoldAveragePriceChart() {
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    
    <!--This time we can put the script tags anywhere we like as the jQuery callback function will be only executed when the DOM is ready. The only limitation is that we need to load our code after we have loaded jQuery itself.-->
-   <script src="script/test.js"></script>
+   <!--<script src="script/test.js"></script>-->
 
    <!--we would like to get some data from the server. As we cannot run anything on the server we cannot get dynamic data, but we can store the data in JSON files and load them using the Ajax methods provided by jQuery.-->
-   <script src="script/json.js"></script>
+   <!--<script src="script/json.js"></script>-->
    
    <!--script for jquery-->
-   <script src="script/test.js"></script>
+   <!--<script src="script/test.js"></script>-->
    
    <!--This is required for icon-->
    <script src="https://kit.fontawesome.com/f46a3c561e.js" crossorigin="anonymous"></script>

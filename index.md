@@ -1671,7 +1671,7 @@ function drawSoldAveragePriceChart() {
    <br/>
    <br/>
    <br/>
-   <p title="You hover on me~"> Below are add by different js approaches </p>
+   <!--<p title="You hover on me~"> Below are add by different js approaches </p>-->
 
    <!--<div style="background-color: PapayaWhip; border:0.2em solid PeachPuff;">-->
      <!--<div id="text1"></div>-->

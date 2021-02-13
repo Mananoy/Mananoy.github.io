@@ -1673,16 +1673,16 @@ function drawSoldAveragePriceChart() {
    <br/>
    <p title="You hover on me~"> Below are add by different js approaches </p>
 
-   <div style="background-color: PapayaWhip; border:0.2em solid PeachPuff;">
-     <div id="text1"></div>
-     <div id="text2"></div>
-     <div id="text3"></div>
-   </div>
+   <!--<div style="background-color: PapayaWhip; border:0.2em solid PeachPuff;">-->
+     <!--<div id="text1"></div>-->
+     <!--<div id="text2"></div>-->
+     <!--<div id="text3"></div>-->
+   <!--</div>-->
 
-   <br>
-   <div style="text-align: center;">
-      <a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>
-   </div>
+   <!--<br>-->
+   <!--<div style="text-align: center;">-->
+      <!--<a class="btn btn-primary" href="https://mananoy.github.io/pages/404" role="button">404</a>-->
+   <!--</div>-->
 
 
 
